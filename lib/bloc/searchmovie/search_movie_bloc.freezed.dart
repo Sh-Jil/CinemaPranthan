@@ -12,39 +12,25 @@ part of 'search_movie_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$SearchMovieEventTearOff {
-  const _$SearchMovieEventTearOff();
-
-  _SearchMovie searchmovie({required String moviequery}) {
-    return _SearchMovie(
-      moviequery: moviequery,
-    );
-  }
-}
-
-/// @nodoc
-const $SearchMovieEvent = _$SearchMovieEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$SearchMovieEvent {
   String get moviequery => throw _privateConstructorUsedError;
-
+  int get page => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String moviequery) searchmovie,
+    required TResult Function(String moviequery, int page) searchmovie,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String moviequery)? searchmovie,
+    TResult Function(String moviequery, int page)? searchmovie,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String moviequery)? searchmovie,
+    TResult Function(String moviequery, int page)? searchmovie,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -75,7 +61,7 @@ abstract class $SearchMovieEventCopyWith<$Res> {
   factory $SearchMovieEventCopyWith(
           SearchMovieEvent value, $Res Function(SearchMovieEvent) then) =
       _$SearchMovieEventCopyWithImpl<$Res>;
-  $Res call({String moviequery});
+  $Res call({String moviequery, int page});
 }
 
 /// @nodoc
@@ -90,46 +76,56 @@ class _$SearchMovieEventCopyWithImpl<$Res>
   @override
   $Res call({
     Object? moviequery = freezed,
+    Object? page = freezed,
   }) {
     return _then(_value.copyWith(
       moviequery: moviequery == freezed
           ? _value.moviequery
           : moviequery // ignore: cast_nullable_to_non_nullable
               as String,
+      page: page == freezed
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$SearchMovieCopyWith<$Res>
+abstract class _$$_SearchMovieCopyWith<$Res>
     implements $SearchMovieEventCopyWith<$Res> {
-  factory _$SearchMovieCopyWith(
-          _SearchMovie value, $Res Function(_SearchMovie) then) =
-      __$SearchMovieCopyWithImpl<$Res>;
+  factory _$$_SearchMovieCopyWith(
+          _$_SearchMovie value, $Res Function(_$_SearchMovie) then) =
+      __$$_SearchMovieCopyWithImpl<$Res>;
   @override
-  $Res call({String moviequery});
+  $Res call({String moviequery, int page});
 }
 
 /// @nodoc
-class __$SearchMovieCopyWithImpl<$Res>
+class __$$_SearchMovieCopyWithImpl<$Res>
     extends _$SearchMovieEventCopyWithImpl<$Res>
-    implements _$SearchMovieCopyWith<$Res> {
-  __$SearchMovieCopyWithImpl(
-      _SearchMovie _value, $Res Function(_SearchMovie) _then)
-      : super(_value, (v) => _then(v as _SearchMovie));
+    implements _$$_SearchMovieCopyWith<$Res> {
+  __$$_SearchMovieCopyWithImpl(
+      _$_SearchMovie _value, $Res Function(_$_SearchMovie) _then)
+      : super(_value, (v) => _then(v as _$_SearchMovie));
 
   @override
-  _SearchMovie get _value => super._value as _SearchMovie;
+  _$_SearchMovie get _value => super._value as _$_SearchMovie;
 
   @override
   $Res call({
     Object? moviequery = freezed,
+    Object? page = freezed,
   }) {
-    return _then(_SearchMovie(
+    return _then(_$_SearchMovie(
       moviequery: moviequery == freezed
           ? _value.moviequery
           : moviequery // ignore: cast_nullable_to_non_nullable
               as String,
+      page: page == freezed
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -137,58 +133,63 @@ class __$SearchMovieCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_SearchMovie implements _SearchMovie {
-  const _$_SearchMovie({required this.moviequery});
+  const _$_SearchMovie({required this.moviequery, required this.page});
 
   @override
   final String moviequery;
+  @override
+  final int page;
 
   @override
   String toString() {
-    return 'SearchMovieEvent.searchmovie(moviequery: $moviequery)';
+    return 'SearchMovieEvent.searchmovie(moviequery: $moviequery, page: $page)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SearchMovie &&
+            other is _$_SearchMovie &&
             const DeepCollectionEquality()
-                .equals(other.moviequery, moviequery));
+                .equals(other.moviequery, moviequery) &&
+            const DeepCollectionEquality().equals(other.page, page));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(moviequery));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(moviequery),
+      const DeepCollectionEquality().hash(page));
 
   @JsonKey(ignore: true)
   @override
-  _$SearchMovieCopyWith<_SearchMovie> get copyWith =>
-      __$SearchMovieCopyWithImpl<_SearchMovie>(this, _$identity);
+  _$$_SearchMovieCopyWith<_$_SearchMovie> get copyWith =>
+      __$$_SearchMovieCopyWithImpl<_$_SearchMovie>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String moviequery) searchmovie,
+    required TResult Function(String moviequery, int page) searchmovie,
   }) {
-    return searchmovie(moviequery);
+    return searchmovie(moviequery, page);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String moviequery)? searchmovie,
+    TResult Function(String moviequery, int page)? searchmovie,
   }) {
-    return searchmovie?.call(moviequery);
+    return searchmovie?.call(moviequery, page);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String moviequery)? searchmovie,
+    TResult Function(String moviequery, int page)? searchmovie,
     required TResult orElse(),
   }) {
     if (searchmovie != null) {
-      return searchmovie(moviequery);
+      return searchmovie(moviequery, page);
     }
     return orElse();
   }
@@ -223,34 +224,19 @@ class _$_SearchMovie implements _SearchMovie {
 }
 
 abstract class _SearchMovie implements SearchMovieEvent {
-  const factory _SearchMovie({required String moviequery}) = _$_SearchMovie;
+  const factory _SearchMovie(
+      {required final String moviequery,
+      required final int page}) = _$_SearchMovie;
 
   @override
   String get moviequery;
   @override
+  int get page;
+  @override
   @JsonKey(ignore: true)
-  _$SearchMovieCopyWith<_SearchMovie> get copyWith =>
+  _$$_SearchMovieCopyWith<_$_SearchMovie> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$SearchMovieStateTearOff {
-  const _$SearchMovieStateTearOff();
-
-  _SearchMovieState call(
-      {required bool isLoading,
-      required List<MovieModel> movies,
-      required Option<Either<MainFailures, List<MovieModel>>> options}) {
-    return _SearchMovieState(
-      isLoading: isLoading,
-      movies: movies,
-      options: options,
-    );
-  }
-}
-
-/// @nodoc
-const $SearchMovieState = _$SearchMovieStateTearOff();
 
 /// @nodoc
 mixin _$SearchMovieState {
@@ -308,11 +294,11 @@ class _$SearchMovieStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SearchMovieStateCopyWith<$Res>
+abstract class _$$_SearchMovieStateCopyWith<$Res>
     implements $SearchMovieStateCopyWith<$Res> {
-  factory _$SearchMovieStateCopyWith(
-          _SearchMovieState value, $Res Function(_SearchMovieState) then) =
-      __$SearchMovieStateCopyWithImpl<$Res>;
+  factory _$$_SearchMovieStateCopyWith(
+          _$_SearchMovieState value, $Res Function(_$_SearchMovieState) then) =
+      __$$_SearchMovieStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool isLoading,
@@ -321,15 +307,15 @@ abstract class _$SearchMovieStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SearchMovieStateCopyWithImpl<$Res>
+class __$$_SearchMovieStateCopyWithImpl<$Res>
     extends _$SearchMovieStateCopyWithImpl<$Res>
-    implements _$SearchMovieStateCopyWith<$Res> {
-  __$SearchMovieStateCopyWithImpl(
-      _SearchMovieState _value, $Res Function(_SearchMovieState) _then)
-      : super(_value, (v) => _then(v as _SearchMovieState));
+    implements _$$_SearchMovieStateCopyWith<$Res> {
+  __$$_SearchMovieStateCopyWithImpl(
+      _$_SearchMovieState _value, $Res Function(_$_SearchMovieState) _then)
+      : super(_value, (v) => _then(v as _$_SearchMovieState));
 
   @override
-  _SearchMovieState get _value => super._value as _SearchMovieState;
+  _$_SearchMovieState get _value => super._value as _$_SearchMovieState;
 
   @override
   $Res call({
@@ -337,13 +323,13 @@ class __$SearchMovieStateCopyWithImpl<$Res>
     Object? movies = freezed,
     Object? options = freezed,
   }) {
-    return _then(_SearchMovieState(
+    return _then(_$_SearchMovieState(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       movies: movies == freezed
-          ? _value.movies
+          ? _value._movies
           : movies // ignore: cast_nullable_to_non_nullable
               as List<MovieModel>,
       options: options == freezed
@@ -358,12 +344,20 @@ class __$SearchMovieStateCopyWithImpl<$Res>
 
 class _$_SearchMovieState implements _SearchMovieState {
   const _$_SearchMovieState(
-      {required this.isLoading, required this.movies, required this.options});
+      {required this.isLoading,
+      required final List<MovieModel> movies,
+      required this.options})
+      : _movies = movies;
 
   @override
   final bool isLoading;
+  final List<MovieModel> _movies;
   @override
-  final List<MovieModel> movies;
+  List<MovieModel> get movies {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_movies);
+  }
+
   @override
   final Option<Either<MainFailures, List<MovieModel>>> options;
 
@@ -376,9 +370,9 @@ class _$_SearchMovieState implements _SearchMovieState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SearchMovieState &&
+            other is _$_SearchMovieState &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
-            const DeepCollectionEquality().equals(other.movies, movies) &&
+            const DeepCollectionEquality().equals(other._movies, _movies) &&
             const DeepCollectionEquality().equals(other.options, options));
   }
 
@@ -386,21 +380,21 @@ class _$_SearchMovieState implements _SearchMovieState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(movies),
+      const DeepCollectionEquality().hash(_movies),
       const DeepCollectionEquality().hash(options));
 
   @JsonKey(ignore: true)
   @override
-  _$SearchMovieStateCopyWith<_SearchMovieState> get copyWith =>
-      __$SearchMovieStateCopyWithImpl<_SearchMovieState>(this, _$identity);
+  _$$_SearchMovieStateCopyWith<_$_SearchMovieState> get copyWith =>
+      __$$_SearchMovieStateCopyWithImpl<_$_SearchMovieState>(this, _$identity);
 }
 
 abstract class _SearchMovieState implements SearchMovieState {
   const factory _SearchMovieState(
-          {required bool isLoading,
-          required List<MovieModel> movies,
-          required Option<Either<MainFailures, List<MovieModel>>> options}) =
-      _$_SearchMovieState;
+      {required final bool isLoading,
+      required final List<MovieModel> movies,
+      required final Option<Either<MainFailures, List<MovieModel>>>
+          options}) = _$_SearchMovieState;
 
   @override
   bool get isLoading;
@@ -410,6 +404,6 @@ abstract class _SearchMovieState implements SearchMovieState {
   Option<Either<MainFailures, List<MovieModel>>> get options;
   @override
   @JsonKey(ignore: true)
-  _$SearchMovieStateCopyWith<_SearchMovieState> get copyWith =>
+  _$$_SearchMovieStateCopyWith<_$_SearchMovieState> get copyWith =>
       throw _privateConstructorUsedError;
 }

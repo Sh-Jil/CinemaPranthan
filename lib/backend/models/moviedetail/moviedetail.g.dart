@@ -1,7 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: non_constant_identifier_names
-
 part of 'moviedetail.dart';
 
 // **************************************************************************
@@ -14,7 +12,7 @@ _$_MovieDetail _$$_MovieDetailFromJson(Map<String, dynamic> json) =>
       backdropPath: json['backdrop_path'] as String?,
       budget: json['budget'] as int?,
       genres: (json['genres'] as List<dynamic>?)
-          ?.map((e) => Genre.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e as Map<String, dynamic>)
           .toList(),
       homepage: json['homepage'] as String?,
       id: json['id'] as int?,
@@ -56,14 +54,4 @@ Map<String, dynamic> _$$_MovieDetailToJson(_$_MovieDetail instance) =>
       'title': instance.title,
       'video': instance.video,
       'vote_average': instance.rating,
-    };
-
-_$_Genre _$$_GenreFromJson(Map<String, dynamic> json) => _$_Genre(
-      id: json['id'] as int,
-      name: json['name'] as String,
-    );
-
-Map<String, dynamic> _$$_GenreToJson(_$_Genre instance) => <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
     };

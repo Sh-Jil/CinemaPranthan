@@ -4,8 +4,12 @@ import 'package:dartz/dartz.dart';
 
 abstract class TvRepo {
   Future<Either<MainFailures, List<TvModel>>> getlatesttv();
-  Future<Either<MainFailures, List<TvModel>>> getpopulartv();
-  Future<Either<MainFailures, List<TvModel>>> getairingtoday();
-  Future<Either<MainFailures, List<TvModel>>> getontv();
-  Future<Either<MainFailures, List<TvModel>>> gettopratedtv();
+
+
+  Future<Either<MainFailures, List<TvModel>>> getpopulartv({required int page});
+  Future<Either<MainFailures, List<TvModel>>> getairingtoday(
+      {required int page});
+  Future<Either<MainFailures, List<TvModel>>> getontv({required int page});
+  Future<Either<MainFailures, List<TvModel>>> gettopratedtv(
+      {required int page});
 }

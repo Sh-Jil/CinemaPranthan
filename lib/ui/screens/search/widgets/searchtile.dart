@@ -1,9 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cinemapranthan/ui/screens/detailspane/details.dart';
+import 'package:cinemapranthan/ui/screens/detailspane/tvdetails.dart';
 import 'package:cinemapranthan/utils/navigation.dart';
 import 'package:flutter/material.dart';
 
-import '../../constants/colours/colours.dart';
+import '../../../../constants/colours/colours.dart';
 
 class SearchTile extends StatelessWidget {
   final String heading;
@@ -12,6 +13,7 @@ class SearchTile extends StatelessWidget {
   final String? year;
   final int id;
   final String overview;
+  final bool ismovie;
   const SearchTile(
       {Key? key,
       required this.heading,
@@ -19,18 +21,21 @@ class SearchTile extends StatelessWidget {
       required this.image,
       required this.year,
       required this.id,
-      required this.overview})
+      required this.overview,
+      required this.ismovie})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       splashColor: orange,
-      onTap: () => goto(
-          context,
-          Details(
-            id: id,
-          )),
+      onTap: () => ismovie
+          ? goto(
+              context,
+              Details(
+                id: id,
+              ))
+          : goto(context, TvDetails(id: id)),
       child: Container(
         decoration: BoxDecoration(
             color: grey.withOpacity(0.5),

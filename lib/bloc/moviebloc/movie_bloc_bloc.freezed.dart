@@ -12,63 +12,35 @@ part of 'movie_bloc_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$MovieEventTearOff {
-  const _$MovieEventTearOff();
-
-  _GetTrendingMovie gettrendingmovie() {
-    return const _GetTrendingMovie();
-  }
-
-  _Getpopular getpopular() {
-    return const _Getpopular();
-  }
-
-  _Getupcoming getupcoming() {
-    return const _Getupcoming();
-  }
-
-  _Getnowplaying getnowplaying() {
-    return const _Getnowplaying();
-  }
-
-  _Gettoprated gettoprated() {
-    return const _Gettoprated();
-  }
-}
-
-/// @nodoc
-const $MovieEvent = _$MovieEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$MovieEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() gettrendingmovie,
-    required TResult Function() getpopular,
-    required TResult Function() getupcoming,
-    required TResult Function() getnowplaying,
-    required TResult Function() gettoprated,
+    required TResult Function(int page) getpopular,
+    required TResult Function(int page) getupcoming,
+    required TResult Function(int page) getnowplaying,
+    required TResult Function(int page) gettoprated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? gettrendingmovie,
-    TResult Function()? getpopular,
-    TResult Function()? getupcoming,
-    TResult Function()? getnowplaying,
-    TResult Function()? gettoprated,
+    TResult Function(int page)? getpopular,
+    TResult Function(int page)? getupcoming,
+    TResult Function(int page)? getnowplaying,
+    TResult Function(int page)? gettoprated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? gettrendingmovie,
-    TResult Function()? getpopular,
-    TResult Function()? getupcoming,
-    TResult Function()? getnowplaying,
-    TResult Function()? gettoprated,
+    TResult Function(int page)? getpopular,
+    TResult Function(int page)? getupcoming,
+    TResult Function(int page)? getnowplaying,
+    TResult Function(int page)? gettoprated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -119,22 +91,22 @@ class _$MovieEventCopyWithImpl<$Res> implements $MovieEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$GetTrendingMovieCopyWith<$Res> {
-  factory _$GetTrendingMovieCopyWith(
-          _GetTrendingMovie value, $Res Function(_GetTrendingMovie) then) =
-      __$GetTrendingMovieCopyWithImpl<$Res>;
+abstract class _$$_GetTrendingMovieCopyWith<$Res> {
+  factory _$$_GetTrendingMovieCopyWith(
+          _$_GetTrendingMovie value, $Res Function(_$_GetTrendingMovie) then) =
+      __$$_GetTrendingMovieCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$GetTrendingMovieCopyWithImpl<$Res>
+class __$$_GetTrendingMovieCopyWithImpl<$Res>
     extends _$MovieEventCopyWithImpl<$Res>
-    implements _$GetTrendingMovieCopyWith<$Res> {
-  __$GetTrendingMovieCopyWithImpl(
-      _GetTrendingMovie _value, $Res Function(_GetTrendingMovie) _then)
-      : super(_value, (v) => _then(v as _GetTrendingMovie));
+    implements _$$_GetTrendingMovieCopyWith<$Res> {
+  __$$_GetTrendingMovieCopyWithImpl(
+      _$_GetTrendingMovie _value, $Res Function(_$_GetTrendingMovie) _then)
+      : super(_value, (v) => _then(v as _$_GetTrendingMovie));
 
   @override
-  _GetTrendingMovie get _value => super._value as _GetTrendingMovie;
+  _$_GetTrendingMovie get _value => super._value as _$_GetTrendingMovie;
 }
 
 /// @nodoc
@@ -150,7 +122,7 @@ class _$_GetTrendingMovie implements _GetTrendingMovie {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _GetTrendingMovie);
+        (other.runtimeType == runtimeType && other is _$_GetTrendingMovie);
   }
 
   @override
@@ -160,10 +132,10 @@ class _$_GetTrendingMovie implements _GetTrendingMovie {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() gettrendingmovie,
-    required TResult Function() getpopular,
-    required TResult Function() getupcoming,
-    required TResult Function() getnowplaying,
-    required TResult Function() gettoprated,
+    required TResult Function(int page) getpopular,
+    required TResult Function(int page) getupcoming,
+    required TResult Function(int page) getnowplaying,
+    required TResult Function(int page) gettoprated,
   }) {
     return gettrendingmovie();
   }
@@ -172,10 +144,10 @@ class _$_GetTrendingMovie implements _GetTrendingMovie {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? gettrendingmovie,
-    TResult Function()? getpopular,
-    TResult Function()? getupcoming,
-    TResult Function()? getnowplaying,
-    TResult Function()? gettoprated,
+    TResult Function(int page)? getpopular,
+    TResult Function(int page)? getupcoming,
+    TResult Function(int page)? getnowplaying,
+    TResult Function(int page)? gettoprated,
   }) {
     return gettrendingmovie?.call();
   }
@@ -184,10 +156,10 @@ class _$_GetTrendingMovie implements _GetTrendingMovie {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? gettrendingmovie,
-    TResult Function()? getpopular,
-    TResult Function()? getupcoming,
-    TResult Function()? getnowplaying,
-    TResult Function()? gettoprated,
+    TResult Function(int page)? getpopular,
+    TResult Function(int page)? getupcoming,
+    TResult Function(int page)? getnowplaying,
+    TResult Function(int page)? gettoprated,
     required TResult orElse(),
   }) {
     if (gettrendingmovie != null) {
@@ -242,78 +214,102 @@ abstract class _GetTrendingMovie implements MovieEvent {
 }
 
 /// @nodoc
-abstract class _$GetpopularCopyWith<$Res> {
-  factory _$GetpopularCopyWith(
-          _Getpopular value, $Res Function(_Getpopular) then) =
-      __$GetpopularCopyWithImpl<$Res>;
+abstract class _$$_GetpopularCopyWith<$Res> {
+  factory _$$_GetpopularCopyWith(
+          _$_Getpopular value, $Res Function(_$_Getpopular) then) =
+      __$$_GetpopularCopyWithImpl<$Res>;
+  $Res call({int page});
 }
 
 /// @nodoc
-class __$GetpopularCopyWithImpl<$Res> extends _$MovieEventCopyWithImpl<$Res>
-    implements _$GetpopularCopyWith<$Res> {
-  __$GetpopularCopyWithImpl(
-      _Getpopular _value, $Res Function(_Getpopular) _then)
-      : super(_value, (v) => _then(v as _Getpopular));
+class __$$_GetpopularCopyWithImpl<$Res> extends _$MovieEventCopyWithImpl<$Res>
+    implements _$$_GetpopularCopyWith<$Res> {
+  __$$_GetpopularCopyWithImpl(
+      _$_Getpopular _value, $Res Function(_$_Getpopular) _then)
+      : super(_value, (v) => _then(v as _$_Getpopular));
 
   @override
-  _Getpopular get _value => super._value as _Getpopular;
+  _$_Getpopular get _value => super._value as _$_Getpopular;
+
+  @override
+  $Res call({
+    Object? page = freezed,
+  }) {
+    return _then(_$_Getpopular(
+      page: page == freezed
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Getpopular implements _Getpopular {
-  const _$_Getpopular();
+  const _$_Getpopular({required this.page});
+
+  @override
+  final int page;
 
   @override
   String toString() {
-    return 'MovieEvent.getpopular()';
+    return 'MovieEvent.getpopular(page: $page)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Getpopular);
+        (other.runtimeType == runtimeType &&
+            other is _$_Getpopular &&
+            const DeepCollectionEquality().equals(other.page, page));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(page));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_GetpopularCopyWith<_$_Getpopular> get copyWith =>
+      __$$_GetpopularCopyWithImpl<_$_Getpopular>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() gettrendingmovie,
-    required TResult Function() getpopular,
-    required TResult Function() getupcoming,
-    required TResult Function() getnowplaying,
-    required TResult Function() gettoprated,
+    required TResult Function(int page) getpopular,
+    required TResult Function(int page) getupcoming,
+    required TResult Function(int page) getnowplaying,
+    required TResult Function(int page) gettoprated,
   }) {
-    return getpopular();
+    return getpopular(page);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? gettrendingmovie,
-    TResult Function()? getpopular,
-    TResult Function()? getupcoming,
-    TResult Function()? getnowplaying,
-    TResult Function()? gettoprated,
+    TResult Function(int page)? getpopular,
+    TResult Function(int page)? getupcoming,
+    TResult Function(int page)? getnowplaying,
+    TResult Function(int page)? gettoprated,
   }) {
-    return getpopular?.call();
+    return getpopular?.call(page);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? gettrendingmovie,
-    TResult Function()? getpopular,
-    TResult Function()? getupcoming,
-    TResult Function()? getnowplaying,
-    TResult Function()? gettoprated,
+    TResult Function(int page)? getpopular,
+    TResult Function(int page)? getupcoming,
+    TResult Function(int page)? getnowplaying,
+    TResult Function(int page)? gettoprated,
     required TResult orElse(),
   }) {
     if (getpopular != null) {
-      return getpopular();
+      return getpopular(page);
     }
     return orElse();
   }
@@ -360,82 +356,111 @@ class _$_Getpopular implements _Getpopular {
 }
 
 abstract class _Getpopular implements MovieEvent {
-  const factory _Getpopular() = _$_Getpopular;
+  const factory _Getpopular({required final int page}) = _$_Getpopular;
+
+  int get page;
+  @JsonKey(ignore: true)
+  _$$_GetpopularCopyWith<_$_Getpopular> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$GetupcomingCopyWith<$Res> {
-  factory _$GetupcomingCopyWith(
-          _Getupcoming value, $Res Function(_Getupcoming) then) =
-      __$GetupcomingCopyWithImpl<$Res>;
+abstract class _$$_GetupcomingCopyWith<$Res> {
+  factory _$$_GetupcomingCopyWith(
+          _$_Getupcoming value, $Res Function(_$_Getupcoming) then) =
+      __$$_GetupcomingCopyWithImpl<$Res>;
+  $Res call({int page});
 }
 
 /// @nodoc
-class __$GetupcomingCopyWithImpl<$Res> extends _$MovieEventCopyWithImpl<$Res>
-    implements _$GetupcomingCopyWith<$Res> {
-  __$GetupcomingCopyWithImpl(
-      _Getupcoming _value, $Res Function(_Getupcoming) _then)
-      : super(_value, (v) => _then(v as _Getupcoming));
+class __$$_GetupcomingCopyWithImpl<$Res> extends _$MovieEventCopyWithImpl<$Res>
+    implements _$$_GetupcomingCopyWith<$Res> {
+  __$$_GetupcomingCopyWithImpl(
+      _$_Getupcoming _value, $Res Function(_$_Getupcoming) _then)
+      : super(_value, (v) => _then(v as _$_Getupcoming));
 
   @override
-  _Getupcoming get _value => super._value as _Getupcoming;
+  _$_Getupcoming get _value => super._value as _$_Getupcoming;
+
+  @override
+  $Res call({
+    Object? page = freezed,
+  }) {
+    return _then(_$_Getupcoming(
+      page: page == freezed
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Getupcoming implements _Getupcoming {
-  const _$_Getupcoming();
+  const _$_Getupcoming({required this.page});
+
+  @override
+  final int page;
 
   @override
   String toString() {
-    return 'MovieEvent.getupcoming()';
+    return 'MovieEvent.getupcoming(page: $page)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Getupcoming);
+        (other.runtimeType == runtimeType &&
+            other is _$_Getupcoming &&
+            const DeepCollectionEquality().equals(other.page, page));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(page));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_GetupcomingCopyWith<_$_Getupcoming> get copyWith =>
+      __$$_GetupcomingCopyWithImpl<_$_Getupcoming>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() gettrendingmovie,
-    required TResult Function() getpopular,
-    required TResult Function() getupcoming,
-    required TResult Function() getnowplaying,
-    required TResult Function() gettoprated,
+    required TResult Function(int page) getpopular,
+    required TResult Function(int page) getupcoming,
+    required TResult Function(int page) getnowplaying,
+    required TResult Function(int page) gettoprated,
   }) {
-    return getupcoming();
+    return getupcoming(page);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? gettrendingmovie,
-    TResult Function()? getpopular,
-    TResult Function()? getupcoming,
-    TResult Function()? getnowplaying,
-    TResult Function()? gettoprated,
+    TResult Function(int page)? getpopular,
+    TResult Function(int page)? getupcoming,
+    TResult Function(int page)? getnowplaying,
+    TResult Function(int page)? gettoprated,
   }) {
-    return getupcoming?.call();
+    return getupcoming?.call(page);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? gettrendingmovie,
-    TResult Function()? getpopular,
-    TResult Function()? getupcoming,
-    TResult Function()? getnowplaying,
-    TResult Function()? gettoprated,
+    TResult Function(int page)? getpopular,
+    TResult Function(int page)? getupcoming,
+    TResult Function(int page)? getnowplaying,
+    TResult Function(int page)? gettoprated,
     required TResult orElse(),
   }) {
     if (getupcoming != null) {
-      return getupcoming();
+      return getupcoming(page);
     }
     return orElse();
   }
@@ -482,82 +507,112 @@ class _$_Getupcoming implements _Getupcoming {
 }
 
 abstract class _Getupcoming implements MovieEvent {
-  const factory _Getupcoming() = _$_Getupcoming;
+  const factory _Getupcoming({required final int page}) = _$_Getupcoming;
+
+  int get page;
+  @JsonKey(ignore: true)
+  _$$_GetupcomingCopyWith<_$_Getupcoming> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$GetnowplayingCopyWith<$Res> {
-  factory _$GetnowplayingCopyWith(
-          _Getnowplaying value, $Res Function(_Getnowplaying) then) =
-      __$GetnowplayingCopyWithImpl<$Res>;
+abstract class _$$_GetnowplayingCopyWith<$Res> {
+  factory _$$_GetnowplayingCopyWith(
+          _$_Getnowplaying value, $Res Function(_$_Getnowplaying) then) =
+      __$$_GetnowplayingCopyWithImpl<$Res>;
+  $Res call({int page});
 }
 
 /// @nodoc
-class __$GetnowplayingCopyWithImpl<$Res> extends _$MovieEventCopyWithImpl<$Res>
-    implements _$GetnowplayingCopyWith<$Res> {
-  __$GetnowplayingCopyWithImpl(
-      _Getnowplaying _value, $Res Function(_Getnowplaying) _then)
-      : super(_value, (v) => _then(v as _Getnowplaying));
+class __$$_GetnowplayingCopyWithImpl<$Res>
+    extends _$MovieEventCopyWithImpl<$Res>
+    implements _$$_GetnowplayingCopyWith<$Res> {
+  __$$_GetnowplayingCopyWithImpl(
+      _$_Getnowplaying _value, $Res Function(_$_Getnowplaying) _then)
+      : super(_value, (v) => _then(v as _$_Getnowplaying));
 
   @override
-  _Getnowplaying get _value => super._value as _Getnowplaying;
+  _$_Getnowplaying get _value => super._value as _$_Getnowplaying;
+
+  @override
+  $Res call({
+    Object? page = freezed,
+  }) {
+    return _then(_$_Getnowplaying(
+      page: page == freezed
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Getnowplaying implements _Getnowplaying {
-  const _$_Getnowplaying();
+  const _$_Getnowplaying({required this.page});
+
+  @override
+  final int page;
 
   @override
   String toString() {
-    return 'MovieEvent.getnowplaying()';
+    return 'MovieEvent.getnowplaying(page: $page)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Getnowplaying);
+        (other.runtimeType == runtimeType &&
+            other is _$_Getnowplaying &&
+            const DeepCollectionEquality().equals(other.page, page));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(page));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_GetnowplayingCopyWith<_$_Getnowplaying> get copyWith =>
+      __$$_GetnowplayingCopyWithImpl<_$_Getnowplaying>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() gettrendingmovie,
-    required TResult Function() getpopular,
-    required TResult Function() getupcoming,
-    required TResult Function() getnowplaying,
-    required TResult Function() gettoprated,
+    required TResult Function(int page) getpopular,
+    required TResult Function(int page) getupcoming,
+    required TResult Function(int page) getnowplaying,
+    required TResult Function(int page) gettoprated,
   }) {
-    return getnowplaying();
+    return getnowplaying(page);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? gettrendingmovie,
-    TResult Function()? getpopular,
-    TResult Function()? getupcoming,
-    TResult Function()? getnowplaying,
-    TResult Function()? gettoprated,
+    TResult Function(int page)? getpopular,
+    TResult Function(int page)? getupcoming,
+    TResult Function(int page)? getnowplaying,
+    TResult Function(int page)? gettoprated,
   }) {
-    return getnowplaying?.call();
+    return getnowplaying?.call(page);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? gettrendingmovie,
-    TResult Function()? getpopular,
-    TResult Function()? getupcoming,
-    TResult Function()? getnowplaying,
-    TResult Function()? gettoprated,
+    TResult Function(int page)? getpopular,
+    TResult Function(int page)? getupcoming,
+    TResult Function(int page)? getnowplaying,
+    TResult Function(int page)? gettoprated,
     required TResult orElse(),
   }) {
     if (getnowplaying != null) {
-      return getnowplaying();
+      return getnowplaying(page);
     }
     return orElse();
   }
@@ -604,82 +659,111 @@ class _$_Getnowplaying implements _Getnowplaying {
 }
 
 abstract class _Getnowplaying implements MovieEvent {
-  const factory _Getnowplaying() = _$_Getnowplaying;
+  const factory _Getnowplaying({required final int page}) = _$_Getnowplaying;
+
+  int get page;
+  @JsonKey(ignore: true)
+  _$$_GetnowplayingCopyWith<_$_Getnowplaying> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$GettopratedCopyWith<$Res> {
-  factory _$GettopratedCopyWith(
-          _Gettoprated value, $Res Function(_Gettoprated) then) =
-      __$GettopratedCopyWithImpl<$Res>;
+abstract class _$$_GettopratedCopyWith<$Res> {
+  factory _$$_GettopratedCopyWith(
+          _$_Gettoprated value, $Res Function(_$_Gettoprated) then) =
+      __$$_GettopratedCopyWithImpl<$Res>;
+  $Res call({int page});
 }
 
 /// @nodoc
-class __$GettopratedCopyWithImpl<$Res> extends _$MovieEventCopyWithImpl<$Res>
-    implements _$GettopratedCopyWith<$Res> {
-  __$GettopratedCopyWithImpl(
-      _Gettoprated _value, $Res Function(_Gettoprated) _then)
-      : super(_value, (v) => _then(v as _Gettoprated));
+class __$$_GettopratedCopyWithImpl<$Res> extends _$MovieEventCopyWithImpl<$Res>
+    implements _$$_GettopratedCopyWith<$Res> {
+  __$$_GettopratedCopyWithImpl(
+      _$_Gettoprated _value, $Res Function(_$_Gettoprated) _then)
+      : super(_value, (v) => _then(v as _$_Gettoprated));
 
   @override
-  _Gettoprated get _value => super._value as _Gettoprated;
+  _$_Gettoprated get _value => super._value as _$_Gettoprated;
+
+  @override
+  $Res call({
+    Object? page = freezed,
+  }) {
+    return _then(_$_Gettoprated(
+      page: page == freezed
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Gettoprated implements _Gettoprated {
-  const _$_Gettoprated();
+  const _$_Gettoprated({required this.page});
+
+  @override
+  final int page;
 
   @override
   String toString() {
-    return 'MovieEvent.gettoprated()';
+    return 'MovieEvent.gettoprated(page: $page)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Gettoprated);
+        (other.runtimeType == runtimeType &&
+            other is _$_Gettoprated &&
+            const DeepCollectionEquality().equals(other.page, page));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(page));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_GettopratedCopyWith<_$_Gettoprated> get copyWith =>
+      __$$_GettopratedCopyWithImpl<_$_Gettoprated>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() gettrendingmovie,
-    required TResult Function() getpopular,
-    required TResult Function() getupcoming,
-    required TResult Function() getnowplaying,
-    required TResult Function() gettoprated,
+    required TResult Function(int page) getpopular,
+    required TResult Function(int page) getupcoming,
+    required TResult Function(int page) getnowplaying,
+    required TResult Function(int page) gettoprated,
   }) {
-    return gettoprated();
+    return gettoprated(page);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? gettrendingmovie,
-    TResult Function()? getpopular,
-    TResult Function()? getupcoming,
-    TResult Function()? getnowplaying,
-    TResult Function()? gettoprated,
+    TResult Function(int page)? getpopular,
+    TResult Function(int page)? getupcoming,
+    TResult Function(int page)? getnowplaying,
+    TResult Function(int page)? gettoprated,
   }) {
-    return gettoprated?.call();
+    return gettoprated?.call(page);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? gettrendingmovie,
-    TResult Function()? getpopular,
-    TResult Function()? getupcoming,
-    TResult Function()? getnowplaying,
-    TResult Function()? gettoprated,
+    TResult Function(int page)? getpopular,
+    TResult Function(int page)? getupcoming,
+    TResult Function(int page)? getnowplaying,
+    TResult Function(int page)? gettoprated,
     required TResult orElse(),
   }) {
     if (gettoprated != null) {
-      return gettoprated();
+      return gettoprated(page);
     }
     return orElse();
   }
@@ -726,27 +810,13 @@ class _$_Gettoprated implements _Gettoprated {
 }
 
 abstract class _Gettoprated implements MovieEvent {
-  const factory _Gettoprated() = _$_Gettoprated;
+  const factory _Gettoprated({required final int page}) = _$_Gettoprated;
+
+  int get page;
+  @JsonKey(ignore: true)
+  _$$_GettopratedCopyWith<_$_Gettoprated> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$MovieblocstateTearOff {
-  const _$MovieblocstateTearOff();
-
-  _Movieblocstate call(
-      {required bool isLoading,
-      required List<MovieModel> movies,
-      required Option<Either<MainFailures, List<MovieModel>>> options}) {
-    return _Movieblocstate(
-      isLoading: isLoading,
-      movies: movies,
-      options: options,
-    );
-  }
-}
-
-/// @nodoc
-const $Movieblocstate = _$MovieblocstateTearOff();
 
 /// @nodoc
 mixin _$Movieblocstate {
@@ -804,11 +874,11 @@ class _$MovieblocstateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$MovieblocstateCopyWith<$Res>
+abstract class _$$_MovieblocstateCopyWith<$Res>
     implements $MovieblocstateCopyWith<$Res> {
-  factory _$MovieblocstateCopyWith(
-          _Movieblocstate value, $Res Function(_Movieblocstate) then) =
-      __$MovieblocstateCopyWithImpl<$Res>;
+  factory _$$_MovieblocstateCopyWith(
+          _$_Movieblocstate value, $Res Function(_$_Movieblocstate) then) =
+      __$$_MovieblocstateCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool isLoading,
@@ -817,15 +887,15 @@ abstract class _$MovieblocstateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$MovieblocstateCopyWithImpl<$Res>
+class __$$_MovieblocstateCopyWithImpl<$Res>
     extends _$MovieblocstateCopyWithImpl<$Res>
-    implements _$MovieblocstateCopyWith<$Res> {
-  __$MovieblocstateCopyWithImpl(
-      _Movieblocstate _value, $Res Function(_Movieblocstate) _then)
-      : super(_value, (v) => _then(v as _Movieblocstate));
+    implements _$$_MovieblocstateCopyWith<$Res> {
+  __$$_MovieblocstateCopyWithImpl(
+      _$_Movieblocstate _value, $Res Function(_$_Movieblocstate) _then)
+      : super(_value, (v) => _then(v as _$_Movieblocstate));
 
   @override
-  _Movieblocstate get _value => super._value as _Movieblocstate;
+  _$_Movieblocstate get _value => super._value as _$_Movieblocstate;
 
   @override
   $Res call({
@@ -833,13 +903,13 @@ class __$MovieblocstateCopyWithImpl<$Res>
     Object? movies = freezed,
     Object? options = freezed,
   }) {
-    return _then(_Movieblocstate(
+    return _then(_$_Movieblocstate(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       movies: movies == freezed
-          ? _value.movies
+          ? _value._movies
           : movies // ignore: cast_nullable_to_non_nullable
               as List<MovieModel>,
       options: options == freezed
@@ -854,12 +924,20 @@ class __$MovieblocstateCopyWithImpl<$Res>
 
 class _$_Movieblocstate implements _Movieblocstate {
   const _$_Movieblocstate(
-      {required this.isLoading, required this.movies, required this.options});
+      {required this.isLoading,
+      required final List<MovieModel> movies,
+      required this.options})
+      : _movies = movies;
 
   @override
   final bool isLoading;
+  final List<MovieModel> _movies;
   @override
-  final List<MovieModel> movies;
+  List<MovieModel> get movies {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_movies);
+  }
+
   @override
   final Option<Either<MainFailures, List<MovieModel>>> options;
 
@@ -872,9 +950,9 @@ class _$_Movieblocstate implements _Movieblocstate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Movieblocstate &&
+            other is _$_Movieblocstate &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
-            const DeepCollectionEquality().equals(other.movies, movies) &&
+            const DeepCollectionEquality().equals(other._movies, _movies) &&
             const DeepCollectionEquality().equals(other.options, options));
   }
 
@@ -882,21 +960,21 @@ class _$_Movieblocstate implements _Movieblocstate {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(movies),
+      const DeepCollectionEquality().hash(_movies),
       const DeepCollectionEquality().hash(options));
 
   @JsonKey(ignore: true)
   @override
-  _$MovieblocstateCopyWith<_Movieblocstate> get copyWith =>
-      __$MovieblocstateCopyWithImpl<_Movieblocstate>(this, _$identity);
+  _$$_MovieblocstateCopyWith<_$_Movieblocstate> get copyWith =>
+      __$$_MovieblocstateCopyWithImpl<_$_Movieblocstate>(this, _$identity);
 }
 
 abstract class _Movieblocstate implements Movieblocstate {
   const factory _Movieblocstate(
-          {required bool isLoading,
-          required List<MovieModel> movies,
-          required Option<Either<MainFailures, List<MovieModel>>> options}) =
-      _$_Movieblocstate;
+      {required final bool isLoading,
+      required final List<MovieModel> movies,
+      required final Option<Either<MainFailures, List<MovieModel>>>
+          options}) = _$_Movieblocstate;
 
   @override
   bool get isLoading;
@@ -906,28 +984,9 @@ abstract class _Movieblocstate implements Movieblocstate {
   Option<Either<MainFailures, List<MovieModel>>> get options;
   @override
   @JsonKey(ignore: true)
-  _$MovieblocstateCopyWith<_Movieblocstate> get copyWith =>
+  _$$_MovieblocstateCopyWith<_$_Movieblocstate> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$PopularMoviestateTearOff {
-  const _$PopularMoviestateTearOff();
-
-  _PopularMoviestate call(
-      {required bool isLoading,
-      required List<MovieModel> popularmovies,
-      required Option<Either<MainFailures, List<MovieModel>>> options}) {
-    return _PopularMoviestate(
-      isLoading: isLoading,
-      popularmovies: popularmovies,
-      options: options,
-    );
-  }
-}
-
-/// @nodoc
-const $PopularMoviestate = _$PopularMoviestateTearOff();
 
 /// @nodoc
 mixin _$PopularMoviestate {
@@ -985,11 +1044,11 @@ class _$PopularMoviestateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PopularMoviestateCopyWith<$Res>
+abstract class _$$_PopularMoviestateCopyWith<$Res>
     implements $PopularMoviestateCopyWith<$Res> {
-  factory _$PopularMoviestateCopyWith(
-          _PopularMoviestate value, $Res Function(_PopularMoviestate) then) =
-      __$PopularMoviestateCopyWithImpl<$Res>;
+  factory _$$_PopularMoviestateCopyWith(_$_PopularMoviestate value,
+          $Res Function(_$_PopularMoviestate) then) =
+      __$$_PopularMoviestateCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool isLoading,
@@ -998,15 +1057,15 @@ abstract class _$PopularMoviestateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PopularMoviestateCopyWithImpl<$Res>
+class __$$_PopularMoviestateCopyWithImpl<$Res>
     extends _$PopularMoviestateCopyWithImpl<$Res>
-    implements _$PopularMoviestateCopyWith<$Res> {
-  __$PopularMoviestateCopyWithImpl(
-      _PopularMoviestate _value, $Res Function(_PopularMoviestate) _then)
-      : super(_value, (v) => _then(v as _PopularMoviestate));
+    implements _$$_PopularMoviestateCopyWith<$Res> {
+  __$$_PopularMoviestateCopyWithImpl(
+      _$_PopularMoviestate _value, $Res Function(_$_PopularMoviestate) _then)
+      : super(_value, (v) => _then(v as _$_PopularMoviestate));
 
   @override
-  _PopularMoviestate get _value => super._value as _PopularMoviestate;
+  _$_PopularMoviestate get _value => super._value as _$_PopularMoviestate;
 
   @override
   $Res call({
@@ -1014,13 +1073,13 @@ class __$PopularMoviestateCopyWithImpl<$Res>
     Object? popularmovies = freezed,
     Object? options = freezed,
   }) {
-    return _then(_PopularMoviestate(
+    return _then(_$_PopularMoviestate(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       popularmovies: popularmovies == freezed
-          ? _value.popularmovies
+          ? _value._popularmovies
           : popularmovies // ignore: cast_nullable_to_non_nullable
               as List<MovieModel>,
       options: options == freezed
@@ -1036,13 +1095,19 @@ class __$PopularMoviestateCopyWithImpl<$Res>
 class _$_PopularMoviestate implements _PopularMoviestate {
   const _$_PopularMoviestate(
       {required this.isLoading,
-      required this.popularmovies,
-      required this.options});
+      required final List<MovieModel> popularmovies,
+      required this.options})
+      : _popularmovies = popularmovies;
 
   @override
   final bool isLoading;
+  final List<MovieModel> _popularmovies;
   @override
-  final List<MovieModel> popularmovies;
+  List<MovieModel> get popularmovies {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_popularmovies);
+  }
+
   @override
   final Option<Either<MainFailures, List<MovieModel>>> options;
 
@@ -1055,10 +1120,10 @@ class _$_PopularMoviestate implements _PopularMoviestate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PopularMoviestate &&
+            other is _$_PopularMoviestate &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
             const DeepCollectionEquality()
-                .equals(other.popularmovies, popularmovies) &&
+                .equals(other._popularmovies, _popularmovies) &&
             const DeepCollectionEquality().equals(other.options, options));
   }
 
@@ -1066,21 +1131,22 @@ class _$_PopularMoviestate implements _PopularMoviestate {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(popularmovies),
+      const DeepCollectionEquality().hash(_popularmovies),
       const DeepCollectionEquality().hash(options));
 
   @JsonKey(ignore: true)
   @override
-  _$PopularMoviestateCopyWith<_PopularMoviestate> get copyWith =>
-      __$PopularMoviestateCopyWithImpl<_PopularMoviestate>(this, _$identity);
+  _$$_PopularMoviestateCopyWith<_$_PopularMoviestate> get copyWith =>
+      __$$_PopularMoviestateCopyWithImpl<_$_PopularMoviestate>(
+          this, _$identity);
 }
 
 abstract class _PopularMoviestate implements PopularMoviestate {
   const factory _PopularMoviestate(
-          {required bool isLoading,
-          required List<MovieModel> popularmovies,
-          required Option<Either<MainFailures, List<MovieModel>>> options}) =
-      _$_PopularMoviestate;
+      {required final bool isLoading,
+      required final List<MovieModel> popularmovies,
+      required final Option<Either<MainFailures, List<MovieModel>>>
+          options}) = _$_PopularMoviestate;
 
   @override
   bool get isLoading;
@@ -1090,28 +1156,9 @@ abstract class _PopularMoviestate implements PopularMoviestate {
   Option<Either<MainFailures, List<MovieModel>>> get options;
   @override
   @JsonKey(ignore: true)
-  _$PopularMoviestateCopyWith<_PopularMoviestate> get copyWith =>
+  _$$_PopularMoviestateCopyWith<_$_PopularMoviestate> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$NowplayingStateTearOff {
-  const _$NowplayingStateTearOff();
-
-  _NowplayingState call(
-      {required bool isLoading,
-      required List<MovieModel> nowplayingmovies,
-      required Option<Either<MainFailures, List<MovieModel>>> options}) {
-    return _NowplayingState(
-      isLoading: isLoading,
-      nowplayingmovies: nowplayingmovies,
-      options: options,
-    );
-  }
-}
-
-/// @nodoc
-const $NowplayingState = _$NowplayingStateTearOff();
 
 /// @nodoc
 mixin _$NowplayingState {
@@ -1169,11 +1216,11 @@ class _$NowplayingStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$NowplayingStateCopyWith<$Res>
+abstract class _$$_NowplayingStateCopyWith<$Res>
     implements $NowplayingStateCopyWith<$Res> {
-  factory _$NowplayingStateCopyWith(
-          _NowplayingState value, $Res Function(_NowplayingState) then) =
-      __$NowplayingStateCopyWithImpl<$Res>;
+  factory _$$_NowplayingStateCopyWith(
+          _$_NowplayingState value, $Res Function(_$_NowplayingState) then) =
+      __$$_NowplayingStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool isLoading,
@@ -1182,15 +1229,15 @@ abstract class _$NowplayingStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$NowplayingStateCopyWithImpl<$Res>
+class __$$_NowplayingStateCopyWithImpl<$Res>
     extends _$NowplayingStateCopyWithImpl<$Res>
-    implements _$NowplayingStateCopyWith<$Res> {
-  __$NowplayingStateCopyWithImpl(
-      _NowplayingState _value, $Res Function(_NowplayingState) _then)
-      : super(_value, (v) => _then(v as _NowplayingState));
+    implements _$$_NowplayingStateCopyWith<$Res> {
+  __$$_NowplayingStateCopyWithImpl(
+      _$_NowplayingState _value, $Res Function(_$_NowplayingState) _then)
+      : super(_value, (v) => _then(v as _$_NowplayingState));
 
   @override
-  _NowplayingState get _value => super._value as _NowplayingState;
+  _$_NowplayingState get _value => super._value as _$_NowplayingState;
 
   @override
   $Res call({
@@ -1198,13 +1245,13 @@ class __$NowplayingStateCopyWithImpl<$Res>
     Object? nowplayingmovies = freezed,
     Object? options = freezed,
   }) {
-    return _then(_NowplayingState(
+    return _then(_$_NowplayingState(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       nowplayingmovies: nowplayingmovies == freezed
-          ? _value.nowplayingmovies
+          ? _value._nowplayingmovies
           : nowplayingmovies // ignore: cast_nullable_to_non_nullable
               as List<MovieModel>,
       options: options == freezed
@@ -1220,13 +1267,19 @@ class __$NowplayingStateCopyWithImpl<$Res>
 class _$_NowplayingState implements _NowplayingState {
   const _$_NowplayingState(
       {required this.isLoading,
-      required this.nowplayingmovies,
-      required this.options});
+      required final List<MovieModel> nowplayingmovies,
+      required this.options})
+      : _nowplayingmovies = nowplayingmovies;
 
   @override
   final bool isLoading;
+  final List<MovieModel> _nowplayingmovies;
   @override
-  final List<MovieModel> nowplayingmovies;
+  List<MovieModel> get nowplayingmovies {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_nowplayingmovies);
+  }
+
   @override
   final Option<Either<MainFailures, List<MovieModel>>> options;
 
@@ -1239,10 +1292,10 @@ class _$_NowplayingState implements _NowplayingState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _NowplayingState &&
+            other is _$_NowplayingState &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
             const DeepCollectionEquality()
-                .equals(other.nowplayingmovies, nowplayingmovies) &&
+                .equals(other._nowplayingmovies, _nowplayingmovies) &&
             const DeepCollectionEquality().equals(other.options, options));
   }
 
@@ -1250,21 +1303,21 @@ class _$_NowplayingState implements _NowplayingState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(nowplayingmovies),
+      const DeepCollectionEquality().hash(_nowplayingmovies),
       const DeepCollectionEquality().hash(options));
 
   @JsonKey(ignore: true)
   @override
-  _$NowplayingStateCopyWith<_NowplayingState> get copyWith =>
-      __$NowplayingStateCopyWithImpl<_NowplayingState>(this, _$identity);
+  _$$_NowplayingStateCopyWith<_$_NowplayingState> get copyWith =>
+      __$$_NowplayingStateCopyWithImpl<_$_NowplayingState>(this, _$identity);
 }
 
 abstract class _NowplayingState implements NowplayingState {
   const factory _NowplayingState(
-          {required bool isLoading,
-          required List<MovieModel> nowplayingmovies,
-          required Option<Either<MainFailures, List<MovieModel>>> options}) =
-      _$_NowplayingState;
+      {required final bool isLoading,
+      required final List<MovieModel> nowplayingmovies,
+      required final Option<Either<MainFailures, List<MovieModel>>>
+          options}) = _$_NowplayingState;
 
   @override
   bool get isLoading;
@@ -1274,28 +1327,9 @@ abstract class _NowplayingState implements NowplayingState {
   Option<Either<MainFailures, List<MovieModel>>> get options;
   @override
   @JsonKey(ignore: true)
-  _$NowplayingStateCopyWith<_NowplayingState> get copyWith =>
+  _$$_NowplayingStateCopyWith<_$_NowplayingState> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$UpcomingStateTearOff {
-  const _$UpcomingStateTearOff();
-
-  _UpcomingState call(
-      {required bool isLoading,
-      required List<MovieModel> upcomingmovies,
-      required Option<Either<MainFailures, List<MovieModel>>> options}) {
-    return _UpcomingState(
-      isLoading: isLoading,
-      upcomingmovies: upcomingmovies,
-      options: options,
-    );
-  }
-}
-
-/// @nodoc
-const $UpcomingState = _$UpcomingStateTearOff();
 
 /// @nodoc
 mixin _$UpcomingState {
@@ -1353,11 +1387,11 @@ class _$UpcomingStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$UpcomingStateCopyWith<$Res>
+abstract class _$$_UpcomingStateCopyWith<$Res>
     implements $UpcomingStateCopyWith<$Res> {
-  factory _$UpcomingStateCopyWith(
-          _UpcomingState value, $Res Function(_UpcomingState) then) =
-      __$UpcomingStateCopyWithImpl<$Res>;
+  factory _$$_UpcomingStateCopyWith(
+          _$_UpcomingState value, $Res Function(_$_UpcomingState) then) =
+      __$$_UpcomingStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool isLoading,
@@ -1366,15 +1400,15 @@ abstract class _$UpcomingStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$UpcomingStateCopyWithImpl<$Res>
+class __$$_UpcomingStateCopyWithImpl<$Res>
     extends _$UpcomingStateCopyWithImpl<$Res>
-    implements _$UpcomingStateCopyWith<$Res> {
-  __$UpcomingStateCopyWithImpl(
-      _UpcomingState _value, $Res Function(_UpcomingState) _then)
-      : super(_value, (v) => _then(v as _UpcomingState));
+    implements _$$_UpcomingStateCopyWith<$Res> {
+  __$$_UpcomingStateCopyWithImpl(
+      _$_UpcomingState _value, $Res Function(_$_UpcomingState) _then)
+      : super(_value, (v) => _then(v as _$_UpcomingState));
 
   @override
-  _UpcomingState get _value => super._value as _UpcomingState;
+  _$_UpcomingState get _value => super._value as _$_UpcomingState;
 
   @override
   $Res call({
@@ -1382,13 +1416,13 @@ class __$UpcomingStateCopyWithImpl<$Res>
     Object? upcomingmovies = freezed,
     Object? options = freezed,
   }) {
-    return _then(_UpcomingState(
+    return _then(_$_UpcomingState(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       upcomingmovies: upcomingmovies == freezed
-          ? _value.upcomingmovies
+          ? _value._upcomingmovies
           : upcomingmovies // ignore: cast_nullable_to_non_nullable
               as List<MovieModel>,
       options: options == freezed
@@ -1404,13 +1438,19 @@ class __$UpcomingStateCopyWithImpl<$Res>
 class _$_UpcomingState implements _UpcomingState {
   const _$_UpcomingState(
       {required this.isLoading,
-      required this.upcomingmovies,
-      required this.options});
+      required final List<MovieModel> upcomingmovies,
+      required this.options})
+      : _upcomingmovies = upcomingmovies;
 
   @override
   final bool isLoading;
+  final List<MovieModel> _upcomingmovies;
   @override
-  final List<MovieModel> upcomingmovies;
+  List<MovieModel> get upcomingmovies {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_upcomingmovies);
+  }
+
   @override
   final Option<Either<MainFailures, List<MovieModel>>> options;
 
@@ -1423,10 +1463,10 @@ class _$_UpcomingState implements _UpcomingState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UpcomingState &&
+            other is _$_UpcomingState &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
             const DeepCollectionEquality()
-                .equals(other.upcomingmovies, upcomingmovies) &&
+                .equals(other._upcomingmovies, _upcomingmovies) &&
             const DeepCollectionEquality().equals(other.options, options));
   }
 
@@ -1434,21 +1474,21 @@ class _$_UpcomingState implements _UpcomingState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(upcomingmovies),
+      const DeepCollectionEquality().hash(_upcomingmovies),
       const DeepCollectionEquality().hash(options));
 
   @JsonKey(ignore: true)
   @override
-  _$UpcomingStateCopyWith<_UpcomingState> get copyWith =>
-      __$UpcomingStateCopyWithImpl<_UpcomingState>(this, _$identity);
+  _$$_UpcomingStateCopyWith<_$_UpcomingState> get copyWith =>
+      __$$_UpcomingStateCopyWithImpl<_$_UpcomingState>(this, _$identity);
 }
 
 abstract class _UpcomingState implements UpcomingState {
   const factory _UpcomingState(
-          {required bool isLoading,
-          required List<MovieModel> upcomingmovies,
-          required Option<Either<MainFailures, List<MovieModel>>> options}) =
-      _$_UpcomingState;
+      {required final bool isLoading,
+      required final List<MovieModel> upcomingmovies,
+      required final Option<Either<MainFailures, List<MovieModel>>>
+          options}) = _$_UpcomingState;
 
   @override
   bool get isLoading;
@@ -1458,28 +1498,9 @@ abstract class _UpcomingState implements UpcomingState {
   Option<Either<MainFailures, List<MovieModel>>> get options;
   @override
   @JsonKey(ignore: true)
-  _$UpcomingStateCopyWith<_UpcomingState> get copyWith =>
+  _$$_UpcomingStateCopyWith<_$_UpcomingState> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$TopratedStateTearOff {
-  const _$TopratedStateTearOff();
-
-  _TopratedState call(
-      {required bool isLoading,
-      required List<MovieModel> topratedmovies,
-      required Option<Either<MainFailures, List<MovieModel>>> options}) {
-    return _TopratedState(
-      isLoading: isLoading,
-      topratedmovies: topratedmovies,
-      options: options,
-    );
-  }
-}
-
-/// @nodoc
-const $TopratedState = _$TopratedStateTearOff();
 
 /// @nodoc
 mixin _$TopratedState {
@@ -1537,11 +1558,11 @@ class _$TopratedStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$TopratedStateCopyWith<$Res>
+abstract class _$$_TopratedStateCopyWith<$Res>
     implements $TopratedStateCopyWith<$Res> {
-  factory _$TopratedStateCopyWith(
-          _TopratedState value, $Res Function(_TopratedState) then) =
-      __$TopratedStateCopyWithImpl<$Res>;
+  factory _$$_TopratedStateCopyWith(
+          _$_TopratedState value, $Res Function(_$_TopratedState) then) =
+      __$$_TopratedStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool isLoading,
@@ -1550,15 +1571,15 @@ abstract class _$TopratedStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$TopratedStateCopyWithImpl<$Res>
+class __$$_TopratedStateCopyWithImpl<$Res>
     extends _$TopratedStateCopyWithImpl<$Res>
-    implements _$TopratedStateCopyWith<$Res> {
-  __$TopratedStateCopyWithImpl(
-      _TopratedState _value, $Res Function(_TopratedState) _then)
-      : super(_value, (v) => _then(v as _TopratedState));
+    implements _$$_TopratedStateCopyWith<$Res> {
+  __$$_TopratedStateCopyWithImpl(
+      _$_TopratedState _value, $Res Function(_$_TopratedState) _then)
+      : super(_value, (v) => _then(v as _$_TopratedState));
 
   @override
-  _TopratedState get _value => super._value as _TopratedState;
+  _$_TopratedState get _value => super._value as _$_TopratedState;
 
   @override
   $Res call({
@@ -1566,13 +1587,13 @@ class __$TopratedStateCopyWithImpl<$Res>
     Object? topratedmovies = freezed,
     Object? options = freezed,
   }) {
-    return _then(_TopratedState(
+    return _then(_$_TopratedState(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       topratedmovies: topratedmovies == freezed
-          ? _value.topratedmovies
+          ? _value._topratedmovies
           : topratedmovies // ignore: cast_nullable_to_non_nullable
               as List<MovieModel>,
       options: options == freezed
@@ -1588,13 +1609,19 @@ class __$TopratedStateCopyWithImpl<$Res>
 class _$_TopratedState implements _TopratedState {
   const _$_TopratedState(
       {required this.isLoading,
-      required this.topratedmovies,
-      required this.options});
+      required final List<MovieModel> topratedmovies,
+      required this.options})
+      : _topratedmovies = topratedmovies;
 
   @override
   final bool isLoading;
+  final List<MovieModel> _topratedmovies;
   @override
-  final List<MovieModel> topratedmovies;
+  List<MovieModel> get topratedmovies {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_topratedmovies);
+  }
+
   @override
   final Option<Either<MainFailures, List<MovieModel>>> options;
 
@@ -1607,10 +1634,10 @@ class _$_TopratedState implements _TopratedState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _TopratedState &&
+            other is _$_TopratedState &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
             const DeepCollectionEquality()
-                .equals(other.topratedmovies, topratedmovies) &&
+                .equals(other._topratedmovies, _topratedmovies) &&
             const DeepCollectionEquality().equals(other.options, options));
   }
 
@@ -1618,21 +1645,21 @@ class _$_TopratedState implements _TopratedState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(topratedmovies),
+      const DeepCollectionEquality().hash(_topratedmovies),
       const DeepCollectionEquality().hash(options));
 
   @JsonKey(ignore: true)
   @override
-  _$TopratedStateCopyWith<_TopratedState> get copyWith =>
-      __$TopratedStateCopyWithImpl<_TopratedState>(this, _$identity);
+  _$$_TopratedStateCopyWith<_$_TopratedState> get copyWith =>
+      __$$_TopratedStateCopyWithImpl<_$_TopratedState>(this, _$identity);
 }
 
 abstract class _TopratedState implements TopratedState {
   const factory _TopratedState(
-          {required bool isLoading,
-          required List<MovieModel> topratedmovies,
-          required Option<Either<MainFailures, List<MovieModel>>> options}) =
-      _$_TopratedState;
+      {required final bool isLoading,
+      required final List<MovieModel> topratedmovies,
+      required final Option<Either<MainFailures, List<MovieModel>>>
+          options}) = _$_TopratedState;
 
   @override
   bool get isLoading;
@@ -1642,6 +1669,6 @@ abstract class _TopratedState implements TopratedState {
   Option<Either<MainFailures, List<MovieModel>>> get options;
   @override
   @JsonKey(ignore: true)
-  _$TopratedStateCopyWith<_TopratedState> get copyWith =>
+  _$$_TopratedStateCopyWith<_$_TopratedState> get copyWith =>
       throw _privateConstructorUsedError;
 }

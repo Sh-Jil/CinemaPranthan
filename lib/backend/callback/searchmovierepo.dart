@@ -4,5 +4,8 @@ import 'package:dartz/dartz.dart';
 
 abstract class SearchMovieRepo {
   Future<Either<MainFailures, List<MovieModel>>> searchmovie(
-      {required String moviequery});
+
+
+      {required String moviequery, required int page});
+
 }

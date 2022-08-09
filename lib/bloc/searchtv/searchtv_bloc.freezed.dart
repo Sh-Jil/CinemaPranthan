@@ -12,39 +12,25 @@ part of 'searchtv_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$SearchTvEventTearOff {
-  const _$SearchTvEventTearOff();
-
-  _Searchtv searchtv({required String tvquery}) {
-    return _Searchtv(
-      tvquery: tvquery,
-    );
-  }
-}
-
-/// @nodoc
-const $SearchTvEvent = _$SearchTvEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$SearchTvEvent {
   String get tvquery => throw _privateConstructorUsedError;
-
+  int get page => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String tvquery) searchtv,
+    required TResult Function(String tvquery, int page) searchtv,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String tvquery)? searchtv,
+    TResult Function(String tvquery, int page)? searchtv,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String tvquery)? searchtv,
+    TResult Function(String tvquery, int page)? searchtv,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -75,7 +61,7 @@ abstract class $SearchTvEventCopyWith<$Res> {
   factory $SearchTvEventCopyWith(
           SearchTvEvent value, $Res Function(SearchTvEvent) then) =
       _$SearchTvEventCopyWithImpl<$Res>;
-  $Res call({String tvquery});
+  $Res call({String tvquery, int page});
 }
 
 /// @nodoc
@@ -90,43 +76,55 @@ class _$SearchTvEventCopyWithImpl<$Res>
   @override
   $Res call({
     Object? tvquery = freezed,
+    Object? page = freezed,
   }) {
     return _then(_value.copyWith(
       tvquery: tvquery == freezed
           ? _value.tvquery
           : tvquery // ignore: cast_nullable_to_non_nullable
               as String,
+      page: page == freezed
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$SearchtvCopyWith<$Res>
+abstract class _$$_SearchtvCopyWith<$Res>
     implements $SearchTvEventCopyWith<$Res> {
-  factory _$SearchtvCopyWith(_Searchtv value, $Res Function(_Searchtv) then) =
-      __$SearchtvCopyWithImpl<$Res>;
+  factory _$$_SearchtvCopyWith(
+          _$_Searchtv value, $Res Function(_$_Searchtv) then) =
+      __$$_SearchtvCopyWithImpl<$Res>;
   @override
-  $Res call({String tvquery});
+  $Res call({String tvquery, int page});
 }
 
 /// @nodoc
-class __$SearchtvCopyWithImpl<$Res> extends _$SearchTvEventCopyWithImpl<$Res>
-    implements _$SearchtvCopyWith<$Res> {
-  __$SearchtvCopyWithImpl(_Searchtv _value, $Res Function(_Searchtv) _then)
-      : super(_value, (v) => _then(v as _Searchtv));
+class __$$_SearchtvCopyWithImpl<$Res> extends _$SearchTvEventCopyWithImpl<$Res>
+    implements _$$_SearchtvCopyWith<$Res> {
+  __$$_SearchtvCopyWithImpl(
+      _$_Searchtv _value, $Res Function(_$_Searchtv) _then)
+      : super(_value, (v) => _then(v as _$_Searchtv));
 
   @override
-  _Searchtv get _value => super._value as _Searchtv;
+  _$_Searchtv get _value => super._value as _$_Searchtv;
 
   @override
   $Res call({
     Object? tvquery = freezed,
+    Object? page = freezed,
   }) {
-    return _then(_Searchtv(
+    return _then(_$_Searchtv(
       tvquery: tvquery == freezed
           ? _value.tvquery
           : tvquery // ignore: cast_nullable_to_non_nullable
               as String,
+      page: page == freezed
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -134,57 +132,62 @@ class __$SearchtvCopyWithImpl<$Res> extends _$SearchTvEventCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Searchtv implements _Searchtv {
-  const _$_Searchtv({required this.tvquery});
+  const _$_Searchtv({required this.tvquery, required this.page});
 
   @override
   final String tvquery;
+  @override
+  final int page;
 
   @override
   String toString() {
-    return 'SearchTvEvent.searchtv(tvquery: $tvquery)';
+    return 'SearchTvEvent.searchtv(tvquery: $tvquery, page: $page)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Searchtv &&
-            const DeepCollectionEquality().equals(other.tvquery, tvquery));
+            other is _$_Searchtv &&
+            const DeepCollectionEquality().equals(other.tvquery, tvquery) &&
+            const DeepCollectionEquality().equals(other.page, page));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(tvquery));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(tvquery),
+      const DeepCollectionEquality().hash(page));
 
   @JsonKey(ignore: true)
   @override
-  _$SearchtvCopyWith<_Searchtv> get copyWith =>
-      __$SearchtvCopyWithImpl<_Searchtv>(this, _$identity);
+  _$$_SearchtvCopyWith<_$_Searchtv> get copyWith =>
+      __$$_SearchtvCopyWithImpl<_$_Searchtv>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String tvquery) searchtv,
+    required TResult Function(String tvquery, int page) searchtv,
   }) {
-    return searchtv(tvquery);
+    return searchtv(tvquery, page);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String tvquery)? searchtv,
+    TResult Function(String tvquery, int page)? searchtv,
   }) {
-    return searchtv?.call(tvquery);
+    return searchtv?.call(tvquery, page);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String tvquery)? searchtv,
+    TResult Function(String tvquery, int page)? searchtv,
     required TResult orElse(),
   }) {
     if (searchtv != null) {
-      return searchtv(tvquery);
+      return searchtv(tvquery, page);
     }
     return orElse();
   }
@@ -219,34 +222,18 @@ class _$_Searchtv implements _Searchtv {
 }
 
 abstract class _Searchtv implements SearchTvEvent {
-  const factory _Searchtv({required String tvquery}) = _$_Searchtv;
+  const factory _Searchtv(
+      {required final String tvquery, required final int page}) = _$_Searchtv;
 
   @override
   String get tvquery;
   @override
+  int get page;
+  @override
   @JsonKey(ignore: true)
-  _$SearchtvCopyWith<_Searchtv> get copyWith =>
+  _$$_SearchtvCopyWith<_$_Searchtv> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$SearchTvStateTearOff {
-  const _$SearchTvStateTearOff();
-
-  _SearchTvState call(
-      {required bool isLoading,
-      required List<TvModel> tvshows,
-      required Option<Either<MainFailures, List<TvModel>>> options}) {
-    return _SearchTvState(
-      isLoading: isLoading,
-      tvshows: tvshows,
-      options: options,
-    );
-  }
-}
-
-/// @nodoc
-const $SearchTvState = _$SearchTvStateTearOff();
 
 /// @nodoc
 mixin _$SearchTvState {
@@ -304,11 +291,11 @@ class _$SearchTvStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SearchTvStateCopyWith<$Res>
+abstract class _$$_SearchTvStateCopyWith<$Res>
     implements $SearchTvStateCopyWith<$Res> {
-  factory _$SearchTvStateCopyWith(
-          _SearchTvState value, $Res Function(_SearchTvState) then) =
-      __$SearchTvStateCopyWithImpl<$Res>;
+  factory _$$_SearchTvStateCopyWith(
+          _$_SearchTvState value, $Res Function(_$_SearchTvState) then) =
+      __$$_SearchTvStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool isLoading,
@@ -317,15 +304,15 @@ abstract class _$SearchTvStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SearchTvStateCopyWithImpl<$Res>
+class __$$_SearchTvStateCopyWithImpl<$Res>
     extends _$SearchTvStateCopyWithImpl<$Res>
-    implements _$SearchTvStateCopyWith<$Res> {
-  __$SearchTvStateCopyWithImpl(
-      _SearchTvState _value, $Res Function(_SearchTvState) _then)
-      : super(_value, (v) => _then(v as _SearchTvState));
+    implements _$$_SearchTvStateCopyWith<$Res> {
+  __$$_SearchTvStateCopyWithImpl(
+      _$_SearchTvState _value, $Res Function(_$_SearchTvState) _then)
+      : super(_value, (v) => _then(v as _$_SearchTvState));
 
   @override
-  _SearchTvState get _value => super._value as _SearchTvState;
+  _$_SearchTvState get _value => super._value as _$_SearchTvState;
 
   @override
   $Res call({
@@ -333,13 +320,13 @@ class __$SearchTvStateCopyWithImpl<$Res>
     Object? tvshows = freezed,
     Object? options = freezed,
   }) {
-    return _then(_SearchTvState(
+    return _then(_$_SearchTvState(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       tvshows: tvshows == freezed
-          ? _value.tvshows
+          ? _value._tvshows
           : tvshows // ignore: cast_nullable_to_non_nullable
               as List<TvModel>,
       options: options == freezed
@@ -354,12 +341,20 @@ class __$SearchTvStateCopyWithImpl<$Res>
 
 class _$_SearchTvState implements _SearchTvState {
   const _$_SearchTvState(
-      {required this.isLoading, required this.tvshows, required this.options});
+      {required this.isLoading,
+      required final List<TvModel> tvshows,
+      required this.options})
+      : _tvshows = tvshows;
 
   @override
   final bool isLoading;
+  final List<TvModel> _tvshows;
   @override
-  final List<TvModel> tvshows;
+  List<TvModel> get tvshows {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_tvshows);
+  }
+
   @override
   final Option<Either<MainFailures, List<TvModel>>> options;
 
@@ -372,9 +367,9 @@ class _$_SearchTvState implements _SearchTvState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SearchTvState &&
+            other is _$_SearchTvState &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
-            const DeepCollectionEquality().equals(other.tvshows, tvshows) &&
+            const DeepCollectionEquality().equals(other._tvshows, _tvshows) &&
             const DeepCollectionEquality().equals(other.options, options));
   }
 
@@ -382,20 +377,20 @@ class _$_SearchTvState implements _SearchTvState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(tvshows),
+      const DeepCollectionEquality().hash(_tvshows),
       const DeepCollectionEquality().hash(options));
 
   @JsonKey(ignore: true)
   @override
-  _$SearchTvStateCopyWith<_SearchTvState> get copyWith =>
-      __$SearchTvStateCopyWithImpl<_SearchTvState>(this, _$identity);
+  _$$_SearchTvStateCopyWith<_$_SearchTvState> get copyWith =>
+      __$$_SearchTvStateCopyWithImpl<_$_SearchTvState>(this, _$identity);
 }
 
 abstract class _SearchTvState implements SearchTvState {
   const factory _SearchTvState(
-          {required bool isLoading,
-          required List<TvModel> tvshows,
-          required Option<Either<MainFailures, List<TvModel>>> options}) =
+          {required final bool isLoading,
+          required final List<TvModel> tvshows,
+          required final Option<Either<MainFailures, List<TvModel>>> options}) =
       _$_SearchTvState;
 
   @override
@@ -406,6 +401,6 @@ abstract class _SearchTvState implements SearchTvState {
   Option<Either<MainFailures, List<TvModel>>> get options;
   @override
   @JsonKey(ignore: true)
-  _$SearchTvStateCopyWith<_SearchTvState> get copyWith =>
+  _$$_SearchTvStateCopyWith<_$_SearchTvState> get copyWith =>
       throw _privateConstructorUsedError;
 }

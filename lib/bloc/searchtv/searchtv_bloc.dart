@@ -18,7 +18,9 @@ class SearchtvBloc extends Bloc<SearchTvEvent, SearchTvState> {
   SearchtvBloc(this.searchtvrepo) : super(SearchTvState.initial()) {
     on<_Searchtv>((event, emit) async {
       final Either<MainFailures, List<TvModel>> result =
-          await searchtvrepo.searchtv(tvquery: event.tvquery);
+         
+
+      await searchtvrepo.searchtv(tvquery: event.tvquery, page: event.page);
 
       emit(result.fold(
           (failure) =>

@@ -30,32 +30,49 @@ dependencies:
   animated_text_kit: ^4.2.2
   cached_network_image: ^3.2.1
   carousel_slider: ^4.1.1
+  cloud_firestore: ^3.4.2
+  connectivity_plus: ^2.3.6
   dartz: ^0.10.1
   device_info_plus: ^4.0.0
   dio: ^4.0.6
+  firebase_auth: ^3.6.1
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
+  flutter_cache_manager: ^3.3.0
+  freezed_annotation: ^2.1.0
   get_it: ^7.2.0
+  google_sign_in: ^5.4.0
   injectable: ^1.5.3
+  intl: ^0.17.0
   json_annotation: ^4.6.0
   json_serializable: ^6.3.1
   like_button: ^2.0.4
-  marquee_text: ^2.5.0+1
+  lottie: ^1.4.0
+  rounded_loading_button: ^2.1.0
   side_sheet: ^1.0.2
+  url_launcher: ^6.1.5
 
 dev_dependencies:
   build_runner: ^2.2.0
+  flutter_launcher_icons: ^0.9.3
   flutter_lints: ^2.0.0
   flutter_native_splash: ^2.2.4
   flutter_test:
     sdk: flutter
-  freezed: ^1.1.1
+  freezed: ^2.1.0+1
   injectable_generator: ^1.5.3
 
 flutter_native_splash:
   color: "#040404"
   image: assets/images/f0fc1ca20e08d638195b9-removebg-preview.png
+
+flutter_icons:
+  android: true
+  ios: false
+  image_path: "assets/images/f0fc1ca20e08d638195b9-removebg-preview.png"
+  adaptive_icon_background: "#000000"
+  adaptive_icon_foreground: "assets/images/web_hi_res_512.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -70,8 +87,13 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/icons/
+
     - assets/gif/
     - assets/images/
+
+    - assets/images/
+    - assets/gif/
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see

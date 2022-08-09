@@ -12,7 +12,7 @@ class MovieDetail with _$MovieDetail {
     @JsonKey(name: "adult") required bool? adult,
     @JsonKey(name: "backdrop_path") required String? backdropPath,
     @JsonKey(name: "budget") required int? budget,
-    @JsonKey(name: "genres") required List<Genre>? genres,
+    @JsonKey(name: "genres") required List<Map<String, dynamic>>? genres,
     @JsonKey(name: "homepage") required String? homepage,
     @JsonKey(name: "id") required int? id,
     @JsonKey(name: "imdb_id") required String? imdbId,
@@ -33,14 +33,4 @@ class MovieDetail with _$MovieDetail {
 
   factory MovieDetail.fromJson(Map<String, dynamic> json) =>
       _$MovieDetailFromJson(json);
-}
-
-@freezed
-class Genre with _$Genre {
-  const factory Genre({
-    required int id,
-    required String name,
-  }) = _Genre;
-
-  factory Genre.fromJson(Map<String, dynamic> json) => _$GenreFromJson(json);
 }

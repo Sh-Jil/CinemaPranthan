@@ -1,4 +1,4 @@
-import 'dart:developer';
+
 
 import 'package:cinemapranthan/backend/apicall/movies.dart';
 import 'package:dartz/dartz.dart';
@@ -31,7 +31,8 @@ class CastCrewRepository implements StarCastRepo {
         return left(const MainFailures.serverFailure());
       }
     } catch (e) {
-      log(e.toString());
+
+
       return left(const MainFailures.clientFailure());
     }
   }

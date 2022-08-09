@@ -1,16 +1,20 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cinemapranthan/constants/Icons/appicons.dart';
+
 import 'package:cinemapranthan/constants/colours/colours.dart';
 
-import 'package:cinemapranthan/ui/widgets/textsize.dart';
 import 'package:flutter/material.dart';
-import 'package:like_button/like_button.dart';
-import 'package:marquee_text/marquee_text.dart';
 
 class MovieTile extends StatelessWidget {
   final String heading;
   final String imageurl;
-  const MovieTile({Key? key, required this.heading, required this.imageurl})
+  final String rating;
+  final String runtime;
+  const MovieTile(
+      {Key? key,
+      required this.heading,
+      required this.imageurl,
+      required this.rating,
+      required this.runtime})
       : super(key: key);
 
   @override
@@ -27,6 +31,7 @@ class MovieTile extends StatelessWidget {
           borderRadius: BorderRadius.circular(20.0),
         ),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             Stack(
               children: [
@@ -41,10 +46,13 @@ class MovieTile extends StatelessWidget {
                   child: CachedNetworkImage(
                     fit: BoxFit.cover,
                     imageUrl: imageurl,
-                    errorWidget: (context, url, error) => const Icon(Icons.error),
+                    errorWidget: (context, url, error) =>
+                        const Icon(Icons.error),
                   ),
                 ),
-                Positioned(
+            
+                /* Positioned(
+
                   bottom: 25.0,
                   right: 25.0,
                   child: LikeButton(
@@ -56,42 +64,25 @@ class MovieTile extends StatelessWidget {
                         )),
                     isLiked: true,
                   ),
+
                 )
+
+                ) */
               ],
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: SizedBox(
-                  width: imgwidth * 0.9,
-                  child: textlength(heading, context) > imgwidth * 0.9
-                      ? MarqueeText(
-                          textAlign: TextAlign.center,
-                          speed: 30,
-                          alwaysScroll: true,
-                          text: TextSpan(text: heading),
-                          style: const TextStyle(
-                              letterSpacing: 1.5,
-                              color: white,
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.bold),
-                        )
-                      : Text(heading,
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(
-                              letterSpacing: 1.5,
-                              color: white,
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.bold))),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
-                "genre",
-                style: TextStyle(
-                  letterSpacing: 1.5,
-                  color: grey,
-                  fontSize: 16.0,
-                ),
+                width: imgwidth * 0.9,
+                child: Text(heading,
+                    textAlign: TextAlign.center,
+                    maxLines: 2,
+                    overflow: TextOverflow.fade,
+                    style: const TextStyle(
+                        letterSpacing: 1.5,
+                        color: white,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold)),
               ),
             ),
             Padding(
@@ -99,17 +90,19 @@ class MovieTile extends StatelessWidget {
                   const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: const [
-                  Text(
-                    "⭐ 4.5",
-                    style: TextStyle(
-                        color: darkGrey, fontSize: 15.0, letterSpacing: 1.5),
-                  ),
-                  Text(
-                    "🕓 16 Seasons",
-                    style: TextStyle(
-                        color: darkGrey, fontSize: 15.0, letterSpacing: 1.5),
-                  ),
+                children: [
+                  if (rating.isNotEmpty)
+                    Text(
+                      "⭐ $rating",
+                      style: const TextStyle(
+                          color: darkGrey, fontSize: 15.0, letterSpacing: 1.5),
+                    ),
+                  if (runtime.isNotEmpty)
+                    Text(
+                      "🕓 $runtime",
+                      style: const TextStyle(
+                          color: darkGrey, fontSize: 15.0, letterSpacing: 1.5),
+                    ),
                 ],
               ),
             )

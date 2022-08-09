@@ -12,63 +12,35 @@ part of 'tvbloc_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$TvblocEventTearOff {
-  const _$TvblocEventTearOff();
-
-  _Getlatesttv getlatesttv() {
-    return const _Getlatesttv();
-  }
-
-  _Getpopulartv getpopulartv() {
-    return const _Getpopulartv();
-  }
-
-  _Getairingtoday getairingtoday() {
-    return const _Getairingtoday();
-  }
-
-  _Getontv getontv() {
-    return const _Getontv();
-  }
-
-  _Gettopratedtv gettopratedtv() {
-    return const _Gettopratedtv();
-  }
-}
-
-/// @nodoc
-const $TvblocEvent = _$TvblocEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$TvblocEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getlatesttv,
-    required TResult Function() getpopulartv,
-    required TResult Function() getairingtoday,
-    required TResult Function() getontv,
-    required TResult Function() gettopratedtv,
+    required TResult Function(int page) getpopulartv,
+    required TResult Function(int page) getairingtoday,
+    required TResult Function(int page) getontv,
+    required TResult Function(int page) gettopratedtv,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getlatesttv,
-    TResult Function()? getpopulartv,
-    TResult Function()? getairingtoday,
-    TResult Function()? getontv,
-    TResult Function()? gettopratedtv,
+    TResult Function(int page)? getpopulartv,
+    TResult Function(int page)? getairingtoday,
+    TResult Function(int page)? getontv,
+    TResult Function(int page)? gettopratedtv,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getlatesttv,
-    TResult Function()? getpopulartv,
-    TResult Function()? getairingtoday,
-    TResult Function()? getontv,
-    TResult Function()? gettopratedtv,
+    TResult Function(int page)? getpopulartv,
+    TResult Function(int page)? getairingtoday,
+    TResult Function(int page)? getontv,
+    TResult Function(int page)? gettopratedtv,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -119,21 +91,21 @@ class _$TvblocEventCopyWithImpl<$Res> implements $TvblocEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$GetlatesttvCopyWith<$Res> {
-  factory _$GetlatesttvCopyWith(
-          _Getlatesttv value, $Res Function(_Getlatesttv) then) =
-      __$GetlatesttvCopyWithImpl<$Res>;
+abstract class _$$_GetlatesttvCopyWith<$Res> {
+  factory _$$_GetlatesttvCopyWith(
+          _$_Getlatesttv value, $Res Function(_$_Getlatesttv) then) =
+      __$$_GetlatesttvCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$GetlatesttvCopyWithImpl<$Res> extends _$TvblocEventCopyWithImpl<$Res>
-    implements _$GetlatesttvCopyWith<$Res> {
-  __$GetlatesttvCopyWithImpl(
-      _Getlatesttv _value, $Res Function(_Getlatesttv) _then)
-      : super(_value, (v) => _then(v as _Getlatesttv));
+class __$$_GetlatesttvCopyWithImpl<$Res> extends _$TvblocEventCopyWithImpl<$Res>
+    implements _$$_GetlatesttvCopyWith<$Res> {
+  __$$_GetlatesttvCopyWithImpl(
+      _$_Getlatesttv _value, $Res Function(_$_Getlatesttv) _then)
+      : super(_value, (v) => _then(v as _$_Getlatesttv));
 
   @override
-  _Getlatesttv get _value => super._value as _Getlatesttv;
+  _$_Getlatesttv get _value => super._value as _$_Getlatesttv;
 }
 
 /// @nodoc
@@ -149,7 +121,7 @@ class _$_Getlatesttv implements _Getlatesttv {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Getlatesttv);
+        (other.runtimeType == runtimeType && other is _$_Getlatesttv);
   }
 
   @override
@@ -159,10 +131,10 @@ class _$_Getlatesttv implements _Getlatesttv {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getlatesttv,
-    required TResult Function() getpopulartv,
-    required TResult Function() getairingtoday,
-    required TResult Function() getontv,
-    required TResult Function() gettopratedtv,
+    required TResult Function(int page) getpopulartv,
+    required TResult Function(int page) getairingtoday,
+    required TResult Function(int page) getontv,
+    required TResult Function(int page) gettopratedtv,
   }) {
     return getlatesttv();
   }
@@ -171,10 +143,10 @@ class _$_Getlatesttv implements _Getlatesttv {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getlatesttv,
-    TResult Function()? getpopulartv,
-    TResult Function()? getairingtoday,
-    TResult Function()? getontv,
-    TResult Function()? gettopratedtv,
+    TResult Function(int page)? getpopulartv,
+    TResult Function(int page)? getairingtoday,
+    TResult Function(int page)? getontv,
+    TResult Function(int page)? gettopratedtv,
   }) {
     return getlatesttv?.call();
   }
@@ -183,10 +155,10 @@ class _$_Getlatesttv implements _Getlatesttv {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getlatesttv,
-    TResult Function()? getpopulartv,
-    TResult Function()? getairingtoday,
-    TResult Function()? getontv,
-    TResult Function()? gettopratedtv,
+    TResult Function(int page)? getpopulartv,
+    TResult Function(int page)? getairingtoday,
+    TResult Function(int page)? getontv,
+    TResult Function(int page)? gettopratedtv,
     required TResult orElse(),
   }) {
     if (getlatesttv != null) {
@@ -241,78 +213,103 @@ abstract class _Getlatesttv implements TvblocEvent {
 }
 
 /// @nodoc
-abstract class _$GetpopulartvCopyWith<$Res> {
-  factory _$GetpopulartvCopyWith(
-          _Getpopulartv value, $Res Function(_Getpopulartv) then) =
-      __$GetpopulartvCopyWithImpl<$Res>;
+abstract class _$$_GetpopulartvCopyWith<$Res> {
+  factory _$$_GetpopulartvCopyWith(
+          _$_Getpopulartv value, $Res Function(_$_Getpopulartv) then) =
+      __$$_GetpopulartvCopyWithImpl<$Res>;
+  $Res call({int page});
 }
 
 /// @nodoc
-class __$GetpopulartvCopyWithImpl<$Res> extends _$TvblocEventCopyWithImpl<$Res>
-    implements _$GetpopulartvCopyWith<$Res> {
-  __$GetpopulartvCopyWithImpl(
-      _Getpopulartv _value, $Res Function(_Getpopulartv) _then)
-      : super(_value, (v) => _then(v as _Getpopulartv));
+class __$$_GetpopulartvCopyWithImpl<$Res>
+    extends _$TvblocEventCopyWithImpl<$Res>
+    implements _$$_GetpopulartvCopyWith<$Res> {
+  __$$_GetpopulartvCopyWithImpl(
+      _$_Getpopulartv _value, $Res Function(_$_Getpopulartv) _then)
+      : super(_value, (v) => _then(v as _$_Getpopulartv));
 
   @override
-  _Getpopulartv get _value => super._value as _Getpopulartv;
+  _$_Getpopulartv get _value => super._value as _$_Getpopulartv;
+
+  @override
+  $Res call({
+    Object? page = freezed,
+  }) {
+    return _then(_$_Getpopulartv(
+      page: page == freezed
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Getpopulartv implements _Getpopulartv {
-  const _$_Getpopulartv();
+  const _$_Getpopulartv({required this.page});
+
+  @override
+  final int page;
 
   @override
   String toString() {
-    return 'TvblocEvent.getpopulartv()';
+    return 'TvblocEvent.getpopulartv(page: $page)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Getpopulartv);
+        (other.runtimeType == runtimeType &&
+            other is _$_Getpopulartv &&
+            const DeepCollectionEquality().equals(other.page, page));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(page));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_GetpopulartvCopyWith<_$_Getpopulartv> get copyWith =>
+      __$$_GetpopulartvCopyWithImpl<_$_Getpopulartv>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getlatesttv,
-    required TResult Function() getpopulartv,
-    required TResult Function() getairingtoday,
-    required TResult Function() getontv,
-    required TResult Function() gettopratedtv,
+    required TResult Function(int page) getpopulartv,
+    required TResult Function(int page) getairingtoday,
+    required TResult Function(int page) getontv,
+    required TResult Function(int page) gettopratedtv,
   }) {
-    return getpopulartv();
+    return getpopulartv(page);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getlatesttv,
-    TResult Function()? getpopulartv,
-    TResult Function()? getairingtoday,
-    TResult Function()? getontv,
-    TResult Function()? gettopratedtv,
+    TResult Function(int page)? getpopulartv,
+    TResult Function(int page)? getairingtoday,
+    TResult Function(int page)? getontv,
+    TResult Function(int page)? gettopratedtv,
   }) {
-    return getpopulartv?.call();
+    return getpopulartv?.call(page);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getlatesttv,
-    TResult Function()? getpopulartv,
-    TResult Function()? getairingtoday,
-    TResult Function()? getontv,
-    TResult Function()? gettopratedtv,
+    TResult Function(int page)? getpopulartv,
+    TResult Function(int page)? getairingtoday,
+    TResult Function(int page)? getontv,
+    TResult Function(int page)? gettopratedtv,
     required TResult orElse(),
   }) {
     if (getpopulartv != null) {
-      return getpopulartv();
+      return getpopulartv(page);
     }
     return orElse();
   }
@@ -359,83 +356,112 @@ class _$_Getpopulartv implements _Getpopulartv {
 }
 
 abstract class _Getpopulartv implements TvblocEvent {
-  const factory _Getpopulartv() = _$_Getpopulartv;
+  const factory _Getpopulartv({required final int page}) = _$_Getpopulartv;
+
+  int get page;
+  @JsonKey(ignore: true)
+  _$$_GetpopulartvCopyWith<_$_Getpopulartv> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$GetairingtodayCopyWith<$Res> {
-  factory _$GetairingtodayCopyWith(
-          _Getairingtoday value, $Res Function(_Getairingtoday) then) =
-      __$GetairingtodayCopyWithImpl<$Res>;
+abstract class _$$_GetairingtodayCopyWith<$Res> {
+  factory _$$_GetairingtodayCopyWith(
+          _$_Getairingtoday value, $Res Function(_$_Getairingtoday) then) =
+      __$$_GetairingtodayCopyWithImpl<$Res>;
+  $Res call({int page});
 }
 
 /// @nodoc
-class __$GetairingtodayCopyWithImpl<$Res>
+class __$$_GetairingtodayCopyWithImpl<$Res>
     extends _$TvblocEventCopyWithImpl<$Res>
-    implements _$GetairingtodayCopyWith<$Res> {
-  __$GetairingtodayCopyWithImpl(
-      _Getairingtoday _value, $Res Function(_Getairingtoday) _then)
-      : super(_value, (v) => _then(v as _Getairingtoday));
+    implements _$$_GetairingtodayCopyWith<$Res> {
+  __$$_GetairingtodayCopyWithImpl(
+      _$_Getairingtoday _value, $Res Function(_$_Getairingtoday) _then)
+      : super(_value, (v) => _then(v as _$_Getairingtoday));
 
   @override
-  _Getairingtoday get _value => super._value as _Getairingtoday;
+  _$_Getairingtoday get _value => super._value as _$_Getairingtoday;
+
+  @override
+  $Res call({
+    Object? page = freezed,
+  }) {
+    return _then(_$_Getairingtoday(
+      page: page == freezed
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Getairingtoday implements _Getairingtoday {
-  const _$_Getairingtoday();
+  const _$_Getairingtoday({required this.page});
+
+  @override
+  final int page;
 
   @override
   String toString() {
-    return 'TvblocEvent.getairingtoday()';
+    return 'TvblocEvent.getairingtoday(page: $page)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Getairingtoday);
+        (other.runtimeType == runtimeType &&
+            other is _$_Getairingtoday &&
+            const DeepCollectionEquality().equals(other.page, page));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(page));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_GetairingtodayCopyWith<_$_Getairingtoday> get copyWith =>
+      __$$_GetairingtodayCopyWithImpl<_$_Getairingtoday>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getlatesttv,
-    required TResult Function() getpopulartv,
-    required TResult Function() getairingtoday,
-    required TResult Function() getontv,
-    required TResult Function() gettopratedtv,
+    required TResult Function(int page) getpopulartv,
+    required TResult Function(int page) getairingtoday,
+    required TResult Function(int page) getontv,
+    required TResult Function(int page) gettopratedtv,
   }) {
-    return getairingtoday();
+    return getairingtoday(page);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getlatesttv,
-    TResult Function()? getpopulartv,
-    TResult Function()? getairingtoday,
-    TResult Function()? getontv,
-    TResult Function()? gettopratedtv,
+    TResult Function(int page)? getpopulartv,
+    TResult Function(int page)? getairingtoday,
+    TResult Function(int page)? getontv,
+    TResult Function(int page)? gettopratedtv,
   }) {
-    return getairingtoday?.call();
+    return getairingtoday?.call(page);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getlatesttv,
-    TResult Function()? getpopulartv,
-    TResult Function()? getairingtoday,
-    TResult Function()? getontv,
-    TResult Function()? gettopratedtv,
+    TResult Function(int page)? getpopulartv,
+    TResult Function(int page)? getairingtoday,
+    TResult Function(int page)? getontv,
+    TResult Function(int page)? gettopratedtv,
     required TResult orElse(),
   }) {
     if (getairingtoday != null) {
-      return getairingtoday();
+      return getairingtoday(page);
     }
     return orElse();
   }
@@ -482,80 +508,110 @@ class _$_Getairingtoday implements _Getairingtoday {
 }
 
 abstract class _Getairingtoday implements TvblocEvent {
-  const factory _Getairingtoday() = _$_Getairingtoday;
+  const factory _Getairingtoday({required final int page}) = _$_Getairingtoday;
+
+  int get page;
+  @JsonKey(ignore: true)
+  _$$_GetairingtodayCopyWith<_$_Getairingtoday> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$GetontvCopyWith<$Res> {
-  factory _$GetontvCopyWith(_Getontv value, $Res Function(_Getontv) then) =
-      __$GetontvCopyWithImpl<$Res>;
+abstract class _$$_GetontvCopyWith<$Res> {
+  factory _$$_GetontvCopyWith(
+          _$_Getontv value, $Res Function(_$_Getontv) then) =
+      __$$_GetontvCopyWithImpl<$Res>;
+  $Res call({int page});
 }
 
 /// @nodoc
-class __$GetontvCopyWithImpl<$Res> extends _$TvblocEventCopyWithImpl<$Res>
-    implements _$GetontvCopyWith<$Res> {
-  __$GetontvCopyWithImpl(_Getontv _value, $Res Function(_Getontv) _then)
-      : super(_value, (v) => _then(v as _Getontv));
+class __$$_GetontvCopyWithImpl<$Res> extends _$TvblocEventCopyWithImpl<$Res>
+    implements _$$_GetontvCopyWith<$Res> {
+  __$$_GetontvCopyWithImpl(_$_Getontv _value, $Res Function(_$_Getontv) _then)
+      : super(_value, (v) => _then(v as _$_Getontv));
 
   @override
-  _Getontv get _value => super._value as _Getontv;
+  _$_Getontv get _value => super._value as _$_Getontv;
+
+  @override
+  $Res call({
+    Object? page = freezed,
+  }) {
+    return _then(_$_Getontv(
+      page: page == freezed
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Getontv implements _Getontv {
-  const _$_Getontv();
+  const _$_Getontv({required this.page});
+
+  @override
+  final int page;
 
   @override
   String toString() {
-    return 'TvblocEvent.getontv()';
+    return 'TvblocEvent.getontv(page: $page)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Getontv);
+        (other.runtimeType == runtimeType &&
+            other is _$_Getontv &&
+            const DeepCollectionEquality().equals(other.page, page));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(page));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_GetontvCopyWith<_$_Getontv> get copyWith =>
+      __$$_GetontvCopyWithImpl<_$_Getontv>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getlatesttv,
-    required TResult Function() getpopulartv,
-    required TResult Function() getairingtoday,
-    required TResult Function() getontv,
-    required TResult Function() gettopratedtv,
+    required TResult Function(int page) getpopulartv,
+    required TResult Function(int page) getairingtoday,
+    required TResult Function(int page) getontv,
+    required TResult Function(int page) gettopratedtv,
   }) {
-    return getontv();
+    return getontv(page);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getlatesttv,
-    TResult Function()? getpopulartv,
-    TResult Function()? getairingtoday,
-    TResult Function()? getontv,
-    TResult Function()? gettopratedtv,
+    TResult Function(int page)? getpopulartv,
+    TResult Function(int page)? getairingtoday,
+    TResult Function(int page)? getontv,
+    TResult Function(int page)? gettopratedtv,
   }) {
-    return getontv?.call();
+    return getontv?.call(page);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getlatesttv,
-    TResult Function()? getpopulartv,
-    TResult Function()? getairingtoday,
-    TResult Function()? getontv,
-    TResult Function()? gettopratedtv,
+    TResult Function(int page)? getpopulartv,
+    TResult Function(int page)? getairingtoday,
+    TResult Function(int page)? getontv,
+    TResult Function(int page)? gettopratedtv,
     required TResult orElse(),
   }) {
     if (getontv != null) {
-      return getontv();
+      return getontv(page);
     }
     return orElse();
   }
@@ -602,82 +658,112 @@ class _$_Getontv implements _Getontv {
 }
 
 abstract class _Getontv implements TvblocEvent {
-  const factory _Getontv() = _$_Getontv;
+  const factory _Getontv({required final int page}) = _$_Getontv;
+
+  int get page;
+  @JsonKey(ignore: true)
+  _$$_GetontvCopyWith<_$_Getontv> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$GettopratedtvCopyWith<$Res> {
-  factory _$GettopratedtvCopyWith(
-          _Gettopratedtv value, $Res Function(_Gettopratedtv) then) =
-      __$GettopratedtvCopyWithImpl<$Res>;
+abstract class _$$_GettopratedtvCopyWith<$Res> {
+  factory _$$_GettopratedtvCopyWith(
+          _$_Gettopratedtv value, $Res Function(_$_Gettopratedtv) then) =
+      __$$_GettopratedtvCopyWithImpl<$Res>;
+  $Res call({int page});
 }
 
 /// @nodoc
-class __$GettopratedtvCopyWithImpl<$Res> extends _$TvblocEventCopyWithImpl<$Res>
-    implements _$GettopratedtvCopyWith<$Res> {
-  __$GettopratedtvCopyWithImpl(
-      _Gettopratedtv _value, $Res Function(_Gettopratedtv) _then)
-      : super(_value, (v) => _then(v as _Gettopratedtv));
+class __$$_GettopratedtvCopyWithImpl<$Res>
+    extends _$TvblocEventCopyWithImpl<$Res>
+    implements _$$_GettopratedtvCopyWith<$Res> {
+  __$$_GettopratedtvCopyWithImpl(
+      _$_Gettopratedtv _value, $Res Function(_$_Gettopratedtv) _then)
+      : super(_value, (v) => _then(v as _$_Gettopratedtv));
 
   @override
-  _Gettopratedtv get _value => super._value as _Gettopratedtv;
+  _$_Gettopratedtv get _value => super._value as _$_Gettopratedtv;
+
+  @override
+  $Res call({
+    Object? page = freezed,
+  }) {
+    return _then(_$_Gettopratedtv(
+      page: page == freezed
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Gettopratedtv implements _Gettopratedtv {
-  const _$_Gettopratedtv();
+  const _$_Gettopratedtv({required this.page});
+
+  @override
+  final int page;
 
   @override
   String toString() {
-    return 'TvblocEvent.gettopratedtv()';
+    return 'TvblocEvent.gettopratedtv(page: $page)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Gettopratedtv);
+        (other.runtimeType == runtimeType &&
+            other is _$_Gettopratedtv &&
+            const DeepCollectionEquality().equals(other.page, page));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(page));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_GettopratedtvCopyWith<_$_Gettopratedtv> get copyWith =>
+      __$$_GettopratedtvCopyWithImpl<_$_Gettopratedtv>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getlatesttv,
-    required TResult Function() getpopulartv,
-    required TResult Function() getairingtoday,
-    required TResult Function() getontv,
-    required TResult Function() gettopratedtv,
+    required TResult Function(int page) getpopulartv,
+    required TResult Function(int page) getairingtoday,
+    required TResult Function(int page) getontv,
+    required TResult Function(int page) gettopratedtv,
   }) {
-    return gettopratedtv();
+    return gettopratedtv(page);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getlatesttv,
-    TResult Function()? getpopulartv,
-    TResult Function()? getairingtoday,
-    TResult Function()? getontv,
-    TResult Function()? gettopratedtv,
+    TResult Function(int page)? getpopulartv,
+    TResult Function(int page)? getairingtoday,
+    TResult Function(int page)? getontv,
+    TResult Function(int page)? gettopratedtv,
   }) {
-    return gettopratedtv?.call();
+    return gettopratedtv?.call(page);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getlatesttv,
-    TResult Function()? getpopulartv,
-    TResult Function()? getairingtoday,
-    TResult Function()? getontv,
-    TResult Function()? gettopratedtv,
+    TResult Function(int page)? getpopulartv,
+    TResult Function(int page)? getairingtoday,
+    TResult Function(int page)? getontv,
+    TResult Function(int page)? gettopratedtv,
     required TResult orElse(),
   }) {
     if (gettopratedtv != null) {
-      return gettopratedtv();
+      return gettopratedtv(page);
     }
     return orElse();
   }
@@ -724,27 +810,13 @@ class _$_Gettopratedtv implements _Gettopratedtv {
 }
 
 abstract class _Gettopratedtv implements TvblocEvent {
-  const factory _Gettopratedtv() = _$_Gettopratedtv;
+  const factory _Gettopratedtv({required final int page}) = _$_Gettopratedtv;
+
+  int get page;
+  @JsonKey(ignore: true)
+  _$$_GettopratedtvCopyWith<_$_Gettopratedtv> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$TvblocStateTearOff {
-  const _$TvblocStateTearOff();
-
-  _TvblocState call(
-      {required bool isLoading,
-      required List<TvModel> tvshows,
-      required Option<Either<MainFailures, List<TvModel>>> options}) {
-    return _TvblocState(
-      isLoading: isLoading,
-      tvshows: tvshows,
-      options: options,
-    );
-  }
-}
-
-/// @nodoc
-const $TvblocState = _$TvblocStateTearOff();
 
 /// @nodoc
 mixin _$TvblocState {
@@ -801,11 +873,11 @@ class _$TvblocStateCopyWithImpl<$Res> implements $TvblocStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$TvblocStateCopyWith<$Res>
+abstract class _$$_TvblocStateCopyWith<$Res>
     implements $TvblocStateCopyWith<$Res> {
-  factory _$TvblocStateCopyWith(
-          _TvblocState value, $Res Function(_TvblocState) then) =
-      __$TvblocStateCopyWithImpl<$Res>;
+  factory _$$_TvblocStateCopyWith(
+          _$_TvblocState value, $Res Function(_$_TvblocState) then) =
+      __$$_TvblocStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool isLoading,
@@ -814,14 +886,14 @@ abstract class _$TvblocStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$TvblocStateCopyWithImpl<$Res> extends _$TvblocStateCopyWithImpl<$Res>
-    implements _$TvblocStateCopyWith<$Res> {
-  __$TvblocStateCopyWithImpl(
-      _TvblocState _value, $Res Function(_TvblocState) _then)
-      : super(_value, (v) => _then(v as _TvblocState));
+class __$$_TvblocStateCopyWithImpl<$Res> extends _$TvblocStateCopyWithImpl<$Res>
+    implements _$$_TvblocStateCopyWith<$Res> {
+  __$$_TvblocStateCopyWithImpl(
+      _$_TvblocState _value, $Res Function(_$_TvblocState) _then)
+      : super(_value, (v) => _then(v as _$_TvblocState));
 
   @override
-  _TvblocState get _value => super._value as _TvblocState;
+  _$_TvblocState get _value => super._value as _$_TvblocState;
 
   @override
   $Res call({
@@ -829,13 +901,13 @@ class __$TvblocStateCopyWithImpl<$Res> extends _$TvblocStateCopyWithImpl<$Res>
     Object? tvshows = freezed,
     Object? options = freezed,
   }) {
-    return _then(_TvblocState(
+    return _then(_$_TvblocState(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       tvshows: tvshows == freezed
-          ? _value.tvshows
+          ? _value._tvshows
           : tvshows // ignore: cast_nullable_to_non_nullable
               as List<TvModel>,
       options: options == freezed
@@ -850,12 +922,20 @@ class __$TvblocStateCopyWithImpl<$Res> extends _$TvblocStateCopyWithImpl<$Res>
 
 class _$_TvblocState implements _TvblocState {
   const _$_TvblocState(
-      {required this.isLoading, required this.tvshows, required this.options});
+      {required this.isLoading,
+      required final List<TvModel> tvshows,
+      required this.options})
+      : _tvshows = tvshows;
 
   @override
   final bool isLoading;
+  final List<TvModel> _tvshows;
   @override
-  final List<TvModel> tvshows;
+  List<TvModel> get tvshows {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_tvshows);
+  }
+
   @override
   final Option<Either<MainFailures, List<TvModel>>> options;
 
@@ -868,9 +948,9 @@ class _$_TvblocState implements _TvblocState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _TvblocState &&
+            other is _$_TvblocState &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
-            const DeepCollectionEquality().equals(other.tvshows, tvshows) &&
+            const DeepCollectionEquality().equals(other._tvshows, _tvshows) &&
             const DeepCollectionEquality().equals(other.options, options));
   }
 
@@ -878,20 +958,20 @@ class _$_TvblocState implements _TvblocState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(tvshows),
+      const DeepCollectionEquality().hash(_tvshows),
       const DeepCollectionEquality().hash(options));
 
   @JsonKey(ignore: true)
   @override
-  _$TvblocStateCopyWith<_TvblocState> get copyWith =>
-      __$TvblocStateCopyWithImpl<_TvblocState>(this, _$identity);
+  _$$_TvblocStateCopyWith<_$_TvblocState> get copyWith =>
+      __$$_TvblocStateCopyWithImpl<_$_TvblocState>(this, _$identity);
 }
 
 abstract class _TvblocState implements TvblocState {
   const factory _TvblocState(
-          {required bool isLoading,
-          required List<TvModel> tvshows,
-          required Option<Either<MainFailures, List<TvModel>>> options}) =
+          {required final bool isLoading,
+          required final List<TvModel> tvshows,
+          required final Option<Either<MainFailures, List<TvModel>>> options}) =
       _$_TvblocState;
 
   @override
@@ -902,28 +982,9 @@ abstract class _TvblocState implements TvblocState {
   Option<Either<MainFailures, List<TvModel>>> get options;
   @override
   @JsonKey(ignore: true)
-  _$TvblocStateCopyWith<_TvblocState> get copyWith =>
+  _$$_TvblocStateCopyWith<_$_TvblocState> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$PopularTvStateTearOff {
-  const _$PopularTvStateTearOff();
-
-  _PopularTvState call(
-      {required bool isLoading,
-      required List<TvModel> tvshows,
-      required Option<Either<MainFailures, List<TvModel>>> options}) {
-    return _PopularTvState(
-      isLoading: isLoading,
-      tvshows: tvshows,
-      options: options,
-    );
-  }
-}
-
-/// @nodoc
-const $PopularTvState = _$PopularTvStateTearOff();
 
 /// @nodoc
 mixin _$PopularTvState {
@@ -981,11 +1042,11 @@ class _$PopularTvStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PopularTvStateCopyWith<$Res>
+abstract class _$$_PopularTvStateCopyWith<$Res>
     implements $PopularTvStateCopyWith<$Res> {
-  factory _$PopularTvStateCopyWith(
-          _PopularTvState value, $Res Function(_PopularTvState) then) =
-      __$PopularTvStateCopyWithImpl<$Res>;
+  factory _$$_PopularTvStateCopyWith(
+          _$_PopularTvState value, $Res Function(_$_PopularTvState) then) =
+      __$$_PopularTvStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool isLoading,
@@ -994,15 +1055,15 @@ abstract class _$PopularTvStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PopularTvStateCopyWithImpl<$Res>
+class __$$_PopularTvStateCopyWithImpl<$Res>
     extends _$PopularTvStateCopyWithImpl<$Res>
-    implements _$PopularTvStateCopyWith<$Res> {
-  __$PopularTvStateCopyWithImpl(
-      _PopularTvState _value, $Res Function(_PopularTvState) _then)
-      : super(_value, (v) => _then(v as _PopularTvState));
+    implements _$$_PopularTvStateCopyWith<$Res> {
+  __$$_PopularTvStateCopyWithImpl(
+      _$_PopularTvState _value, $Res Function(_$_PopularTvState) _then)
+      : super(_value, (v) => _then(v as _$_PopularTvState));
 
   @override
-  _PopularTvState get _value => super._value as _PopularTvState;
+  _$_PopularTvState get _value => super._value as _$_PopularTvState;
 
   @override
   $Res call({
@@ -1010,13 +1071,13 @@ class __$PopularTvStateCopyWithImpl<$Res>
     Object? tvshows = freezed,
     Object? options = freezed,
   }) {
-    return _then(_PopularTvState(
+    return _then(_$_PopularTvState(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       tvshows: tvshows == freezed
-          ? _value.tvshows
+          ? _value._tvshows
           : tvshows // ignore: cast_nullable_to_non_nullable
               as List<TvModel>,
       options: options == freezed
@@ -1031,12 +1092,20 @@ class __$PopularTvStateCopyWithImpl<$Res>
 
 class _$_PopularTvState implements _PopularTvState {
   const _$_PopularTvState(
-      {required this.isLoading, required this.tvshows, required this.options});
+      {required this.isLoading,
+      required final List<TvModel> tvshows,
+      required this.options})
+      : _tvshows = tvshows;
 
   @override
   final bool isLoading;
+  final List<TvModel> _tvshows;
   @override
-  final List<TvModel> tvshows;
+  List<TvModel> get tvshows {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_tvshows);
+  }
+
   @override
   final Option<Either<MainFailures, List<TvModel>>> options;
 
@@ -1049,9 +1118,9 @@ class _$_PopularTvState implements _PopularTvState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PopularTvState &&
+            other is _$_PopularTvState &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
-            const DeepCollectionEquality().equals(other.tvshows, tvshows) &&
+            const DeepCollectionEquality().equals(other._tvshows, _tvshows) &&
             const DeepCollectionEquality().equals(other.options, options));
   }
 
@@ -1059,20 +1128,20 @@ class _$_PopularTvState implements _PopularTvState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(tvshows),
+      const DeepCollectionEquality().hash(_tvshows),
       const DeepCollectionEquality().hash(options));
 
   @JsonKey(ignore: true)
   @override
-  _$PopularTvStateCopyWith<_PopularTvState> get copyWith =>
-      __$PopularTvStateCopyWithImpl<_PopularTvState>(this, _$identity);
+  _$$_PopularTvStateCopyWith<_$_PopularTvState> get copyWith =>
+      __$$_PopularTvStateCopyWithImpl<_$_PopularTvState>(this, _$identity);
 }
 
 abstract class _PopularTvState implements PopularTvState {
   const factory _PopularTvState(
-          {required bool isLoading,
-          required List<TvModel> tvshows,
-          required Option<Either<MainFailures, List<TvModel>>> options}) =
+          {required final bool isLoading,
+          required final List<TvModel> tvshows,
+          required final Option<Either<MainFailures, List<TvModel>>> options}) =
       _$_PopularTvState;
 
   @override
@@ -1083,28 +1152,9 @@ abstract class _PopularTvState implements PopularTvState {
   Option<Either<MainFailures, List<TvModel>>> get options;
   @override
   @JsonKey(ignore: true)
-  _$PopularTvStateCopyWith<_PopularTvState> get copyWith =>
+  _$$_PopularTvStateCopyWith<_$_PopularTvState> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$AiringtodayStateTearOff {
-  const _$AiringtodayStateTearOff();
-
-  _AiringtodayState call(
-      {required bool isLoading,
-      required List<TvModel> tvshows,
-      required Option<Either<MainFailures, List<TvModel>>> options}) {
-    return _AiringtodayState(
-      isLoading: isLoading,
-      tvshows: tvshows,
-      options: options,
-    );
-  }
-}
-
-/// @nodoc
-const $AiringtodayState = _$AiringtodayStateTearOff();
 
 /// @nodoc
 mixin _$AiringtodayState {
@@ -1162,11 +1212,11 @@ class _$AiringtodayStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$AiringtodayStateCopyWith<$Res>
+abstract class _$$_AiringtodayStateCopyWith<$Res>
     implements $AiringtodayStateCopyWith<$Res> {
-  factory _$AiringtodayStateCopyWith(
-          _AiringtodayState value, $Res Function(_AiringtodayState) then) =
-      __$AiringtodayStateCopyWithImpl<$Res>;
+  factory _$$_AiringtodayStateCopyWith(
+          _$_AiringtodayState value, $Res Function(_$_AiringtodayState) then) =
+      __$$_AiringtodayStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool isLoading,
@@ -1175,15 +1225,15 @@ abstract class _$AiringtodayStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$AiringtodayStateCopyWithImpl<$Res>
+class __$$_AiringtodayStateCopyWithImpl<$Res>
     extends _$AiringtodayStateCopyWithImpl<$Res>
-    implements _$AiringtodayStateCopyWith<$Res> {
-  __$AiringtodayStateCopyWithImpl(
-      _AiringtodayState _value, $Res Function(_AiringtodayState) _then)
-      : super(_value, (v) => _then(v as _AiringtodayState));
+    implements _$$_AiringtodayStateCopyWith<$Res> {
+  __$$_AiringtodayStateCopyWithImpl(
+      _$_AiringtodayState _value, $Res Function(_$_AiringtodayState) _then)
+      : super(_value, (v) => _then(v as _$_AiringtodayState));
 
   @override
-  _AiringtodayState get _value => super._value as _AiringtodayState;
+  _$_AiringtodayState get _value => super._value as _$_AiringtodayState;
 
   @override
   $Res call({
@@ -1191,13 +1241,13 @@ class __$AiringtodayStateCopyWithImpl<$Res>
     Object? tvshows = freezed,
     Object? options = freezed,
   }) {
-    return _then(_AiringtodayState(
+    return _then(_$_AiringtodayState(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       tvshows: tvshows == freezed
-          ? _value.tvshows
+          ? _value._tvshows
           : tvshows // ignore: cast_nullable_to_non_nullable
               as List<TvModel>,
       options: options == freezed
@@ -1212,12 +1262,20 @@ class __$AiringtodayStateCopyWithImpl<$Res>
 
 class _$_AiringtodayState implements _AiringtodayState {
   const _$_AiringtodayState(
-      {required this.isLoading, required this.tvshows, required this.options});
+      {required this.isLoading,
+      required final List<TvModel> tvshows,
+      required this.options})
+      : _tvshows = tvshows;
 
   @override
   final bool isLoading;
+  final List<TvModel> _tvshows;
   @override
-  final List<TvModel> tvshows;
+  List<TvModel> get tvshows {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_tvshows);
+  }
+
   @override
   final Option<Either<MainFailures, List<TvModel>>> options;
 
@@ -1230,9 +1288,9 @@ class _$_AiringtodayState implements _AiringtodayState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AiringtodayState &&
+            other is _$_AiringtodayState &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
-            const DeepCollectionEquality().equals(other.tvshows, tvshows) &&
+            const DeepCollectionEquality().equals(other._tvshows, _tvshows) &&
             const DeepCollectionEquality().equals(other.options, options));
   }
 
@@ -1240,20 +1298,20 @@ class _$_AiringtodayState implements _AiringtodayState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(tvshows),
+      const DeepCollectionEquality().hash(_tvshows),
       const DeepCollectionEquality().hash(options));
 
   @JsonKey(ignore: true)
   @override
-  _$AiringtodayStateCopyWith<_AiringtodayState> get copyWith =>
-      __$AiringtodayStateCopyWithImpl<_AiringtodayState>(this, _$identity);
+  _$$_AiringtodayStateCopyWith<_$_AiringtodayState> get copyWith =>
+      __$$_AiringtodayStateCopyWithImpl<_$_AiringtodayState>(this, _$identity);
 }
 
 abstract class _AiringtodayState implements AiringtodayState {
   const factory _AiringtodayState(
-          {required bool isLoading,
-          required List<TvModel> tvshows,
-          required Option<Either<MainFailures, List<TvModel>>> options}) =
+          {required final bool isLoading,
+          required final List<TvModel> tvshows,
+          required final Option<Either<MainFailures, List<TvModel>>> options}) =
       _$_AiringtodayState;
 
   @override
@@ -1264,28 +1322,9 @@ abstract class _AiringtodayState implements AiringtodayState {
   Option<Either<MainFailures, List<TvModel>>> get options;
   @override
   @JsonKey(ignore: true)
-  _$AiringtodayStateCopyWith<_AiringtodayState> get copyWith =>
+  _$$_AiringtodayStateCopyWith<_$_AiringtodayState> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$OnTvSTateTearOff {
-  const _$OnTvSTateTearOff();
-
-  _OnTvSTate call(
-      {required bool isLoading,
-      required List<TvModel> tvshows,
-      required Option<Either<MainFailures, List<TvModel>>> options}) {
-    return _OnTvSTate(
-      isLoading: isLoading,
-      tvshows: tvshows,
-      options: options,
-    );
-  }
-}
-
-/// @nodoc
-const $OnTvSTate = _$OnTvSTateTearOff();
 
 /// @nodoc
 mixin _$OnTvSTate {
@@ -1341,10 +1380,10 @@ class _$OnTvSTateCopyWithImpl<$Res> implements $OnTvSTateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$OnTvSTateCopyWith<$Res> implements $OnTvSTateCopyWith<$Res> {
-  factory _$OnTvSTateCopyWith(
-          _OnTvSTate value, $Res Function(_OnTvSTate) then) =
-      __$OnTvSTateCopyWithImpl<$Res>;
+abstract class _$$_OnTvSTateCopyWith<$Res> implements $OnTvSTateCopyWith<$Res> {
+  factory _$$_OnTvSTateCopyWith(
+          _$_OnTvSTate value, $Res Function(_$_OnTvSTate) then) =
+      __$$_OnTvSTateCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool isLoading,
@@ -1353,13 +1392,14 @@ abstract class _$OnTvSTateCopyWith<$Res> implements $OnTvSTateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$OnTvSTateCopyWithImpl<$Res> extends _$OnTvSTateCopyWithImpl<$Res>
-    implements _$OnTvSTateCopyWith<$Res> {
-  __$OnTvSTateCopyWithImpl(_OnTvSTate _value, $Res Function(_OnTvSTate) _then)
-      : super(_value, (v) => _then(v as _OnTvSTate));
+class __$$_OnTvSTateCopyWithImpl<$Res> extends _$OnTvSTateCopyWithImpl<$Res>
+    implements _$$_OnTvSTateCopyWith<$Res> {
+  __$$_OnTvSTateCopyWithImpl(
+      _$_OnTvSTate _value, $Res Function(_$_OnTvSTate) _then)
+      : super(_value, (v) => _then(v as _$_OnTvSTate));
 
   @override
-  _OnTvSTate get _value => super._value as _OnTvSTate;
+  _$_OnTvSTate get _value => super._value as _$_OnTvSTate;
 
   @override
   $Res call({
@@ -1367,13 +1407,13 @@ class __$OnTvSTateCopyWithImpl<$Res> extends _$OnTvSTateCopyWithImpl<$Res>
     Object? tvshows = freezed,
     Object? options = freezed,
   }) {
-    return _then(_OnTvSTate(
+    return _then(_$_OnTvSTate(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       tvshows: tvshows == freezed
-          ? _value.tvshows
+          ? _value._tvshows
           : tvshows // ignore: cast_nullable_to_non_nullable
               as List<TvModel>,
       options: options == freezed
@@ -1388,12 +1428,20 @@ class __$OnTvSTateCopyWithImpl<$Res> extends _$OnTvSTateCopyWithImpl<$Res>
 
 class _$_OnTvSTate implements _OnTvSTate {
   const _$_OnTvSTate(
-      {required this.isLoading, required this.tvshows, required this.options});
+      {required this.isLoading,
+      required final List<TvModel> tvshows,
+      required this.options})
+      : _tvshows = tvshows;
 
   @override
   final bool isLoading;
+  final List<TvModel> _tvshows;
   @override
-  final List<TvModel> tvshows;
+  List<TvModel> get tvshows {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_tvshows);
+  }
+
   @override
   final Option<Either<MainFailures, List<TvModel>>> options;
 
@@ -1406,9 +1454,9 @@ class _$_OnTvSTate implements _OnTvSTate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _OnTvSTate &&
+            other is _$_OnTvSTate &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
-            const DeepCollectionEquality().equals(other.tvshows, tvshows) &&
+            const DeepCollectionEquality().equals(other._tvshows, _tvshows) &&
             const DeepCollectionEquality().equals(other.options, options));
   }
 
@@ -1416,20 +1464,20 @@ class _$_OnTvSTate implements _OnTvSTate {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(tvshows),
+      const DeepCollectionEquality().hash(_tvshows),
       const DeepCollectionEquality().hash(options));
 
   @JsonKey(ignore: true)
   @override
-  _$OnTvSTateCopyWith<_OnTvSTate> get copyWith =>
-      __$OnTvSTateCopyWithImpl<_OnTvSTate>(this, _$identity);
+  _$$_OnTvSTateCopyWith<_$_OnTvSTate> get copyWith =>
+      __$$_OnTvSTateCopyWithImpl<_$_OnTvSTate>(this, _$identity);
 }
 
 abstract class _OnTvSTate implements OnTvSTate {
   const factory _OnTvSTate(
-          {required bool isLoading,
-          required List<TvModel> tvshows,
-          required Option<Either<MainFailures, List<TvModel>>> options}) =
+          {required final bool isLoading,
+          required final List<TvModel> tvshows,
+          required final Option<Either<MainFailures, List<TvModel>>> options}) =
       _$_OnTvSTate;
 
   @override
@@ -1440,28 +1488,9 @@ abstract class _OnTvSTate implements OnTvSTate {
   Option<Either<MainFailures, List<TvModel>>> get options;
   @override
   @JsonKey(ignore: true)
-  _$OnTvSTateCopyWith<_OnTvSTate> get copyWith =>
+  _$$_OnTvSTateCopyWith<_$_OnTvSTate> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$TopratedTvStateTearOff {
-  const _$TopratedTvStateTearOff();
-
-  _TopratedTvState call(
-      {required bool isLoading,
-      required List<TvModel> tvshows,
-      required Option<Either<MainFailures, List<TvModel>>> options}) {
-    return _TopratedTvState(
-      isLoading: isLoading,
-      tvshows: tvshows,
-      options: options,
-    );
-  }
-}
-
-/// @nodoc
-const $TopratedTvState = _$TopratedTvStateTearOff();
 
 /// @nodoc
 mixin _$TopratedTvState {
@@ -1519,11 +1548,11 @@ class _$TopratedTvStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$TopratedTvStateCopyWith<$Res>
+abstract class _$$_TopratedTvStateCopyWith<$Res>
     implements $TopratedTvStateCopyWith<$Res> {
-  factory _$TopratedTvStateCopyWith(
-          _TopratedTvState value, $Res Function(_TopratedTvState) then) =
-      __$TopratedTvStateCopyWithImpl<$Res>;
+  factory _$$_TopratedTvStateCopyWith(
+          _$_TopratedTvState value, $Res Function(_$_TopratedTvState) then) =
+      __$$_TopratedTvStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool isLoading,
@@ -1532,15 +1561,15 @@ abstract class _$TopratedTvStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$TopratedTvStateCopyWithImpl<$Res>
+class __$$_TopratedTvStateCopyWithImpl<$Res>
     extends _$TopratedTvStateCopyWithImpl<$Res>
-    implements _$TopratedTvStateCopyWith<$Res> {
-  __$TopratedTvStateCopyWithImpl(
-      _TopratedTvState _value, $Res Function(_TopratedTvState) _then)
-      : super(_value, (v) => _then(v as _TopratedTvState));
+    implements _$$_TopratedTvStateCopyWith<$Res> {
+  __$$_TopratedTvStateCopyWithImpl(
+      _$_TopratedTvState _value, $Res Function(_$_TopratedTvState) _then)
+      : super(_value, (v) => _then(v as _$_TopratedTvState));
 
   @override
-  _TopratedTvState get _value => super._value as _TopratedTvState;
+  _$_TopratedTvState get _value => super._value as _$_TopratedTvState;
 
   @override
   $Res call({
@@ -1548,13 +1577,13 @@ class __$TopratedTvStateCopyWithImpl<$Res>
     Object? tvshows = freezed,
     Object? options = freezed,
   }) {
-    return _then(_TopratedTvState(
+    return _then(_$_TopratedTvState(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       tvshows: tvshows == freezed
-          ? _value.tvshows
+          ? _value._tvshows
           : tvshows // ignore: cast_nullable_to_non_nullable
               as List<TvModel>,
       options: options == freezed
@@ -1569,12 +1598,20 @@ class __$TopratedTvStateCopyWithImpl<$Res>
 
 class _$_TopratedTvState implements _TopratedTvState {
   const _$_TopratedTvState(
-      {required this.isLoading, required this.tvshows, required this.options});
+      {required this.isLoading,
+      required final List<TvModel> tvshows,
+      required this.options})
+      : _tvshows = tvshows;
 
   @override
   final bool isLoading;
+  final List<TvModel> _tvshows;
   @override
-  final List<TvModel> tvshows;
+  List<TvModel> get tvshows {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_tvshows);
+  }
+
   @override
   final Option<Either<MainFailures, List<TvModel>>> options;
 
@@ -1587,9 +1624,9 @@ class _$_TopratedTvState implements _TopratedTvState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _TopratedTvState &&
+            other is _$_TopratedTvState &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
-            const DeepCollectionEquality().equals(other.tvshows, tvshows) &&
+            const DeepCollectionEquality().equals(other._tvshows, _tvshows) &&
             const DeepCollectionEquality().equals(other.options, options));
   }
 
@@ -1597,20 +1634,20 @@ class _$_TopratedTvState implements _TopratedTvState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(tvshows),
+      const DeepCollectionEquality().hash(_tvshows),
       const DeepCollectionEquality().hash(options));
 
   @JsonKey(ignore: true)
   @override
-  _$TopratedTvStateCopyWith<_TopratedTvState> get copyWith =>
-      __$TopratedTvStateCopyWithImpl<_TopratedTvState>(this, _$identity);
+  _$$_TopratedTvStateCopyWith<_$_TopratedTvState> get copyWith =>
+      __$$_TopratedTvStateCopyWithImpl<_$_TopratedTvState>(this, _$identity);
 }
 
 abstract class _TopratedTvState implements TopratedTvState {
   const factory _TopratedTvState(
-          {required bool isLoading,
-          required List<TvModel> tvshows,
-          required Option<Either<MainFailures, List<TvModel>>> options}) =
+          {required final bool isLoading,
+          required final List<TvModel> tvshows,
+          required final Option<Either<MainFailures, List<TvModel>>> options}) =
       _$_TopratedTvState;
 
   @override
@@ -1621,6 +1658,6 @@ abstract class _TopratedTvState implements TopratedTvState {
   Option<Either<MainFailures, List<TvModel>>> get options;
   @override
   @JsonKey(ignore: true)
-  _$TopratedTvStateCopyWith<_TopratedTvState> get copyWith =>
+  _$$_TopratedTvStateCopyWith<_$_TopratedTvState> get copyWith =>
       throw _privateConstructorUsedError;
 }

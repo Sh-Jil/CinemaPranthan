@@ -12,26 +12,11 @@ part of 'movie_detail_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$MovieDetailEventTearOff {
-  const _$MovieDetailEventTearOff();
-
-  _GetMovieDetail getmoviedetail({required String movieparam}) {
-    return _GetMovieDetail(
-      movieparam: movieparam,
-    );
-  }
-}
-
-/// @nodoc
-const $MovieDetailEvent = _$MovieDetailEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$MovieDetailEvent {
   String get movieparam => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String movieparam) getmoviedetail,
@@ -101,31 +86,31 @@ class _$MovieDetailEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$GetMovieDetailCopyWith<$Res>
+abstract class _$$_GetMovieDetailCopyWith<$Res>
     implements $MovieDetailEventCopyWith<$Res> {
-  factory _$GetMovieDetailCopyWith(
-          _GetMovieDetail value, $Res Function(_GetMovieDetail) then) =
-      __$GetMovieDetailCopyWithImpl<$Res>;
+  factory _$$_GetMovieDetailCopyWith(
+          _$_GetMovieDetail value, $Res Function(_$_GetMovieDetail) then) =
+      __$$_GetMovieDetailCopyWithImpl<$Res>;
   @override
   $Res call({String movieparam});
 }
 
 /// @nodoc
-class __$GetMovieDetailCopyWithImpl<$Res>
+class __$$_GetMovieDetailCopyWithImpl<$Res>
     extends _$MovieDetailEventCopyWithImpl<$Res>
-    implements _$GetMovieDetailCopyWith<$Res> {
-  __$GetMovieDetailCopyWithImpl(
-      _GetMovieDetail _value, $Res Function(_GetMovieDetail) _then)
-      : super(_value, (v) => _then(v as _GetMovieDetail));
+    implements _$$_GetMovieDetailCopyWith<$Res> {
+  __$$_GetMovieDetailCopyWithImpl(
+      _$_GetMovieDetail _value, $Res Function(_$_GetMovieDetail) _then)
+      : super(_value, (v) => _then(v as _$_GetMovieDetail));
 
   @override
-  _GetMovieDetail get _value => super._value as _GetMovieDetail;
+  _$_GetMovieDetail get _value => super._value as _$_GetMovieDetail;
 
   @override
   $Res call({
     Object? movieparam = freezed,
   }) {
-    return _then(_GetMovieDetail(
+    return _then(_$_GetMovieDetail(
       movieparam: movieparam == freezed
           ? _value.movieparam
           : movieparam // ignore: cast_nullable_to_non_nullable
@@ -151,7 +136,7 @@ class _$_GetMovieDetail implements _GetMovieDetail {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _GetMovieDetail &&
+            other is _$_GetMovieDetail &&
             const DeepCollectionEquality()
                 .equals(other.movieparam, movieparam));
   }
@@ -162,8 +147,8 @@ class _$_GetMovieDetail implements _GetMovieDetail {
 
   @JsonKey(ignore: true)
   @override
-  _$GetMovieDetailCopyWith<_GetMovieDetail> get copyWith =>
-      __$GetMovieDetailCopyWithImpl<_GetMovieDetail>(this, _$identity);
+  _$$_GetMovieDetailCopyWith<_$_GetMovieDetail> get copyWith =>
+      __$$_GetMovieDetailCopyWithImpl<_$_GetMovieDetail>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -223,35 +208,16 @@ class _$_GetMovieDetail implements _GetMovieDetail {
 }
 
 abstract class _GetMovieDetail implements MovieDetailEvent {
-  const factory _GetMovieDetail({required String movieparam}) =
+  const factory _GetMovieDetail({required final String movieparam}) =
       _$_GetMovieDetail;
 
   @override
   String get movieparam;
   @override
   @JsonKey(ignore: true)
-  _$GetMovieDetailCopyWith<_GetMovieDetail> get copyWith =>
+  _$$_GetMovieDetailCopyWith<_$_GetMovieDetail> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$MovieDetailStateTearOff {
-  const _$MovieDetailStateTearOff();
-
-  _MovieDetailState call(
-      {required bool isLoading,
-      required List<MovieDetail> moviedetail,
-      required Option<Either<MainFailures, List<MovieDetail>>> options}) {
-    return _MovieDetailState(
-      isLoading: isLoading,
-      moviedetail: moviedetail,
-      options: options,
-    );
-  }
-}
-
-/// @nodoc
-const $MovieDetailState = _$MovieDetailStateTearOff();
 
 /// @nodoc
 mixin _$MovieDetailState {
@@ -309,11 +275,11 @@ class _$MovieDetailStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$MovieDetailStateCopyWith<$Res>
+abstract class _$$_MovieDetailStateCopyWith<$Res>
     implements $MovieDetailStateCopyWith<$Res> {
-  factory _$MovieDetailStateCopyWith(
-          _MovieDetailState value, $Res Function(_MovieDetailState) then) =
-      __$MovieDetailStateCopyWithImpl<$Res>;
+  factory _$$_MovieDetailStateCopyWith(
+          _$_MovieDetailState value, $Res Function(_$_MovieDetailState) then) =
+      __$$_MovieDetailStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool isLoading,
@@ -322,15 +288,15 @@ abstract class _$MovieDetailStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$MovieDetailStateCopyWithImpl<$Res>
+class __$$_MovieDetailStateCopyWithImpl<$Res>
     extends _$MovieDetailStateCopyWithImpl<$Res>
-    implements _$MovieDetailStateCopyWith<$Res> {
-  __$MovieDetailStateCopyWithImpl(
-      _MovieDetailState _value, $Res Function(_MovieDetailState) _then)
-      : super(_value, (v) => _then(v as _MovieDetailState));
+    implements _$$_MovieDetailStateCopyWith<$Res> {
+  __$$_MovieDetailStateCopyWithImpl(
+      _$_MovieDetailState _value, $Res Function(_$_MovieDetailState) _then)
+      : super(_value, (v) => _then(v as _$_MovieDetailState));
 
   @override
-  _MovieDetailState get _value => super._value as _MovieDetailState;
+  _$_MovieDetailState get _value => super._value as _$_MovieDetailState;
 
   @override
   $Res call({
@@ -338,13 +304,13 @@ class __$MovieDetailStateCopyWithImpl<$Res>
     Object? moviedetail = freezed,
     Object? options = freezed,
   }) {
-    return _then(_MovieDetailState(
+    return _then(_$_MovieDetailState(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       moviedetail: moviedetail == freezed
-          ? _value.moviedetail
+          ? _value._moviedetail
           : moviedetail // ignore: cast_nullable_to_non_nullable
               as List<MovieDetail>,
       options: options == freezed
@@ -360,13 +326,19 @@ class __$MovieDetailStateCopyWithImpl<$Res>
 class _$_MovieDetailState implements _MovieDetailState {
   const _$_MovieDetailState(
       {required this.isLoading,
-      required this.moviedetail,
-      required this.options});
+      required final List<MovieDetail> moviedetail,
+      required this.options})
+      : _moviedetail = moviedetail;
 
   @override
   final bool isLoading;
+  final List<MovieDetail> _moviedetail;
   @override
-  final List<MovieDetail> moviedetail;
+  List<MovieDetail> get moviedetail {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_moviedetail);
+  }
+
   @override
   final Option<Either<MainFailures, List<MovieDetail>>> options;
 
@@ -379,10 +351,10 @@ class _$_MovieDetailState implements _MovieDetailState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _MovieDetailState &&
+            other is _$_MovieDetailState &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
             const DeepCollectionEquality()
-                .equals(other.moviedetail, moviedetail) &&
+                .equals(other._moviedetail, _moviedetail) &&
             const DeepCollectionEquality().equals(other.options, options));
   }
 
@@ -390,21 +362,21 @@ class _$_MovieDetailState implements _MovieDetailState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(moviedetail),
+      const DeepCollectionEquality().hash(_moviedetail),
       const DeepCollectionEquality().hash(options));
 
   @JsonKey(ignore: true)
   @override
-  _$MovieDetailStateCopyWith<_MovieDetailState> get copyWith =>
-      __$MovieDetailStateCopyWithImpl<_MovieDetailState>(this, _$identity);
+  _$$_MovieDetailStateCopyWith<_$_MovieDetailState> get copyWith =>
+      __$$_MovieDetailStateCopyWithImpl<_$_MovieDetailState>(this, _$identity);
 }
 
 abstract class _MovieDetailState implements MovieDetailState {
   const factory _MovieDetailState(
-          {required bool isLoading,
-          required List<MovieDetail> moviedetail,
-          required Option<Either<MainFailures, List<MovieDetail>>> options}) =
-      _$_MovieDetailState;
+      {required final bool isLoading,
+      required final List<MovieDetail> moviedetail,
+      required final Option<Either<MainFailures, List<MovieDetail>>>
+          options}) = _$_MovieDetailState;
 
   @override
   bool get isLoading;
@@ -414,6 +386,6 @@ abstract class _MovieDetailState implements MovieDetailState {
   Option<Either<MainFailures, List<MovieDetail>>> get options;
   @override
   @JsonKey(ignore: true)
-  _$MovieDetailStateCopyWith<_MovieDetailState> get copyWith =>
+  _$$_MovieDetailStateCopyWith<_$_MovieDetailState> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -39,7 +39,10 @@ class PopulartvBloc extends Bloc<TvblocEvent, PopularTvState> {
     on<_Getpopulartv>((event, emit) async {
       emit(state.copyWith(isLoading: true, options: const None()));
       final Either<MainFailures, List<TvModel>> populartv =
-          await tvrepo.getlatesttv();
+      
+
+      await tvrepo.getpopulartv(page: event.page);
+
       emit(populartv.fold(
           (failure) =>
               state.copyWith(isLoading: false, options: Some(Left(failure))),
@@ -58,7 +61,9 @@ class AiringTodayBloc extends Bloc<TvblocEvent, AiringtodayState> {
     on<_Getairingtoday>((event, emit) async {
       emit(state.copyWith(isLoading: true, options: const None()));
       final Either<MainFailures, List<TvModel>> airingtodaytv =
-          await tvrepo.getairingtoday();
+       
+      await tvrepo.getairingtoday(page: event.page);
+
       emit(airingtodaytv.fold(
           (failure) =>
               state.copyWith(isLoading: false, options: Some(Left(failure))),
@@ -76,7 +81,10 @@ class OnTVBloc extends Bloc<TvblocEvent, OnTvSTate> {
   OnTVBloc(this.tvrepo) : super(OnTvSTate.initial()) {
     on<_Getontv>((event, emit) async {
       emit(state.copyWith(isLoading: true, options: const None()));
-      final Either<MainFailures, List<TvModel>> ontv = await tvrepo.getontv();
+
+    
+      final Either<MainFailures, List<TvModel>> ontv =
+          await tvrepo.getontv(page: event.page);
 
       emit(ontv.fold(
           (failure) =>
@@ -96,7 +104,10 @@ class TopratedTvBloc extends Bloc<TvblocEvent, TopratedTvState> {
     on<_Gettopratedtv>((event, emit) async {
       emit(state.copyWith(isLoading: true, options: const None()));
       final Either<MainFailures, List<TvModel>> topratedtv =
-          await tvrepo.gettopratedtv();
+         
+
+      await tvrepo.gettopratedtv(page: event.page);
+
       emit(topratedtv.fold(
           (failure) =>
               state.copyWith(isLoading: false, options: Some(Left(failure))),

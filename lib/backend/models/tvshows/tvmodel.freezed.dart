@@ -12,50 +12,11 @@ part of 'tvmodel.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 TvModel _$TvModelFromJson(Map<String, dynamic> json) {
   return _TvModel.fromJson(json);
 }
-
-/// @nodoc
-class _$TvModelTearOff {
-  const _$TvModelTearOff();
-
-  _TvModel call(
-      {@JsonKey(name: "backdrop_path") required String? backdropPath,
-      @JsonKey(name: "first_air_date") required String? firstAirDate,
-      @JsonKey(name: "genre_ids") required List<int>? genreIds,
-      @JsonKey(name: "id") required int id,
-      @JsonKey(name: "name") required String? name,
-      @JsonKey(name: "origin_country") required List<String>? originCountry,
-      @JsonKey(name: "original_language") required String? originalLanguage,
-      @JsonKey(name: "original_name") required String? originalName,
-      @JsonKey(name: "overview") required String? overview,
-      @JsonKey(name: "poster_path") required String? posterPath,
-      @JsonKey(name: "vote_average") required double? rating}) {
-    return _TvModel(
-      backdropPath: backdropPath,
-      firstAirDate: firstAirDate,
-      genreIds: genreIds,
-      id: id,
-      name: name,
-      originCountry: originCountry,
-      originalLanguage: originalLanguage,
-      originalName: originalName,
-      overview: overview,
-      posterPath: posterPath,
-      rating: rating,
-    );
-  }
-
-  TvModel fromJson(Map<String, Object?> json) {
-    return TvModel.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $TvModel = _$TvModelTearOff();
 
 /// @nodoc
 mixin _$TvModel {
@@ -177,9 +138,10 @@ class _$TvModelCopyWithImpl<$Res> implements $TvModelCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$TvModelCopyWith<$Res> implements $TvModelCopyWith<$Res> {
-  factory _$TvModelCopyWith(_TvModel value, $Res Function(_TvModel) then) =
-      __$TvModelCopyWithImpl<$Res>;
+abstract class _$$_TvModelCopyWith<$Res> implements $TvModelCopyWith<$Res> {
+  factory _$$_TvModelCopyWith(
+          _$_TvModel value, $Res Function(_$_TvModel) then) =
+      __$$_TvModelCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: "backdrop_path") String? backdropPath,
@@ -196,13 +158,13 @@ abstract class _$TvModelCopyWith<$Res> implements $TvModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$TvModelCopyWithImpl<$Res> extends _$TvModelCopyWithImpl<$Res>
-    implements _$TvModelCopyWith<$Res> {
-  __$TvModelCopyWithImpl(_TvModel _value, $Res Function(_TvModel) _then)
-      : super(_value, (v) => _then(v as _TvModel));
+class __$$_TvModelCopyWithImpl<$Res> extends _$TvModelCopyWithImpl<$Res>
+    implements _$$_TvModelCopyWith<$Res> {
+  __$$_TvModelCopyWithImpl(_$_TvModel _value, $Res Function(_$_TvModel) _then)
+      : super(_value, (v) => _then(v as _$_TvModel));
 
   @override
-  _TvModel get _value => super._value as _TvModel;
+  _$_TvModel get _value => super._value as _$_TvModel;
 
   @override
   $Res call({
@@ -218,7 +180,7 @@ class __$TvModelCopyWithImpl<$Res> extends _$TvModelCopyWithImpl<$Res>
     Object? posterPath = freezed,
     Object? rating = freezed,
   }) {
-    return _then(_TvModel(
+    return _then(_$_TvModel(
       backdropPath: backdropPath == freezed
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
@@ -228,7 +190,7 @@ class __$TvModelCopyWithImpl<$Res> extends _$TvModelCopyWithImpl<$Res>
           : firstAirDate // ignore: cast_nullable_to_non_nullable
               as String?,
       genreIds: genreIds == freezed
-          ? _value.genreIds
+          ? _value._genreIds
           : genreIds // ignore: cast_nullable_to_non_nullable
               as List<int>?,
       id: id == freezed
@@ -240,7 +202,7 @@ class __$TvModelCopyWithImpl<$Res> extends _$TvModelCopyWithImpl<$Res>
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
       originCountry: originCountry == freezed
-          ? _value.originCountry
+          ? _value._originCountry
           : originCountry // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       originalLanguage: originalLanguage == freezed
@@ -271,17 +233,30 @@ class __$TvModelCopyWithImpl<$Res> extends _$TvModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_TvModel implements _TvModel {
   const _$_TvModel(
-      {@JsonKey(name: "backdrop_path") required this.backdropPath,
-      @JsonKey(name: "first_air_date") required this.firstAirDate,
-      @JsonKey(name: "genre_ids") required this.genreIds,
-      @JsonKey(name: "id") required this.id,
-      @JsonKey(name: "name") required this.name,
-      @JsonKey(name: "origin_country") required this.originCountry,
-      @JsonKey(name: "original_language") required this.originalLanguage,
-      @JsonKey(name: "original_name") required this.originalName,
-      @JsonKey(name: "overview") required this.overview,
-      @JsonKey(name: "poster_path") required this.posterPath,
-      @JsonKey(name: "vote_average") required this.rating});
+      {@JsonKey(name: "backdrop_path")
+          required this.backdropPath,
+      @JsonKey(name: "first_air_date")
+          required this.firstAirDate,
+      @JsonKey(name: "genre_ids")
+          required final List<int>? genreIds,
+      @JsonKey(name: "id")
+          required this.id,
+      @JsonKey(name: "name")
+          required this.name,
+      @JsonKey(name: "origin_country")
+          required final List<String>? originCountry,
+      @JsonKey(name: "original_language")
+          required this.originalLanguage,
+      @JsonKey(name: "original_name")
+          required this.originalName,
+      @JsonKey(name: "overview")
+          required this.overview,
+      @JsonKey(name: "poster_path")
+          required this.posterPath,
+      @JsonKey(name: "vote_average")
+          required this.rating})
+      : _genreIds = genreIds,
+        _originCountry = originCountry;
 
   factory _$_TvModel.fromJson(Map<String, dynamic> json) =>
       _$$_TvModelFromJson(json);
@@ -292,18 +267,32 @@ class _$_TvModel implements _TvModel {
   @override
   @JsonKey(name: "first_air_date")
   final String? firstAirDate;
+  final List<int>? _genreIds;
   @override
   @JsonKey(name: "genre_ids")
-  final List<int>? genreIds;
+  List<int>? get genreIds {
+    final value = _genreIds;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: "id")
   final int id;
   @override
   @JsonKey(name: "name")
   final String? name;
+  final List<String>? _originCountry;
   @override
   @JsonKey(name: "origin_country")
-  final List<String>? originCountry;
+  List<String>? get originCountry {
+    final value = _originCountry;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: "original_language")
   final String? originalLanguage;
@@ -329,16 +318,16 @@ class _$_TvModel implements _TvModel {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _TvModel &&
+            other is _$_TvModel &&
             const DeepCollectionEquality()
                 .equals(other.backdropPath, backdropPath) &&
             const DeepCollectionEquality()
                 .equals(other.firstAirDate, firstAirDate) &&
-            const DeepCollectionEquality().equals(other.genreIds, genreIds) &&
+            const DeepCollectionEquality().equals(other._genreIds, _genreIds) &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality()
-                .equals(other.originCountry, originCountry) &&
+                .equals(other._originCountry, _originCountry) &&
             const DeepCollectionEquality()
                 .equals(other.originalLanguage, originalLanguage) &&
             const DeepCollectionEquality()
@@ -349,15 +338,16 @@ class _$_TvModel implements _TvModel {
             const DeepCollectionEquality().equals(other.rating, rating));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(backdropPath),
       const DeepCollectionEquality().hash(firstAirDate),
-      const DeepCollectionEquality().hash(genreIds),
+      const DeepCollectionEquality().hash(_genreIds),
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(originCountry),
+      const DeepCollectionEquality().hash(_originCountry),
       const DeepCollectionEquality().hash(originalLanguage),
       const DeepCollectionEquality().hash(originalName),
       const DeepCollectionEquality().hash(overview),
@@ -366,28 +356,41 @@ class _$_TvModel implements _TvModel {
 
   @JsonKey(ignore: true)
   @override
-  _$TvModelCopyWith<_TvModel> get copyWith =>
-      __$TvModelCopyWithImpl<_TvModel>(this, _$identity);
+  _$$_TvModelCopyWith<_$_TvModel> get copyWith =>
+      __$$_TvModelCopyWithImpl<_$_TvModel>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TvModelToJson(this);
+    return _$$_TvModelToJson(
+      this,
+    );
   }
 }
 
 abstract class _TvModel implements TvModel {
   const factory _TvModel(
-      {@JsonKey(name: "backdrop_path") required String? backdropPath,
-      @JsonKey(name: "first_air_date") required String? firstAirDate,
-      @JsonKey(name: "genre_ids") required List<int>? genreIds,
-      @JsonKey(name: "id") required int id,
-      @JsonKey(name: "name") required String? name,
-      @JsonKey(name: "origin_country") required List<String>? originCountry,
-      @JsonKey(name: "original_language") required String? originalLanguage,
-      @JsonKey(name: "original_name") required String? originalName,
-      @JsonKey(name: "overview") required String? overview,
-      @JsonKey(name: "poster_path") required String? posterPath,
-      @JsonKey(name: "vote_average") required double? rating}) = _$_TvModel;
+      {@JsonKey(name: "backdrop_path")
+          required final String? backdropPath,
+      @JsonKey(name: "first_air_date")
+          required final String? firstAirDate,
+      @JsonKey(name: "genre_ids")
+          required final List<int>? genreIds,
+      @JsonKey(name: "id")
+          required final int id,
+      @JsonKey(name: "name")
+          required final String? name,
+      @JsonKey(name: "origin_country")
+          required final List<String>? originCountry,
+      @JsonKey(name: "original_language")
+          required final String? originalLanguage,
+      @JsonKey(name: "original_name")
+          required final String? originalName,
+      @JsonKey(name: "overview")
+          required final String? overview,
+      @JsonKey(name: "poster_path")
+          required final String? posterPath,
+      @JsonKey(name: "vote_average")
+          required final double? rating}) = _$_TvModel;
 
   factory _TvModel.fromJson(Map<String, dynamic> json) = _$_TvModel.fromJson;
 
@@ -426,6 +429,6 @@ abstract class _TvModel implements TvModel {
   double? get rating;
   @override
   @JsonKey(ignore: true)
-  _$TvModelCopyWith<_TvModel> get copyWith =>
+  _$$_TvModelCopyWith<_$_TvModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

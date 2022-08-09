@@ -1,4 +1,4 @@
-package com.example.cinemapranthan
+package com.shijil.cinemapranthan
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -5,5 +5,7 @@ import '../Failures/mainfailure.dart';
 
 abstract class SearchTvRepo {
   Future<Either<MainFailures, List<TvModel>>> searchtv(
-      {required String tvquery});
+
+      {required String tvquery, required int page});
+
 }

@@ -1,15 +1,19 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
+
+
+
 import '../../../../constants/colours/colours.dart';
 
 class BackImage extends StatelessWidget {
   final String imageurl;
+
   const BackImage({Key? key, required this.imageurl}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final double height = MediaQuery.of(context).size.height * 0.6;
+    final double height = MediaQuery.of(context).size.height * 0.7;
     return Container(
       decoration: const BoxDecoration(
           color: grey,
@@ -34,6 +38,8 @@ class BackImage extends StatelessWidget {
               bottomRight: Radius.circular(30.0)),
         ),
       ),
+
+  
     );
   }
 }

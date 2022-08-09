@@ -13,8 +13,9 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> screens = [
-      Movies(),
-      TvShows(),
+    
+      const Movies(),
+      const TvShows(),
       const Favourites(),
       const Settings()
     ];

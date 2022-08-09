@@ -1,5 +1,8 @@
 import 'package:cinemapranthan/backend/Failures/mainfailure.dart';
 import 'package:cinemapranthan/backend/api_key.dart';
+
+import 'package:cinemapranthan/backend/apicall/movies.dart';
+
 import 'package:cinemapranthan/backend/callback/moviedetailrepo.dart';
 import 'package:cinemapranthan/backend/models/moviedetail/moviedetail.dart';
 import 'package:dartz/dartz.dart';
@@ -12,7 +15,9 @@ class MovieDetailRepository implements MovieDetailRepo {
   Future<Either<MainFailures, List<MovieDetail>>> getmoviedetails(
       {required movieparam}) async {
     try {
-      var url = "https://api.themoviedb.org/3/movie/$movieparam?api_key=$api";
+
+      var url = "$moviedetail$movieparam?api_key=$api";
+
       var response = await Dio().get(url);
       if (response.statusCode == 200 || response.statusCode == 201) {
         List<MovieDetail> moviedetailist = [];

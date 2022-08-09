@@ -1,5 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cinemapranthan/ui/screens/detailspane/details.dart';
+
+
+import 'package:cinemapranthan/ui/screens/detailspane/tvdetails.dart';
+
 import 'package:cinemapranthan/utils/navigation.dart';
 import 'package:flutter/material.dart';
 import '../../../constants/colours/colours.dart';
@@ -24,7 +28,12 @@ class MovieSlider extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       splashColor: orange,
-      onTap: () => goto(context, Details(id: id)),
+
+     
+      onTap: () => ismovie
+          ? goto(context, Details(id: id))
+          : goto(context, TvDetails(id: id)),
+
       child: GridTile(
           child: Stack(
         children: [
@@ -33,8 +42,14 @@ class MovieSlider extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20.0),
                 image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: CachedNetworkImageProvider(imageurl))),
+
+
+                    fit: imageurl.isNotEmpty ? BoxFit.cover : BoxFit.scaleDown,
+                    image: imageurl.isNotEmpty
+                        ? CachedNetworkImageProvider(imageurl) as ImageProvider
+                        : const AssetImage(
+                            "assets/images/f0fc1ca20e08d638195b9-removebg-preview.png"))),
+
           ),
           Positioned(
               bottom: 0,

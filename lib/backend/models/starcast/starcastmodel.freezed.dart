@@ -12,22 +12,7 @@ part of 'starcastmodel.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$CastandCrewTearOff {
-  const _$CastandCrewTearOff();
-
-  _CastandCrew call({required List<Cast> cast, required List<Crew> crew}) {
-    return _CastandCrew(
-      cast: cast,
-      crew: crew,
-    );
-  }
-}
-
-/// @nodoc
-const $CastandCrew = _$CastandCrewTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$CastandCrew {
@@ -74,37 +59,37 @@ class _$CastandCrewCopyWithImpl<$Res> implements $CastandCrewCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$CastandCrewCopyWith<$Res>
+abstract class _$$_CastandCrewCopyWith<$Res>
     implements $CastandCrewCopyWith<$Res> {
-  factory _$CastandCrewCopyWith(
-          _CastandCrew value, $Res Function(_CastandCrew) then) =
-      __$CastandCrewCopyWithImpl<$Res>;
+  factory _$$_CastandCrewCopyWith(
+          _$_CastandCrew value, $Res Function(_$_CastandCrew) then) =
+      __$$_CastandCrewCopyWithImpl<$Res>;
   @override
   $Res call({List<Cast> cast, List<Crew> crew});
 }
 
 /// @nodoc
-class __$CastandCrewCopyWithImpl<$Res> extends _$CastandCrewCopyWithImpl<$Res>
-    implements _$CastandCrewCopyWith<$Res> {
-  __$CastandCrewCopyWithImpl(
-      _CastandCrew _value, $Res Function(_CastandCrew) _then)
-      : super(_value, (v) => _then(v as _CastandCrew));
+class __$$_CastandCrewCopyWithImpl<$Res> extends _$CastandCrewCopyWithImpl<$Res>
+    implements _$$_CastandCrewCopyWith<$Res> {
+  __$$_CastandCrewCopyWithImpl(
+      _$_CastandCrew _value, $Res Function(_$_CastandCrew) _then)
+      : super(_value, (v) => _then(v as _$_CastandCrew));
 
   @override
-  _CastandCrew get _value => super._value as _CastandCrew;
+  _$_CastandCrew get _value => super._value as _$_CastandCrew;
 
   @override
   $Res call({
     Object? cast = freezed,
     Object? crew = freezed,
   }) {
-    return _then(_CastandCrew(
+    return _then(_$_CastandCrew(
       cast: cast == freezed
-          ? _value.cast
+          ? _value._cast
           : cast // ignore: cast_nullable_to_non_nullable
               as List<Cast>,
       crew: crew == freezed
-          ? _value.crew
+          ? _value._crew
           : crew // ignore: cast_nullable_to_non_nullable
               as List<Crew>,
     ));
@@ -114,12 +99,24 @@ class __$CastandCrewCopyWithImpl<$Res> extends _$CastandCrewCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_CastandCrew implements _CastandCrew {
-  const _$_CastandCrew({required this.cast, required this.crew});
+  const _$_CastandCrew(
+      {required final List<Cast> cast, required final List<Crew> crew})
+      : _cast = cast,
+        _crew = crew;
 
+  final List<Cast> _cast;
   @override
-  final List<Cast> cast;
+  List<Cast> get cast {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_cast);
+  }
+
+  final List<Crew> _crew;
   @override
-  final List<Crew> crew;
+  List<Crew> get crew {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_crew);
+  }
 
   @override
   String toString() {
@@ -130,26 +127,27 @@ class _$_CastandCrew implements _CastandCrew {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _CastandCrew &&
-            const DeepCollectionEquality().equals(other.cast, cast) &&
-            const DeepCollectionEquality().equals(other.crew, crew));
+            other is _$_CastandCrew &&
+            const DeepCollectionEquality().equals(other._cast, _cast) &&
+            const DeepCollectionEquality().equals(other._crew, _crew));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(cast),
-      const DeepCollectionEquality().hash(crew));
+      const DeepCollectionEquality().hash(_cast),
+      const DeepCollectionEquality().hash(_crew));
 
   @JsonKey(ignore: true)
   @override
-  _$CastandCrewCopyWith<_CastandCrew> get copyWith =>
-      __$CastandCrewCopyWithImpl<_CastandCrew>(this, _$identity);
+  _$$_CastandCrewCopyWith<_$_CastandCrew> get copyWith =>
+      __$$_CastandCrewCopyWithImpl<_$_CastandCrew>(this, _$identity);
 }
 
 abstract class _CastandCrew implements CastandCrew {
   const factory _CastandCrew(
-      {required List<Cast> cast, required List<Crew> crew}) = _$_CastandCrew;
+      {required final List<Cast> cast,
+      required final List<Crew> crew}) = _$_CastandCrew;
 
   @override
   List<Cast> get cast;
@@ -157,42 +155,13 @@ abstract class _CastandCrew implements CastandCrew {
   List<Crew> get crew;
   @override
   @JsonKey(ignore: true)
-  _$CastandCrewCopyWith<_CastandCrew> get copyWith =>
+  _$$_CastandCrewCopyWith<_$_CastandCrew> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 Cast _$CastFromJson(Map<String, dynamic> json) {
   return _Cast.fromJson(json);
 }
-
-/// @nodoc
-class _$CastTearOff {
-  const _$CastTearOff();
-
-  _Cast call(
-      {required int id,
-      required String? name,
-      @JsonKey(name: "original_name") required String? originalName,
-      @JsonKey(name: "profile_path") required String? profilePath,
-      required String? character,
-      @JsonKey(name: "credit_id") required String? creditId}) {
-    return _Cast(
-      id: id,
-      name: name,
-      originalName: originalName,
-      profilePath: profilePath,
-      character: character,
-      creditId: creditId,
-    );
-  }
-
-  Cast fromJson(Map<String, Object?> json) {
-    return Cast.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Cast = _$CastTearOff();
 
 /// @nodoc
 mixin _$Cast {
@@ -271,9 +240,9 @@ class _$CastCopyWithImpl<$Res> implements $CastCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$CastCopyWith<$Res> implements $CastCopyWith<$Res> {
-  factory _$CastCopyWith(_Cast value, $Res Function(_Cast) then) =
-      __$CastCopyWithImpl<$Res>;
+abstract class _$$_CastCopyWith<$Res> implements $CastCopyWith<$Res> {
+  factory _$$_CastCopyWith(_$_Cast value, $Res Function(_$_Cast) then) =
+      __$$_CastCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
@@ -285,13 +254,13 @@ abstract class _$CastCopyWith<$Res> implements $CastCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$CastCopyWithImpl<$Res> extends _$CastCopyWithImpl<$Res>
-    implements _$CastCopyWith<$Res> {
-  __$CastCopyWithImpl(_Cast _value, $Res Function(_Cast) _then)
-      : super(_value, (v) => _then(v as _Cast));
+class __$$_CastCopyWithImpl<$Res> extends _$CastCopyWithImpl<$Res>
+    implements _$$_CastCopyWith<$Res> {
+  __$$_CastCopyWithImpl(_$_Cast _value, $Res Function(_$_Cast) _then)
+      : super(_value, (v) => _then(v as _$_Cast));
 
   @override
-  _Cast get _value => super._value as _Cast;
+  _$_Cast get _value => super._value as _$_Cast;
 
   @override
   $Res call({
@@ -302,7 +271,7 @@ class __$CastCopyWithImpl<$Res> extends _$CastCopyWithImpl<$Res>
     Object? character = freezed,
     Object? creditId = freezed,
   }) {
-    return _then(_Cast(
+    return _then(_$_Cast(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -369,7 +338,7 @@ class _$_Cast implements _Cast {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Cast &&
+            other is _$_Cast &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality()
@@ -380,6 +349,7 @@ class _$_Cast implements _Cast {
             const DeepCollectionEquality().equals(other.creditId, creditId));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -392,23 +362,25 @@ class _$_Cast implements _Cast {
 
   @JsonKey(ignore: true)
   @override
-  _$CastCopyWith<_Cast> get copyWith =>
-      __$CastCopyWithImpl<_Cast>(this, _$identity);
+  _$$_CastCopyWith<_$_Cast> get copyWith =>
+      __$$_CastCopyWithImpl<_$_Cast>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CastToJson(this);
+    return _$$_CastToJson(
+      this,
+    );
   }
 }
 
 abstract class _Cast implements Cast {
   const factory _Cast(
-      {required int id,
-      required String? name,
-      @JsonKey(name: "original_name") required String? originalName,
-      @JsonKey(name: "profile_path") required String? profilePath,
-      required String? character,
-      @JsonKey(name: "credit_id") required String? creditId}) = _$_Cast;
+      {required final int id,
+      required final String? name,
+      @JsonKey(name: "original_name") required final String? originalName,
+      @JsonKey(name: "profile_path") required final String? profilePath,
+      required final String? character,
+      @JsonKey(name: "credit_id") required final String? creditId}) = _$_Cast;
 
   factory _Cast.fromJson(Map<String, dynamic> json) = _$_Cast.fromJson;
 
@@ -429,41 +401,12 @@ abstract class _Cast implements Cast {
   String? get creditId;
   @override
   @JsonKey(ignore: true)
-  _$CastCopyWith<_Cast> get copyWith => throw _privateConstructorUsedError;
+  _$$_CastCopyWith<_$_Cast> get copyWith => throw _privateConstructorUsedError;
 }
 
 Crew _$CrewFromJson(Map<String, dynamic> json) {
   return _Crew.fromJson(json);
 }
-
-/// @nodoc
-class _$CrewTearOff {
-  const _$CrewTearOff();
-
-  _Crew call(
-      {required int id,
-      required String? name,
-      @JsonKey(name: "original_name") required String? originalName,
-      @JsonKey(name: "profile_path") required String? profilePath,
-      @JsonKey(name: "credit_id") required String? creditId,
-      @JsonKey(name: "job") required String? character}) {
-    return _Crew(
-      id: id,
-      name: name,
-      originalName: originalName,
-      profilePath: profilePath,
-      creditId: creditId,
-      character: character,
-    );
-  }
-
-  Crew fromJson(Map<String, Object?> json) {
-    return Crew.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Crew = _$CrewTearOff();
 
 /// @nodoc
 mixin _$Crew {
@@ -543,9 +486,9 @@ class _$CrewCopyWithImpl<$Res> implements $CrewCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$CrewCopyWith<$Res> implements $CrewCopyWith<$Res> {
-  factory _$CrewCopyWith(_Crew value, $Res Function(_Crew) then) =
-      __$CrewCopyWithImpl<$Res>;
+abstract class _$$_CrewCopyWith<$Res> implements $CrewCopyWith<$Res> {
+  factory _$$_CrewCopyWith(_$_Crew value, $Res Function(_$_Crew) then) =
+      __$$_CrewCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
@@ -557,13 +500,13 @@ abstract class _$CrewCopyWith<$Res> implements $CrewCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$CrewCopyWithImpl<$Res> extends _$CrewCopyWithImpl<$Res>
-    implements _$CrewCopyWith<$Res> {
-  __$CrewCopyWithImpl(_Crew _value, $Res Function(_Crew) _then)
-      : super(_value, (v) => _then(v as _Crew));
+class __$$_CrewCopyWithImpl<$Res> extends _$CrewCopyWithImpl<$Res>
+    implements _$$_CrewCopyWith<$Res> {
+  __$$_CrewCopyWithImpl(_$_Crew _value, $Res Function(_$_Crew) _then)
+      : super(_value, (v) => _then(v as _$_Crew));
 
   @override
-  _Crew get _value => super._value as _Crew;
+  _$_Crew get _value => super._value as _$_Crew;
 
   @override
   $Res call({
@@ -574,7 +517,7 @@ class __$CrewCopyWithImpl<$Res> extends _$CrewCopyWithImpl<$Res>
     Object? creditId = freezed,
     Object? character = freezed,
   }) {
-    return _then(_Crew(
+    return _then(_$_Crew(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -642,7 +585,7 @@ class _$_Crew implements _Crew {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Crew &&
+            other is _$_Crew &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality()
@@ -653,6 +596,7 @@ class _$_Crew implements _Crew {
             const DeepCollectionEquality().equals(other.character, character));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -665,23 +609,25 @@ class _$_Crew implements _Crew {
 
   @JsonKey(ignore: true)
   @override
-  _$CrewCopyWith<_Crew> get copyWith =>
-      __$CrewCopyWithImpl<_Crew>(this, _$identity);
+  _$$_CrewCopyWith<_$_Crew> get copyWith =>
+      __$$_CrewCopyWithImpl<_$_Crew>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CrewToJson(this);
+    return _$$_CrewToJson(
+      this,
+    );
   }
 }
 
 abstract class _Crew implements Crew {
   const factory _Crew(
-      {required int id,
-      required String? name,
-      @JsonKey(name: "original_name") required String? originalName,
-      @JsonKey(name: "profile_path") required String? profilePath,
-      @JsonKey(name: "credit_id") required String? creditId,
-      @JsonKey(name: "job") required String? character}) = _$_Crew;
+      {required final int id,
+      required final String? name,
+      @JsonKey(name: "original_name") required final String? originalName,
+      @JsonKey(name: "profile_path") required final String? profilePath,
+      @JsonKey(name: "credit_id") required final String? creditId,
+      @JsonKey(name: "job") required final String? character}) = _$_Crew;
 
   factory _Crew.fromJson(Map<String, dynamic> json) = _$_Crew.fromJson;
 
@@ -703,5 +649,5 @@ abstract class _Crew implements Crew {
   String? get character;
   @override
   @JsonKey(ignore: true)
-  _$CrewCopyWith<_Crew> get copyWith => throw _privateConstructorUsedError;
+  _$$_CrewCopyWith<_$_Crew> get copyWith => throw _privateConstructorUsedError;
 }

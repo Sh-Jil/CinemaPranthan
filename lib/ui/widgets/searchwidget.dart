@@ -1,8 +1,12 @@
-import 'package:cinemapranthan/ui/widgets/searchscreen.dart';
+
 import 'package:cinemapranthan/utils/navigation.dart';
 import 'package:flutter/material.dart';
 import '../../../constants/Icons/appicons.dart';
 import '../../../constants/colours/colours.dart';
+
+import 'package:cinemapranthan/ui/screens/search/searchscreen.dart';
+import '../../constants/Icons/appicons.dart';
+import '../../constants/colours/colours.dart';
 
 class SearchBar extends StatelessWidget {
   final bool ismovie;

@@ -8,17 +8,25 @@ import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: SearchTvRepo)
 class SearchTvRepository implements SearchTvRepo {
+
+  List<TvModel> searchtvlist = [];
   @override
   Future<Either<MainFailures, List<TvModel>>> searchtv(
-      {required String tvquery}) async {
+      {required String tvquery, required int page}) async {
     try {
-      var response =
-          await Dio().get(searchtvurl, queryParameters: {'query': tvquery});
+      var response = await Dio()
+          .get(searchtvurl, queryParameters: {'query': tvquery, 'page': page});
       if (response.statusCode == 200 || response.statusCode == 201) {
-        final List<TvModel> searchtvlist =
-            (response.data['results'] as List).map((e) {
-          return TvModel.fromJson(e);
-        }).toList();
+        if (page == 1) {
+          searchtvlist = (response.data['results'] as List).map((e) {
+            return TvModel.fromJson(e);
+          }).toList();
+        } else {
+          searchtvlist.addAll((response.data['results'] as List).map((e) {
+            return TvModel.fromJson(e);
+          }).toList());
+        }
+
         return Right(searchtvlist);
       } else {
         return left(const MainFailures.serverFailure());

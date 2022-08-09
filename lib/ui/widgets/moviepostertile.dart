@@ -1,8 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cinemapranthan/ui/screens/detailspane/details.dart';
+
 import 'package:cinemapranthan/utils/navigation.dart';
 import 'package:flutter/material.dart';
 import '../../../constants/Icons/appicons.dart';
+
+import 'package:cinemapranthan/ui/screens/detailspane/tvdetails.dart';
+
 import '../../../constants/colours/colours.dart';
 import 'glasscontainer.dart';
 
@@ -11,28 +15,33 @@ class MoviePosterTile extends StatelessWidget {
   final String rating;
   final int index;
   final String backimage;
-  final String posterimage;
-  final String overview;
   final int id;
+  final bool ismovie;
+
   const MoviePosterTile(
       {super.key,
       required this.moviename,
       required this.rating,
       required this.index,
       required this.backimage,
-      required this.posterimage,
-      required this.overview,
-      required this.id});
+      required this.id,
+      required this.ismovie});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       splashColor: orange,
-      onTap: () => goto(
-          context,
-          Details(
-            id: id,
-          )),
+      onTap: () => ismovie
+          ? goto(
+              context,
+              Details(
+                id: id,
+              ))
+          : goto(
+              context,
+              TvDetails(
+                id: id,
+              )),
       child: Stack(
         children: [
           Container(
@@ -64,8 +73,11 @@ class MoviePosterTile extends StatelessWidget {
                 shape: BoxShape.rectangle,
                 borderRadius: const BorderRadius.all(Radius.circular(40.0)),
                 image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: CachedNetworkImageProvider(backimage))),
+                    fit: backimage.isNotEmpty ? BoxFit.cover : BoxFit.scaleDown,
+                    image: backimage.isNotEmpty
+                        ? CachedNetworkImageProvider(backimage) as ImageProvider
+                        : const AssetImage(
+                            "assets/images/f0fc1ca20e08d638195b9-removebg-preview.png"))),
           ),
           Positioned(
             top: 16.0,
@@ -118,7 +130,7 @@ class MoviePosterTile extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.7,
+                            width: MediaQuery.of(context).size.width * 0.8,
                             child: Text(
                               moviename,
                               overflow: TextOverflow.fade,
@@ -154,22 +166,6 @@ class MoviePosterTile extends StatelessWidget {
                             ],
                           )
                         ],
-                      ),
-                      GlassContainer(
-                        padding: const EdgeInsets.all(4.0),
-                        blurPower: 5.0,
-                        isRectangle: false,
-                        gradientColors: [
-                          white.withOpacity(0.1),
-                          Colors.white10.withOpacity(0.1)
-                        ],
-                        child: FloatingActionButton.small(
-                          heroTag: null,
-                          elevation: 0,
-                          backgroundColor: white,
-                          child: AppIcons.play,
-                          onPressed: () {},
-                        ),
                       ),
                     ],
                   ),

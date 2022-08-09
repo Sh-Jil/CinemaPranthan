@@ -13,11 +13,16 @@ class BackPic extends StatelessWidget {
       children: [
         SizedBox(
           height: height,
-          child: CachedNetworkImage(
-            fit: BoxFit.cover,
-            imageUrl: imageurl,
-            errorWidget: (context, url, error) => const Icon(Icons.error),
-          ),
+          
+          child: imageurl.isNotEmpty
+              ? CachedNetworkImage(
+                  fit: BoxFit.cover,
+                  imageUrl: imageurl,
+                  errorWidget: (context, url, error) => const Icon(Icons.error))
+              : Image.asset(
+                  "assets/images/f0fc1ca20e08d638195b9-removebg-preview.png",
+                  fit: BoxFit.scaleDown,
+                ),
         ),
         Positioned(
             left: 0,

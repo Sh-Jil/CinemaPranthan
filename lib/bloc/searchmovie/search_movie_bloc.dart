@@ -1,5 +1,6 @@
 // ignore_for_file: depend_on_referenced_packages
 
+
 import 'package:bloc/bloc.dart';
 import 'package:cinemapranthan/backend/callback/searchmovierepo.dart';
 import 'package:dartz/dartz.dart';
@@ -18,7 +19,10 @@ class SearchMovieBloc extends Bloc<SearchMovieEvent, SearchMovieState> {
   SearchMovieBloc(this.searchmovierepo) : super(SearchMovieState.initial()) {
     on<SearchMovieEvent>((event, emit) async {
       final Either<MainFailures, List<MovieModel>> result =
-          await searchmovierepo.searchmovie(moviequery: event.moviequery);
+
+      await searchmovierepo.searchmovie(
+          moviequery: event.moviequery, page: event.page);
+      /*  log(result.toString()); */
 
       emit(result.fold(
           (failure) =>

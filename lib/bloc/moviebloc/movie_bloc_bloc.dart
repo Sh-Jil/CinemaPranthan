@@ -39,7 +39,8 @@ class PopularMovieBloc extends Bloc<MovieEvent, PopularMoviestate> {
     on<_Getpopular>((event, emit) async {
       emit(state.copyWith(isLoading: true, options: const None()));
       final Either<MainFailures, List<MovieModel>> popularmov =
-          await movieRepo.getpopular();
+      await movieRepo.getpopular(page: event.page);
+
       emit(popularmov.fold(
           (failure) =>
               state.copyWith(isLoading: false, options: Some(Left(failure))),
@@ -58,7 +59,8 @@ class NowplayingMovieBloc extends Bloc<MovieEvent, NowplayingState> {
     on<_Getnowplaying>((event, emit) async {
       emit(state.copyWith(isLoading: true, options: const None()));
       final Either<MainFailures, List<MovieModel>> nowplayingmov =
-          await movieRepo.getnowplaying();
+      await movieRepo.getnowplaying(page: event.page);
+
       emit(nowplayingmov.fold(
           (failure) =>
               state.copyWith(isLoading: false, options: Some(Left(failure))),
@@ -77,7 +79,8 @@ class UpcomingMovieBloc extends Bloc<MovieEvent, UpcomingState> {
     on<_Getupcoming>((event, emit) async {
       emit(state.copyWith(isLoading: true, options: const None()));
       final Either<MainFailures, List<MovieModel>> upcomingmov =
-          await movieRepo.getupcoming();
+      await movieRepo.getupcoming(page: event.page);
+
       emit(upcomingmov.fold(
           (failure) =>
               state.copyWith(isLoading: false, options: Some(Left(failure))),
@@ -96,7 +99,8 @@ class TopRatedmovieBloc extends Bloc<MovieEvent, TopratedState> {
     on<_Gettoprated>((event, emit) async {
       emit(state.copyWith(isLoading: true, options: const None()));
       final Either<MainFailures, List<MovieModel>> topratedmov =
-          await movieRepo.gettoprated();
+      await movieRepo.gettoprated(page: event.page);
+
       emit(topratedmov.fold(
           (failure) =>
               state.copyWith(isLoading: false, options: Some(Left(failure))),

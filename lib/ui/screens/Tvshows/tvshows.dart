@@ -1,5 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cinemapranthan/bloc/tvbloc/tvbloc_bloc.dart';
+
+import 'package:cinemapranthan/ui/screens/Tvshows/widgets/airingtoday.dart';
+import 'package:cinemapranthan/ui/screens/Tvshows/widgets/ontv.dart';
+import 'package:cinemapranthan/ui/screens/Tvshows/widgets/popular.dart';
+import 'package:cinemapranthan/ui/screens/Tvshows/widgets/toprated.dart';
+
 import 'package:cinemapranthan/ui/widgets/tileheading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,26 +15,24 @@ import '../../../constants/Icons/appicons.dart';
 import '../../../constants/colours/colours.dart';
 import '../../widgets/aboutdialog.dart';
 import '../../widgets/moviepostertile.dart';
-import '../../widgets/movietilelist.dart';
 import '../../widgets/searchwidget.dart';
 import '../../widgets/sidesheet.dart';
 
 class TvShows extends StatelessWidget {
-  TvShows({Key? key}) : super(key: key);
-
-  final List<String> tvcat = ["Popular", "Airing Today", "On Tv", "Top Rated"];
+  const TvShows({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback(((_) {
       BlocProvider.of<TvblocBloc>(context).add(const TvblocEvent.getlatesttv());
       BlocProvider.of<PopulartvBloc>(context)
-          .add(const TvblocEvent.getpopulartv());
+          .add(const TvblocEvent.getpopulartv(page: 1));
       BlocProvider.of<AiringTodayBloc>(context)
-          .add(const TvblocEvent.getairingtoday());
-      BlocProvider.of<OnTVBloc>(context).add(const TvblocEvent.getontv());
+          .add(const TvblocEvent.getairingtoday(page: 1));
+      BlocProvider.of<OnTVBloc>(context)
+          .add(const TvblocEvent.getontv(page: 1));
       BlocProvider.of<TopratedTvBloc>(context)
-          .add(const TvblocEvent.gettopratedtv());
+          .add(const TvblocEvent.gettopratedtv(page: 1));
     }));
     return SafeArea(
         child: NestedScrollView(
@@ -54,9 +58,9 @@ class TvShows extends StatelessWidget {
                         icon: const Icon(
                           AppIcons.notification,
                         )),
-                    IconButton(
+                    /*  IconButton(
                         onPressed: () => about(context),
-                        icon: const Icon(AppIcons.more_svgrepo_com))
+                        icon: const Icon(AppIcons.more_svgrepo_com)) */
                   ],
                   bottom: const PreferredSize(
                       preferredSize: Size(double.infinity, 10),
@@ -82,17 +86,18 @@ class TvShows extends StatelessWidget {
                                 int pageViewIndex) {
                               return Center(
                                 child: MoviePosterTile(
-                                  overview:
-                                      state.tvshows[itemIndex].overview ?? "__",
+                                  key: UniqueKey(),
+                                  ismovie: false,
                                   id: state.tvshows[itemIndex].id,
                                   moviename:
                                       state.tvshows[itemIndex].name ?? '_',
                                   rating: state.tvshows[itemIndex].rating!
                                       .toStringAsFixed(1),
-                                  backimage:
-                                      "$backdrophead${state.tvshows[itemIndex].backdropPath}",
-                                  posterimage:
-                                      "$backdrophead${state.tvshows[itemIndex].posterPath}",
+                                  backimage: state.tvshows[itemIndex]
+                                              .backdropPath !=
+                                          null
+                                      ? "$backdrophead${state.tvshows[itemIndex].backdropPath}"
+                                      : "",
                                   index: itemIndex,
                                 ),
                               );
@@ -114,132 +119,16 @@ class TvShows extends StatelessWidget {
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        TileHeading(heading: tvcat[0]),
+                        const TileHeading(heading: "Popular"),
+                        const PopularTvScreen(),
+                        const TileHeading(heading: "Airing Today"),
+                        const AiringTodayTvScreen(),
+                        const TileHeading(heading: "On TV"),
+                        const OnTvScreen(),
+                        const TileHeading(heading: "Top Rated"),
+                        const TopratedTvScreen(),
                         SizedBox(
-                          height: 200,
-                          child: BlocBuilder<PopulartvBloc, PopularTvState>(
-                            builder: (context, state) {
-                              return state.isLoading
-                                  ? const Center(
-                                      child: CircularProgressIndicator(
-                                      color: orange,
-                                    ))
-                                  : ListView.builder(
-                                      itemCount: state.tvshows.length,
-                                      padding: const EdgeInsets.all(16.0),
-                                      shrinkWrap: true,
-                                      scrollDirection: Axis.horizontal,
-                                      itemBuilder: (context, index) {
-                                        return MovieTileList(
-                                          id: state.tvshows[index].id,
-                                          ismovie: false,
-                                          heading:
-                                              state.tvshows[index].name ?? '_',
-                                          rating: state.tvshows[index].rating!
-                                              .toStringAsFixed(1),
-                                          imageurl:
-                                              "$backdrophead${state.tvshows[index].posterPath}",
-                                        );
-                                      },
-                                    );
-                            },
-                          ),
-                        ),
-                        TileHeading(heading: tvcat[1]),
-                        SizedBox(
-                          height: 200,
-                          child: BlocBuilder<AiringTodayBloc, AiringtodayState>(
-                            builder: (context, state) {
-                              return state.isLoading
-                                  ? const Center(
-                                      child: CircularProgressIndicator(
-                                      color: orange,
-                                    ))
-                                  : ListView.builder(
-                                      itemCount: state.tvshows.length,
-                                      padding: const EdgeInsets.all(16.0),
-                                      shrinkWrap: true,
-                                      scrollDirection: Axis.horizontal,
-                                      itemBuilder: (context, index) {
-                                        return MovieTileList(
-                                          id: state.tvshows[index].id,
-                                          ismovie: false,
-                                          heading:
-                                              state.tvshows[index].name ?? '_',
-                                          rating: state.tvshows[index].rating!
-                                              .toStringAsFixed(1),
-                                          imageurl:
-                                              "$backdrophead${state.tvshows[index].posterPath}",
-                                        );
-                                      },
-                                    );
-                            },
-                          ),
-                        ),
-                        TileHeading(heading: tvcat[2]),
-                        SizedBox(
-                          height: 200,
-                          child: BlocBuilder<OnTVBloc, OnTvSTate>(
-                            builder: (context, state) {
-                              return state.isLoading
-                                  ? const Center(
-                                      child: CircularProgressIndicator(
-                                      color: orange,
-                                    ))
-                                  : ListView.builder(
-                                      itemCount: state.tvshows.length,
-                                      padding: const EdgeInsets.all(16.0),
-                                      shrinkWrap: true,
-                                      scrollDirection: Axis.horizontal,
-                                      itemBuilder: (context, index) {
-                                        return MovieTileList(
-                                          id: state.tvshows[index].id,
-                                          ismovie: false,
-                                          heading:
-                                              state.tvshows[index].name ?? '_',
-                                          rating: state.tvshows[index].rating!
-                                              .toStringAsFixed(1),
-                                          imageurl:
-                                              "$backdrophead${state.tvshows[index].posterPath}",
-                                        );
-                                      },
-                                    );
-                            },
-                          ),
-                        ),
-                        TileHeading(heading: tvcat[3]),
-                        SizedBox(
-                          height: 200,
-                          child: BlocBuilder<TopratedTvBloc, TopratedTvState>(
-                            builder: (context, state) {
-                              return state.isLoading
-                                  ? const Center(
-                                      child: CircularProgressIndicator(
-                                      color: orange,
-                                    ))
-                                  : ListView.builder(
-                                      itemCount: state.tvshows.length,
-                                      padding: const EdgeInsets.all(16.0),
-                                      shrinkWrap: true,
-                                      scrollDirection: Axis.horizontal,
-                                      itemBuilder: (context, index) {
-                                        return MovieTileList(
-                                          id: state.tvshows[index].id,
-                                          ismovie: false,
-                                          heading:
-                                              state.tvshows[index].name ?? '_',
-                                          rating: state.tvshows[index].rating!
-                                              .toStringAsFixed(1),
-                                          imageurl:
-                                              "$backdrophead${state.tvshows[index].posterPath}",
-                                        );
-                                      },
-                                    );
-                            },
-                          ),
-                        ),
-                        SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.1)
+                            height: MediaQuery.of(context).size.height * 0.2)
                       ],
                     );
                   }, childCount: 1),

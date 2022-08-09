@@ -4,8 +4,13 @@ import 'package:dartz/dartz.dart';
 
 abstract class MovieRepo {
   Future<Either<MainFailures, List<MovieModel>>> gettrendingmovie();
-  Future<Either<MainFailures, List<MovieModel>>> getpopular();
-  Future<Either<MainFailures, List<MovieModel>>> getupcoming();
-  Future<Either<MainFailures, List<MovieModel>>> getnowplaying();
-  Future<Either<MainFailures, List<MovieModel>>> gettoprated();
+
+  Future<Either<MainFailures, List<MovieModel>>> getpopular(
+      {required int page});
+  Future<Either<MainFailures, List<MovieModel>>> getupcoming(
+      {required int page});
+  Future<Either<MainFailures, List<MovieModel>>> getnowplaying(
+      {required int page});
+  Future<Either<MainFailures, List<MovieModel>>> gettoprated(
+      {required int page});
 }

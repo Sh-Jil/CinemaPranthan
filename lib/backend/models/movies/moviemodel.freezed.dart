@@ -12,50 +12,11 @@ part of 'moviemodel.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 MovieModel _$MovieModelFromJson(Map<String, dynamic> json) {
   return _TrendingMovie.fromJson(json);
 }
-
-/// @nodoc
-class _$MovieModelTearOff {
-  const _$MovieModelTearOff();
-
-  _TrendingMovie call(
-      {@JsonKey(name: "backdrop_path") required String? backdropPath,
-      @JsonKey(name: "adult") required bool isadult,
-      @JsonKey(name: "genre_ids") required List<int>? genreid,
-      @JsonKey(name: "id") required int? movieid,
-      @JsonKey(name: "title") required String? title,
-      @JsonKey(name: "name") required String? name,
-      @JsonKey(name: "original_language") required String? language,
-      @JsonKey(name: "overview") required String? overview,
-      @JsonKey(name: "poster_path") required String? posterPath,
-      @JsonKey(name: "release_date") required String? releasedate,
-      @JsonKey(name: "vote_average") required double? rating}) {
-    return _TrendingMovie(
-      backdropPath: backdropPath,
-      isadult: isadult,
-      genreid: genreid,
-      movieid: movieid,
-      title: title,
-      name: name,
-      language: language,
-      overview: overview,
-      posterPath: posterPath,
-      releasedate: releasedate,
-      rating: rating,
-    );
-  }
-
-  MovieModel fromJson(Map<String, Object?> json) {
-    return MovieModel.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $MovieModel = _$MovieModelTearOff();
 
 /// @nodoc
 mixin _$MovieModel {
@@ -179,11 +140,11 @@ class _$MovieModelCopyWithImpl<$Res> implements $MovieModelCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$TrendingMovieCopyWith<$Res>
+abstract class _$$_TrendingMovieCopyWith<$Res>
     implements $MovieModelCopyWith<$Res> {
-  factory _$TrendingMovieCopyWith(
-          _TrendingMovie value, $Res Function(_TrendingMovie) then) =
-      __$TrendingMovieCopyWithImpl<$Res>;
+  factory _$$_TrendingMovieCopyWith(
+          _$_TrendingMovie value, $Res Function(_$_TrendingMovie) then) =
+      __$$_TrendingMovieCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: "backdrop_path") String? backdropPath,
@@ -200,14 +161,15 @@ abstract class _$TrendingMovieCopyWith<$Res>
 }
 
 /// @nodoc
-class __$TrendingMovieCopyWithImpl<$Res> extends _$MovieModelCopyWithImpl<$Res>
-    implements _$TrendingMovieCopyWith<$Res> {
-  __$TrendingMovieCopyWithImpl(
-      _TrendingMovie _value, $Res Function(_TrendingMovie) _then)
-      : super(_value, (v) => _then(v as _TrendingMovie));
+class __$$_TrendingMovieCopyWithImpl<$Res>
+    extends _$MovieModelCopyWithImpl<$Res>
+    implements _$$_TrendingMovieCopyWith<$Res> {
+  __$$_TrendingMovieCopyWithImpl(
+      _$_TrendingMovie _value, $Res Function(_$_TrendingMovie) _then)
+      : super(_value, (v) => _then(v as _$_TrendingMovie));
 
   @override
-  _TrendingMovie get _value => super._value as _TrendingMovie;
+  _$_TrendingMovie get _value => super._value as _$_TrendingMovie;
 
   @override
   $Res call({
@@ -223,7 +185,7 @@ class __$TrendingMovieCopyWithImpl<$Res> extends _$MovieModelCopyWithImpl<$Res>
     Object? releasedate = freezed,
     Object? rating = freezed,
   }) {
-    return _then(_TrendingMovie(
+    return _then(_$_TrendingMovie(
       backdropPath: backdropPath == freezed
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
@@ -233,7 +195,7 @@ class __$TrendingMovieCopyWithImpl<$Res> extends _$MovieModelCopyWithImpl<$Res>
           : isadult // ignore: cast_nullable_to_non_nullable
               as bool,
       genreid: genreid == freezed
-          ? _value.genreid
+          ? _value._genreid
           : genreid // ignore: cast_nullable_to_non_nullable
               as List<int>?,
       movieid: movieid == freezed
@@ -278,7 +240,7 @@ class _$_TrendingMovie implements _TrendingMovie {
   const _$_TrendingMovie(
       {@JsonKey(name: "backdrop_path") required this.backdropPath,
       @JsonKey(name: "adult") required this.isadult,
-      @JsonKey(name: "genre_ids") required this.genreid,
+      @JsonKey(name: "genre_ids") required final List<int>? genreid,
       @JsonKey(name: "id") required this.movieid,
       @JsonKey(name: "title") required this.title,
       @JsonKey(name: "name") required this.name,
@@ -286,7 +248,8 @@ class _$_TrendingMovie implements _TrendingMovie {
       @JsonKey(name: "overview") required this.overview,
       @JsonKey(name: "poster_path") required this.posterPath,
       @JsonKey(name: "release_date") required this.releasedate,
-      @JsonKey(name: "vote_average") required this.rating});
+      @JsonKey(name: "vote_average") required this.rating})
+      : _genreid = genreid;
 
   factory _$_TrendingMovie.fromJson(Map<String, dynamic> json) =>
       _$$_TrendingMovieFromJson(json);
@@ -297,9 +260,16 @@ class _$_TrendingMovie implements _TrendingMovie {
   @override
   @JsonKey(name: "adult")
   final bool isadult;
+  final List<int>? _genreid;
   @override
   @JsonKey(name: "genre_ids")
-  final List<int>? genreid;
+  List<int>? get genreid {
+    final value = _genreid;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: "id")
   final int? movieid;
@@ -334,11 +304,11 @@ class _$_TrendingMovie implements _TrendingMovie {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _TrendingMovie &&
+            other is _$_TrendingMovie &&
             const DeepCollectionEquality()
                 .equals(other.backdropPath, backdropPath) &&
             const DeepCollectionEquality().equals(other.isadult, isadult) &&
-            const DeepCollectionEquality().equals(other.genreid, genreid) &&
+            const DeepCollectionEquality().equals(other._genreid, _genreid) &&
             const DeepCollectionEquality().equals(other.movieid, movieid) &&
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.name, name) &&
@@ -351,12 +321,13 @@ class _$_TrendingMovie implements _TrendingMovie {
             const DeepCollectionEquality().equals(other.rating, rating));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(backdropPath),
       const DeepCollectionEquality().hash(isadult),
-      const DeepCollectionEquality().hash(genreid),
+      const DeepCollectionEquality().hash(_genreid),
       const DeepCollectionEquality().hash(movieid),
       const DeepCollectionEquality().hash(title),
       const DeepCollectionEquality().hash(name),
@@ -368,28 +339,30 @@ class _$_TrendingMovie implements _TrendingMovie {
 
   @JsonKey(ignore: true)
   @override
-  _$TrendingMovieCopyWith<_TrendingMovie> get copyWith =>
-      __$TrendingMovieCopyWithImpl<_TrendingMovie>(this, _$identity);
+  _$$_TrendingMovieCopyWith<_$_TrendingMovie> get copyWith =>
+      __$$_TrendingMovieCopyWithImpl<_$_TrendingMovie>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TrendingMovieToJson(this);
+    return _$$_TrendingMovieToJson(
+      this,
+    );
   }
 }
 
 abstract class _TrendingMovie implements MovieModel {
   const factory _TrendingMovie(
-          {@JsonKey(name: "backdrop_path") required String? backdropPath,
-          @JsonKey(name: "adult") required bool isadult,
-          @JsonKey(name: "genre_ids") required List<int>? genreid,
-          @JsonKey(name: "id") required int? movieid,
-          @JsonKey(name: "title") required String? title,
-          @JsonKey(name: "name") required String? name,
-          @JsonKey(name: "original_language") required String? language,
-          @JsonKey(name: "overview") required String? overview,
-          @JsonKey(name: "poster_path") required String? posterPath,
-          @JsonKey(name: "release_date") required String? releasedate,
-          @JsonKey(name: "vote_average") required double? rating}) =
+          {@JsonKey(name: "backdrop_path") required final String? backdropPath,
+          @JsonKey(name: "adult") required final bool isadult,
+          @JsonKey(name: "genre_ids") required final List<int>? genreid,
+          @JsonKey(name: "id") required final int? movieid,
+          @JsonKey(name: "title") required final String? title,
+          @JsonKey(name: "name") required final String? name,
+          @JsonKey(name: "original_language") required final String? language,
+          @JsonKey(name: "overview") required final String? overview,
+          @JsonKey(name: "poster_path") required final String? posterPath,
+          @JsonKey(name: "release_date") required final String? releasedate,
+          @JsonKey(name: "vote_average") required final double? rating}) =
       _$_TrendingMovie;
 
   factory _TrendingMovie.fromJson(Map<String, dynamic> json) =
@@ -430,6 +403,6 @@ abstract class _TrendingMovie implements MovieModel {
   double? get rating;
   @override
   @JsonKey(ignore: true)
-  _$TrendingMovieCopyWith<_TrendingMovie> get copyWith =>
+  _$$_TrendingMovieCopyWith<_$_TrendingMovie> get copyWith =>
       throw _privateConstructorUsedError;
 }

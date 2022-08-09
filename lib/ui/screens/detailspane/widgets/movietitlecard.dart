@@ -1,28 +1,34 @@
-import 'package:cinemapranthan/backend/models/moviedetail/moviedetail.dart';
 import 'package:flutter/material.dart';
 import '../../../../constants/colours/colours.dart';
+
+import '../../../../constants/languages.dart';
+
 import 'moviename.dart';
 
 class MovieTitleCard extends StatelessWidget {
   final String heading;
-  final List<Genre> genre;
+
+  final List<dynamic> genre;
   final String rating;
   final String year;
   final String runtime;
+  final String language;
+
   const MovieTitleCard(
       {Key? key,
       required this.heading,
       required this.genre,
       required this.rating,
       required this.year,
-      required this.runtime})
+      required this.runtime,
+      required this.language})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final genres = [];
     for (var element in genre) {
-      genres.add(element.name);
+      genres.add(element['name']);
     }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,31 +63,44 @@ class MovieTitleCard extends StatelessWidget {
                 const SizedBox(
                   height: 18.0,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "⭐ $rating",
-                      style: const TextStyle(
-                          color: grey, fontSize: 16.0, letterSpacing: 1.5),
-                    ),
-                    const SizedBox(
-                      width: 20.0,
-                    ),
-                    Text(
-                      "📆 $year",
-                      style: const TextStyle(
-                          color: grey, fontSize: 16.0, letterSpacing: 1.5),
-                    ),
-                    const SizedBox(
-                      width: 20.0,
-                    ),
-                    Text(
-                      "⏰ $runtime",
-                      style: const TextStyle(
-                          color: grey, fontSize: 16.0, letterSpacing: 1.5),
-                    ),
-                  ],
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "⭐ $rating",
+                        style: const TextStyle(
+                            color: grey, fontSize: 16.0, letterSpacing: 1.5),
+                      ),
+                      Text(
+                        "📆 $year",
+                        style: const TextStyle(
+                            color: grey, fontSize: 16.0, letterSpacing: 1.5),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 18.0,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "📖 ${languages[language]}",
+                        style: const TextStyle(
+                            color: grey, fontSize: 16.0, letterSpacing: 1.5),
+                      ),
+                      Text(
+                        "⏰ $runtime",
+                        style: const TextStyle(
+                            color: grey, fontSize: 16.0, letterSpacing: 1.5),
+                      ),
+                    ],
+                  ),
                 ),
                 const SizedBox(
                   height: 18.0,

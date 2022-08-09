@@ -1,4 +1,10 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+
+import 'package:cinemapranthan/bloc/auth/auth_bloc.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../constants/colours/colours.dart';
 import '../../utils/navigation.dart';
 
@@ -7,6 +13,8 @@ class SideDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser;
+
     return Container(
       color: darkColour,
       child: SafeArea(
@@ -36,32 +44,41 @@ class SideDrawer extends StatelessWidget {
                     padding: EdgeInsets.symmetric(
                         vertical: MediaQuery.of(context).size.height * 0.025),
                     child: CircleAvatar(
+                      backgroundImage:
+                          CachedNetworkImageProvider(user!.photoURL!),
                       radius: MediaQuery.of(context).size.width * 0.1,
                     ),
                   )),
-                  const Text(
-                    "Person Name",
-                    style: TextStyle(
+                  Text(
+                    user.displayName ?? "",
+                    style: const TextStyle(
                         color: white,
                         fontSize: 20.0,
                         letterSpacing: 1.5,
                         fontWeight: FontWeight.bold),
                   ),
                   const Expanded(child: SizedBox.shrink()),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.7,
-                    child: const ListTile(
-                      leading: Icon(
-                        Icons.logout_outlined,
-                        color: white,
-                      ),
-                      title: Text(
-                        "Log Out",
-                        style: TextStyle(
-                            color: white,
-                            fontSize: 17.0,
-                            letterSpacing: 1.0,
-                            fontWeight: FontWeight.w500),
+                  InkWell(
+                    onTap: () {
+                      BlocProvider.of<AuthBloc>(context)
+                          .add(const AuthEvent.signout());
+                      goback(context);
+                    },
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.7,
+                      child: const ListTile(
+                        leading: Icon(
+                          Icons.logout_outlined,
+                          color: white,
+                        ),
+                        title: Text(
+                          "Log Out",
+                          style: TextStyle(
+                              color: white,
+                              fontSize: 17.0,
+                              letterSpacing: 1.0,
+                              fontWeight: FontWeight.w500),
+                        ),
                       ),
                     ),
                   ),

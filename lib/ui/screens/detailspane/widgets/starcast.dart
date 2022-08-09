@@ -25,9 +25,11 @@ class StarCast extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemBuilder: ((context, index) {
               return Listtiles(
+                 
+                  personid: liste[index].id.toString(),
                   imageurl: liste[index].profilePath == null
                       ? ""
-                      : "$backdrophead${liste[index].profilePath}",
+                      : "$profilepic${liste[index].profilePath}",
                   title: liste[index].name,
                   subtitle: liste[index].character ?? "_");
             }),
