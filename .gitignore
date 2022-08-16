@@ -112,4 +112,8 @@ android/app/google-services.json
 
 
 android/key.properties
+<<<<<<< HEAD
 android/app/key/
+=======
+android/app/key/upload-keystore.jks
+>>>>>>> da15eac (final commit)
