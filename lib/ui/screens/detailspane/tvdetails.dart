@@ -1,3 +1,4 @@
+import 'package:cinemapranthan/bloc/Images/poster_images_bloc.dart';
 import 'package:cinemapranthan/bloc/castcrew/cast_crew_bloc.dart';
 import 'package:cinemapranthan/bloc/favourites/favourite_bloc.dart';
 import 'package:cinemapranthan/bloc/tvdetail/tv_detail_bloc.dart';
@@ -13,6 +14,7 @@ import '../../../backend/db/dboperations.dart';
 import '../../../backend/models/favourites/favmodel.dart';
 import '../../../constants/Icons/appicons.dart';
 import '../../../constants/colours/colours.dart';
+import '../../../utils/date.dart';
 import '../../../utils/navigation.dart';
 import 'widgets/backimage.dart';
 import 'widgets/moviename.dart';
@@ -29,6 +31,8 @@ class TvDetails extends StatelessWidget {
     WidgetsBinding.instance.addPostFrameCallback((((_) {
       BlocProvider.of<TvDetailBloc>(context)
           .add(TvDetailEvent.gettvdetail(tvid: id.toString()));
+      BlocProvider.of<TvPosterImageBloc>(context)
+          .add(PosterImagesEvent.gettvimages(tvid: id));
       BlocProvider.of<TvShowCreditBloc>(context)
           .add(CastCrewEvent.gettvshowcredit(tvid: id.toString()));
       BlocProvider.of<TvRelatedBloc>(context)
@@ -70,15 +74,16 @@ class TvDetails extends StatelessWidget {
                               ),
                             ),
                             centerTitle: true,
-                            background: state.isLoading
-                                ? const Center(
-                                    child: CircularProgressIndicator(
-                                        color: orange))
-                                : BackImage(
-                                    imageurl: state.tvdetails[0].posterPath !=
-                                            null
-                                        ? "$backdrophead${state.tvdetails[0].posterPath!}"
-                                        : ""),
+                            background: BlocBuilder<TvPosterImageBloc,
+                                PosterImagesState>(
+                              builder: (context, state) {
+                                return state.isLoading
+                                    ? const Center(
+                                        child: CircularProgressIndicator(
+                                            color: orange))
+                                    : BackImage(imagelist: state.imagelist);
+                              },
+                            ),
                           );
                         }),
                         leading: IconButton(
@@ -150,7 +155,8 @@ class TvDetails extends StatelessWidget {
                           year: state.tvdetails[0].firstAirDate.isEmpty ||
                                   state.tvdetails[0].firstAirDate.length < 5
                               ? "_"
-                              : state.tvdetails[0].firstAirDate.substring(0, 4),
+                              : dateformating(DateTime.parse(
+                                  state.tvdetails[0].firstAirDate)),
                           runtime: state.tvdetails[0].numberOfEpisodes == null
                               ? "_"
                               : "${state.tvdetails[0].numberOfEpisodes.toString()} episodes",

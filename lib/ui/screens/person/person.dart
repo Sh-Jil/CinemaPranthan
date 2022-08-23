@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'dart:developer';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cinemapranthan/bloc/persondetail/person_detail_bloc.dart';
 import 'package:cinemapranthan/constants/colours/colours.dart';

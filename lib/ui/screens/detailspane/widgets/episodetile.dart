@@ -45,14 +45,6 @@ class EpisodeTile extends StatelessWidget {
                       ),
               ),
               ExpansionTile(
-                /* leading: Text(
-                  episodeno.toString(),
-                  style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: white,
-                      fontSize: 20.0,
-                      letterSpacing: 1.0),
-                ), */
                 childrenPadding: const EdgeInsets.all(12.0).copyWith(top: 0),
                 expandedCrossAxisAlignment: CrossAxisAlignment.start,
                 collapsedIconColor: darkGrey.withOpacity(0.5),

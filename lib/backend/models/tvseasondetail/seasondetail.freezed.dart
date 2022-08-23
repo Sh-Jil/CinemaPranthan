@@ -28,11 +28,11 @@ mixin _$SeasonDetailsModel {
   String get name => throw _privateConstructorUsedError;
   String get overview => throw _privateConstructorUsedError;
   @JsonKey(name: "id")
-  int get seasonDetailsModelId => throw _privateConstructorUsedError;
+  int? get seasonDetailsModelId => throw _privateConstructorUsedError;
   @JsonKey(name: "poster_path")
   String? get posterPath => throw _privateConstructorUsedError;
   @JsonKey(name: "season_number")
-  int get seasonNumber => throw _privateConstructorUsedError;
+  int? get seasonNumber => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -51,9 +51,9 @@ abstract class $SeasonDetailsModelCopyWith<$Res> {
       List<Episode>? episodes,
       String name,
       String overview,
-      @JsonKey(name: "id") int seasonDetailsModelId,
+      @JsonKey(name: "id") int? seasonDetailsModelId,
       @JsonKey(name: "poster_path") String? posterPath,
-      @JsonKey(name: "season_number") int seasonNumber});
+      @JsonKey(name: "season_number") int? seasonNumber});
 }
 
 /// @nodoc
@@ -100,7 +100,7 @@ class _$SeasonDetailsModelCopyWithImpl<$Res>
       seasonDetailsModelId: seasonDetailsModelId == freezed
           ? _value.seasonDetailsModelId
           : seasonDetailsModelId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       posterPath: posterPath == freezed
           ? _value.posterPath
           : posterPath // ignore: cast_nullable_to_non_nullable
@@ -108,7 +108,7 @@ class _$SeasonDetailsModelCopyWithImpl<$Res>
       seasonNumber: seasonNumber == freezed
           ? _value.seasonNumber
           : seasonNumber // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ));
   }
 }
@@ -126,9 +126,9 @@ abstract class _$$_SeasonDetailsModelCopyWith<$Res>
       List<Episode>? episodes,
       String name,
       String overview,
-      @JsonKey(name: "id") int seasonDetailsModelId,
+      @JsonKey(name: "id") int? seasonDetailsModelId,
       @JsonKey(name: "poster_path") String? posterPath,
-      @JsonKey(name: "season_number") int seasonNumber});
+      @JsonKey(name: "season_number") int? seasonNumber});
 }
 
 /// @nodoc
@@ -177,7 +177,7 @@ class __$$_SeasonDetailsModelCopyWithImpl<$Res>
       seasonDetailsModelId: seasonDetailsModelId == freezed
           ? _value.seasonDetailsModelId
           : seasonDetailsModelId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       posterPath: posterPath == freezed
           ? _value.posterPath
           : posterPath // ignore: cast_nullable_to_non_nullable
@@ -185,7 +185,7 @@ class __$$_SeasonDetailsModelCopyWithImpl<$Res>
       seasonNumber: seasonNumber == freezed
           ? _value.seasonNumber
           : seasonNumber // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ));
   }
 }
@@ -228,13 +228,13 @@ class _$_SeasonDetailsModel implements _SeasonDetailsModel {
   final String overview;
   @override
   @JsonKey(name: "id")
-  final int seasonDetailsModelId;
+  final int? seasonDetailsModelId;
   @override
   @JsonKey(name: "poster_path")
   final String? posterPath;
   @override
   @JsonKey(name: "season_number")
-  final int seasonNumber;
+  final int? seasonNumber;
 
   @override
   String toString() {
@@ -293,9 +293,9 @@ abstract class _SeasonDetailsModel implements SeasonDetailsModel {
           required final List<Episode>? episodes,
           required final String name,
           required final String overview,
-          @JsonKey(name: "id") required final int seasonDetailsModelId,
+          @JsonKey(name: "id") required final int? seasonDetailsModelId,
           @JsonKey(name: "poster_path") required final String? posterPath,
-          @JsonKey(name: "season_number") required final int seasonNumber}) =
+          @JsonKey(name: "season_number") required final int? seasonNumber}) =
       _$_SeasonDetailsModel;
 
   factory _SeasonDetailsModel.fromJson(Map<String, dynamic> json) =
@@ -315,13 +315,13 @@ abstract class _SeasonDetailsModel implements SeasonDetailsModel {
   String get overview;
   @override
   @JsonKey(name: "id")
-  int get seasonDetailsModelId;
+  int? get seasonDetailsModelId;
   @override
   @JsonKey(name: "poster_path")
   String? get posterPath;
   @override
   @JsonKey(name: "season_number")
-  int get seasonNumber;
+  int? get seasonNumber;
   @override
   @JsonKey(ignore: true)
   _$$_SeasonDetailsModelCopyWith<_$_SeasonDetailsModel> get copyWith =>
@@ -337,16 +337,16 @@ mixin _$Episode {
   @JsonKey(name: "air_date")
   DateTime? get airDate => throw _privateConstructorUsedError;
   @JsonKey(name: "episode_number")
-  int get episodeNumber => throw _privateConstructorUsedError;
-  int get id => throw _privateConstructorUsedError;
+  int? get episodeNumber => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get overview => throw _privateConstructorUsedError;
   @JsonKey(name: "production_code")
   String get productionCode => throw _privateConstructorUsedError;
   int? get runtime => throw _privateConstructorUsedError;
-  int get seasonNumber => throw _privateConstructorUsedError;
+  int? get seasonNumber => throw _privateConstructorUsedError;
   @JsonKey(name: "show_id")
-  int get showId => throw _privateConstructorUsedError;
+  int? get showId => throw _privateConstructorUsedError;
   @JsonKey(name: "still_path")
   String? get stillPath => throw _privateConstructorUsedError;
   @JsonKey(name: "vote_average")
@@ -363,14 +363,14 @@ abstract class $EpisodeCopyWith<$Res> {
       _$EpisodeCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: "air_date") DateTime? airDate,
-      @JsonKey(name: "episode_number") int episodeNumber,
-      int id,
+      @JsonKey(name: "episode_number") int? episodeNumber,
+      int? id,
       String name,
       String overview,
       @JsonKey(name: "production_code") String productionCode,
       int? runtime,
-      int seasonNumber,
-      @JsonKey(name: "show_id") int showId,
+      int? seasonNumber,
+      @JsonKey(name: "show_id") int? showId,
       @JsonKey(name: "still_path") String? stillPath,
       @JsonKey(name: "vote_average") double rating});
 }
@@ -405,11 +405,11 @@ class _$EpisodeCopyWithImpl<$Res> implements $EpisodeCopyWith<$Res> {
       episodeNumber: episodeNumber == freezed
           ? _value.episodeNumber
           : episodeNumber // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -429,11 +429,11 @@ class _$EpisodeCopyWithImpl<$Res> implements $EpisodeCopyWith<$Res> {
       seasonNumber: seasonNumber == freezed
           ? _value.seasonNumber
           : seasonNumber // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       showId: showId == freezed
           ? _value.showId
           : showId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       stillPath: stillPath == freezed
           ? _value.stillPath
           : stillPath // ignore: cast_nullable_to_non_nullable
@@ -454,14 +454,14 @@ abstract class _$$_EpisodeCopyWith<$Res> implements $EpisodeCopyWith<$Res> {
   @override
   $Res call(
       {@JsonKey(name: "air_date") DateTime? airDate,
-      @JsonKey(name: "episode_number") int episodeNumber,
-      int id,
+      @JsonKey(name: "episode_number") int? episodeNumber,
+      int? id,
       String name,
       String overview,
       @JsonKey(name: "production_code") String productionCode,
       int? runtime,
-      int seasonNumber,
-      @JsonKey(name: "show_id") int showId,
+      int? seasonNumber,
+      @JsonKey(name: "show_id") int? showId,
       @JsonKey(name: "still_path") String? stillPath,
       @JsonKey(name: "vote_average") double rating});
 }
@@ -497,11 +497,11 @@ class __$$_EpisodeCopyWithImpl<$Res> extends _$EpisodeCopyWithImpl<$Res>
       episodeNumber: episodeNumber == freezed
           ? _value.episodeNumber
           : episodeNumber // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -521,11 +521,11 @@ class __$$_EpisodeCopyWithImpl<$Res> extends _$EpisodeCopyWithImpl<$Res>
       seasonNumber: seasonNumber == freezed
           ? _value.seasonNumber
           : seasonNumber // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       showId: showId == freezed
           ? _value.showId
           : showId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       stillPath: stillPath == freezed
           ? _value.stillPath
           : stillPath // ignore: cast_nullable_to_non_nullable
@@ -562,9 +562,9 @@ class _$_Episode implements _Episode {
   final DateTime? airDate;
   @override
   @JsonKey(name: "episode_number")
-  final int episodeNumber;
+  final int? episodeNumber;
   @override
-  final int id;
+  final int? id;
   @override
   final String name;
   @override
@@ -575,10 +575,10 @@ class _$_Episode implements _Episode {
   @override
   final int? runtime;
   @override
-  final int seasonNumber;
+  final int? seasonNumber;
   @override
   @JsonKey(name: "show_id")
-  final int showId;
+  final int? showId;
   @override
   @JsonKey(name: "still_path")
   final String? stillPath;
@@ -646,16 +646,16 @@ abstract class _Episode implements Episode {
       {@JsonKey(name: "air_date")
           required final DateTime? airDate,
       @JsonKey(name: "episode_number")
-          required final int episodeNumber,
-      required final int id,
+          required final int? episodeNumber,
+      required final int? id,
       required final String name,
       required final String overview,
       @JsonKey(name: "production_code")
           required final String productionCode,
       required final int? runtime,
-      required final int seasonNumber,
+      required final int? seasonNumber,
       @JsonKey(name: "show_id")
-          required final int showId,
+          required final int? showId,
       @JsonKey(name: "still_path")
           required final String? stillPath,
       @JsonKey(name: "vote_average")
@@ -668,9 +668,9 @@ abstract class _Episode implements Episode {
   DateTime? get airDate;
   @override
   @JsonKey(name: "episode_number")
-  int get episodeNumber;
+  int? get episodeNumber;
   @override
-  int get id;
+  int? get id;
   @override
   String get name;
   @override
@@ -681,10 +681,10 @@ abstract class _Episode implements Episode {
   @override
   int? get runtime;
   @override
-  int get seasonNumber;
+  int? get seasonNumber;
   @override
   @JsonKey(name: "show_id")
-  int get showId;
+  int? get showId;
   @override
   @JsonKey(name: "still_path")
   String? get stillPath;

@@ -7,6 +7,6 @@ class TvSeasonDetailState with _$TvSeasonDetailState {
       required Option<Either<MainFailures, List<SeasonDetailsModel>>> options,
       required List<SeasonDetailsModel> seasondetail}) = _TvSeasonDetailState;
 
-  factory TvSeasonDetailState.initial() => const TvSeasonDetailState(
-      isLoading: true, options: None(), seasondetail: []);
+  factory TvSeasonDetailState.initial() =>
+      TvSeasonDetailState(isLoading: true, options: None(), seasondetail: []);
 }

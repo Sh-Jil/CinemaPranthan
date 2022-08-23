@@ -4,6 +4,6 @@ final Map<String, Uri> appLInks = {
   "instagram": Uri.parse("https://www.instagram.com/cinemapranthanmarr/"),
   "youtube": Uri.parse("https://www.youtube.com/c/CinemaPranthanmar"),
   "privacy":
-      Uri.parse("https://pages.flycricket.io/cinema-pranthan/privacy.html"),
-  "terms": Uri.parse("https://pages.flycricket.io/cinema-pranthan/terms.html")
+      Uri.parse("https://cinemapranthanmaar-website.web.app/privacy_policy"),
+  "terms": Uri.parse("https://cinemapranthanmaar-website.web.app/terms")
 };

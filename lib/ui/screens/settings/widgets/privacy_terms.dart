@@ -15,7 +15,8 @@ class PrivacyTerms extends StatelessWidget {
         TextButton(
             onPressed: () async {
               if (await canLaunchUrl(appLInks['privacy']!)) {
-                await launchUrl(appLInks['privacy']!);
+                await launchUrl(appLInks['privacy']!,
+                    mode: LaunchMode.externalApplication);
               }
             },
             child: const Text("Privacy Policy",
@@ -24,7 +25,8 @@ class PrivacyTerms extends StatelessWidget {
         TextButton(
             onPressed: () async {
               if (await canLaunchUrl(appLInks['terms']!)) {
-                await launchUrl(appLInks['terms']!);
+                await launchUrl(appLInks['terms']!,
+                    mode: LaunchMode.externalApplication);
               }
             },
             child: const Text(

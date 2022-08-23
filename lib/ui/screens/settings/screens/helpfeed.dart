@@ -3,9 +3,13 @@ import 'package:cinemapranthan/constants/colours/colours.dart';
 import 'package:cinemapranthan/constants/links/links.dart';
 
 import 'package:cinemapranthan/ui/screens/settings/widgets/helplisttile.dart';
+import 'package:cinemapranthan/ui/screens/settings/widgets/logo.dart';
 import 'package:cinemapranthan/utils/navigation.dart';
 import 'package:flutter/material.dart';
+
 import 'package:url_launcher/url_launcher.dart';
+
+import '../widgets/ratingbuilder.dart';
 
 class HelpFeed extends StatelessWidget {
   const HelpFeed({Key? key}) : super(key: key);
@@ -29,6 +33,13 @@ class HelpFeed extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               HelpListTile(
+                  ontap: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return RatingScreen();
+                        });
+                  },
                   buttoncolor: const Color.fromARGB(255, 192, 175, 26),
                   title: "Rate Us",
                   icon: Icons.star),

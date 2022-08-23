@@ -60,7 +60,6 @@ class _SearchMovieListState extends State<SearchMovieList> {
             ),
           );
         } else if (state.movies.isNotEmpty && widget.text.text.isNotEmpty) {
-          /*  log(state.movies.toString()); */
           return ListView.separated(
               controller: controller,
               keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,

@@ -9,8 +9,5 @@ class SearchMovieState with _$SearchMovieState {
       _SearchMovieState;
 
   factory SearchMovieState.initial() =>
-
       const SearchMovieState(isLoading: false, options: None(), movies: []);
-
-
 }

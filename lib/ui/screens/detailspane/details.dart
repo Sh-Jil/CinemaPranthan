@@ -1,4 +1,5 @@
 import 'package:cinemapranthan/backend/apicall/movies.dart';
+import 'package:cinemapranthan/bloc/Images/poster_images_bloc.dart';
 import 'package:cinemapranthan/bloc/castcrew/cast_crew_bloc.dart';
 import 'package:cinemapranthan/bloc/moviedetail/movie_detail_bloc.dart';
 
@@ -17,6 +18,7 @@ import 'package:cinemapranthan/ui/screens/detailspane/widgets/recommendedlist.da
 
 import 'package:cinemapranthan/ui/screens/detailspane/widgets/starcast.dart';
 import 'package:cinemapranthan/ui/screens/detailspane/widgets/titlestyle.dart';
+import 'package:cinemapranthan/utils/date.dart';
 import 'package:cinemapranthan/utils/mintohour.dart';
 import 'package:cinemapranthan/utils/navigation.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +35,8 @@ class Details extends StatelessWidget {
     WidgetsBinding.instance.addPostFrameCallback(((_) {
       BlocProvider.of<MovieDetailBloc>(context)
           .add(MovieDetailEvent.getmoviedetail(movieparam: id.toString()));
+      BlocProvider.of<PosterImagesBloc>(context)
+          .add(PosterImagesEvent.getmovieimages(movieid: id));
       BlocProvider.of<CastCrewBloc>(context)
           .add(CastCrewEvent.getcastcrew(movieid: id.toString()));
       BlocProvider.of<RelatedMoviesBloc>(context)
@@ -77,15 +81,18 @@ class Details extends StatelessWidget {
                               ),
                             ),
                             centerTitle: true,
-                            background: state.isLoading
-                                ? const Center(
-                                    child: CircularProgressIndicator(
-                                        color: orange))
-                                : BackImage(
-                                    imageurl: state.moviedetail[0].posterPath !=
-                                            null
-                                        ? "$backdrophead${state.moviedetail[0].posterPath!}"
-                                        : ""),
+                            background: BlocBuilder<PosterImagesBloc,
+                                PosterImagesState>(
+                              builder: (context, state) {
+                                return state.isLoading
+                                    ? const Center(
+                                        child: CircularProgressIndicator(
+                                            color: orange))
+                                    : BackImage(
+                                        imagelist: state.imagelist,
+                                      );
+                              },
+                            ),
                           );
                         }),
                         leading: IconButton(
@@ -159,8 +166,8 @@ class Details extends StatelessWidget {
                           year: state.moviedetail[0].releaseDate.isEmpty ||
                                   state.moviedetail[0].releaseDate.length < 5
                               ? "_"
-                              : state.moviedetail[0].releaseDate
-                                  .substring(0, 4),
+                              : dateformating(DateTime.parse(
+                                  state.moviedetail[0].releaseDate)),
                           runtime: state.moviedetail[0].runtime == null
                               ? "_"
                               : durationToString(state.moviedetail[0].runtime!),

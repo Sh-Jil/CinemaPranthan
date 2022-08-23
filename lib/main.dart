@@ -1,4 +1,5 @@
 import 'package:cinemapranthan/backend/depinjection/injectable.dart';
+import 'package:cinemapranthan/bloc/Images/poster_images_bloc.dart';
 import 'package:cinemapranthan/bloc/castcrew/cast_crew_bloc.dart';
 import 'package:cinemapranthan/bloc/moviebloc/movie_bloc_bloc.dart';
 import 'package:cinemapranthan/bloc/moviedetail/movie_detail_bloc.dart';
@@ -39,6 +40,27 @@ void main() async {
   HttpOverrides.global = MyHttpOverrides();
   final androidSdkVersion =
       deviceInfo is AndroidDeviceInfo ? deviceInfo.version.sdkInt! : 0;
+  /* ErrorWidget.builder = (FlutterErrorDetails details) {
+    bool inDebug = false;
+    assert(() {
+      inDebug = true;
+      return true;
+    }());
+    // In debug mode, use the normal error widget which shows
+    // the error message:
+    if (inDebug) {
+      return ErrorWidget(details.exception);
+    }
+    // In release builds, show a yellow-on-blue message instead:
+    return Container(
+      alignment: Alignment.center,
+      child: Text(
+        'Error! ${details.exception}',
+        style: TextStyle(color: Colors.yellow),
+        textDirection: TextDirection.ltr,
+      ),
+    );
+  }; */
   runApp(MyApp(
     androidSdkVersion: androidSdkVersion,
   ));
@@ -78,7 +100,9 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => getIt<AuthBloc>()),
         BlocProvider(create: (context) => getIt<FavouriteBloc>()),
         BlocProvider(create: ((context) => getIt<RelatedMoviesBloc>())),
-        BlocProvider(create: (context) => getIt<TvRelatedBloc>())
+        BlocProvider(create: (context) => getIt<TvRelatedBloc>()),
+        BlocProvider(create: (context) => getIt<PosterImagesBloc>()),
+        BlocProvider(create: ((context) => getIt<TvPosterImageBloc>())),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
