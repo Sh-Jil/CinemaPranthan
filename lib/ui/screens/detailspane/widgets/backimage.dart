@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cinemapranthan/backend/apicall/movies.dart';
 import 'package:cinemapranthan/backend/models/images/posterimages.dart';
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -33,15 +32,15 @@ class BackImage extends StatelessWidget {
                   CarouselSlider.builder(
                       itemCount: imagelist.length,
                       itemBuilder: (context, itemIndex, pageindex) {
-                        return Container(
-                            decoration: BoxDecoration(
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: CachedNetworkImageProvider(
-                                  '$backdrophead${imagelist[itemIndex].filePath}',
-                                  errorListener: () =>
-                                      const Icon(Icons.error))),
-                        ));
+                        return CachedNetworkImage(
+                          fit: BoxFit.cover,
+                          imageUrl:
+                              '$backdrophead${imagelist[itemIndex].filePath}',
+                          placeholder: (context, url) => Center(
+                              child: CircularProgressIndicator(
+                            color: white.withOpacity(0.1),
+                          )),
+                        );
                       },
                       options: CarouselOptions(
                           onPageChanged: ((index, reason) {
