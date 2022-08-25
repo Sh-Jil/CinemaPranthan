@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cinemapranthan/backend/apicall/movies.dart';
 import 'package:cinemapranthan/bloc/Images/poster_images_bloc.dart';
 import 'package:cinemapranthan/bloc/castcrew/cast_crew_bloc.dart';
@@ -10,6 +11,7 @@ import 'package:cinemapranthan/bloc/relatedmovies/related_movies_bloc.dart';
 
 import 'package:cinemapranthan/constants/Icons/appicons.dart';
 import 'package:cinemapranthan/constants/colours/colours.dart';
+import 'package:cinemapranthan/ui/screens/detailspane/collectionscreen.dart';
 import 'package:cinemapranthan/ui/screens/detailspane/widgets/backimage.dart';
 import 'package:cinemapranthan/ui/screens/detailspane/widgets/moviename.dart';
 import 'package:cinemapranthan/ui/screens/detailspane/widgets/movietitlecard.dart';
@@ -18,6 +20,7 @@ import 'package:cinemapranthan/ui/screens/detailspane/widgets/recommendedlist.da
 
 import 'package:cinemapranthan/ui/screens/detailspane/widgets/starcast.dart';
 import 'package:cinemapranthan/ui/screens/detailspane/widgets/titlestyle.dart';
+import 'package:cinemapranthan/ui/widgets/glasscontainer.dart';
 import 'package:cinemapranthan/utils/date.dart';
 import 'package:cinemapranthan/utils/mintohour.dart';
 import 'package:cinemapranthan/utils/navigation.dart';
@@ -32,6 +35,7 @@ class Details extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double width = MediaQuery.of(context).size.width;
     WidgetsBinding.instance.addPostFrameCallback(((_) {
       BlocProvider.of<MovieDetailBloc>(context)
           .add(MovieDetailEvent.getmoviedetail(movieparam: id.toString()));
@@ -71,7 +75,7 @@ class Details extends StatelessWidget {
                           top = constraints.biggest.height;
                           return FlexibleSpaceBar(
                             title: SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.8,
+                              width: width * 0.8,
                               child: AnimatedOpacity(
                                 opacity: top < 150 ? 1.0 : 0.0,
                                 duration: const Duration(milliseconds: 300),
@@ -217,6 +221,72 @@ class Details extends StatelessWidget {
                             ),
                           ],
                         ),
+                      ),
+                      SliverToBoxAdapter(
+                        child: state.moviedetail[0].belongsToCollection != null
+                            ? InkWell(
+                                onTap: () => goto(
+                                    context,
+                                    CollectionScreen(
+                                      collectionId: state.moviedetail[0]
+                                          .belongsToCollection!.id,
+                                    )),
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 20.0, horizontal: 20.0),
+                                  child: Stack(
+                                    alignment: Alignment.bottomCenter,
+                                    children: [
+                                      ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(20.0),
+                                        child: state
+                                                        .moviedetail[0]
+                                                        .belongsToCollection!
+                                                        .backdropPath !=
+                                                    null &&
+                                                state
+                                                    .moviedetail[0]
+                                                    .belongsToCollection!
+                                                    .backdropPath!
+                                                    .isNotEmpty
+                                            ? CachedNetworkImage(
+                                                imageUrl:
+                                                    "$backdrophead${state.moviedetail[0].belongsToCollection!.backdropPath}")
+                                            : Image.asset(
+                                                'assets/images/f0fc1ca20e08d638195b9-removebg-preview.png'),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: GlassContainer(
+                                          width: width * 0.7,
+                                          borderRadius:
+                                              BorderRadius.circular(20.0),
+                                          padding: EdgeInsets.symmetric(
+                                              vertical: 8.0, horizontal: 16.0),
+                                          blurPower: 25.0,
+                                          gradientColors: [
+                                            grey.withOpacity(0.3),
+                                            grey.withOpacity(0.3)
+                                          ],
+                                          child: Text(
+                                              "View ${state.moviedetail[0].belongsToCollection!.name}",
+                                              softWrap: true,
+                                              maxLines: 3,
+                                              style: const TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  height: 1.5,
+                                                  color: white,
+                                                  fontSize: 16.0,
+                                                  letterSpacing: 1.0),
+                                              textAlign: TextAlign.center),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              )
+                            : SizedBox(),
                       ),
                       SliverList(
                           delegate: SliverChildBuilderDelegate(

@@ -2,6 +2,7 @@ import 'package:cinemapranthan/backend/depinjection/injectable.dart';
 import 'package:cinemapranthan/bloc/Images/poster_images_bloc.dart';
 import 'package:cinemapranthan/bloc/castcrew/cast_crew_bloc.dart';
 import 'package:cinemapranthan/bloc/moviebloc/movie_bloc_bloc.dart';
+import 'package:cinemapranthan/bloc/moviecollection/collection_bloc.dart';
 import 'package:cinemapranthan/bloc/moviedetail/movie_detail_bloc.dart';
 import 'package:cinemapranthan/bloc/searchmovie/search_movie_bloc.dart';
 import 'package:cinemapranthan/bloc/searchtv/searchtv_bloc.dart';
@@ -10,6 +11,7 @@ import 'package:cinemapranthan/ui/screens/homescreen.dart';
 import 'package:cinemapranthan/ui/widgets/scrollindicator.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'constants/colours/colours.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -61,6 +63,7 @@ void main() async {
       ),
     );
   }; */
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(MyApp(
     androidSdkVersion: androidSdkVersion,
   ));
@@ -103,6 +106,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => getIt<TvRelatedBloc>()),
         BlocProvider(create: (context) => getIt<PosterImagesBloc>()),
         BlocProvider(create: ((context) => getIt<TvPosterImageBloc>())),
+        BlocProvider(create: ((context) => getIt<CollectionBloc>()))
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

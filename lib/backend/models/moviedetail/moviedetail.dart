@@ -10,6 +10,8 @@ part 'moviedetail.g.dart';
 class MovieDetail with _$MovieDetail {
   const factory MovieDetail({
     @JsonKey(name: "adult") required bool? adult,
+    @JsonKey(name: "belongs_to_collection")
+        required BelongsToCollection? belongsToCollection,
     @JsonKey(name: "backdrop_path") required String? backdropPath,
     @JsonKey(name: "budget") required int? budget,
     @JsonKey(name: "genres") required List<Map<String, dynamic>>? genres,
@@ -33,4 +35,17 @@ class MovieDetail with _$MovieDetail {
 
   factory MovieDetail.fromJson(Map<String, dynamic> json) =>
       _$MovieDetailFromJson(json);
+}
+
+@freezed
+class BelongsToCollection with _$BelongsToCollection {
+  const factory BelongsToCollection({
+    required int id,
+    required String name,
+    @JsonKey(name: 'poster_path') String? posterPath,
+    @JsonKey(name: 'backdrop_path') String? backdropPath,
+  }) = _BelongsToCollection;
+
+  factory BelongsToCollection.fromJson(Map<String, dynamic> json) =>
+      _$BelongsToCollectionFromJson(json);
 }

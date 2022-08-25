@@ -18,3 +18,4 @@ const stillhead = "https://image.tmdb.org/t/p/w500";
 const moviehead = "https://api.themoviedb.org/3/movie/";
 const personhead = "https://api.themoviedb.org/3/person/";
 const largeprofilepic = "https://www.themoviedb.org/t/p/h632";
+const moviecollectionhead = "https://api.themoviedb.org/3/collection/";

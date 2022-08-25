@@ -9,6 +9,10 @@ part of 'moviedetail.dart';
 _$_MovieDetail _$$_MovieDetailFromJson(Map<String, dynamic> json) =>
     _$_MovieDetail(
       adult: json['adult'] as bool?,
+      belongsToCollection: json['belongs_to_collection'] == null
+          ? null
+          : BelongsToCollection.fromJson(
+              json['belongs_to_collection'] as Map<String, dynamic>),
       backdropPath: json['backdrop_path'] as String?,
       budget: json['budget'] as int?,
       genres: (json['genres'] as List<dynamic>?)
@@ -35,6 +39,7 @@ _$_MovieDetail _$$_MovieDetailFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$_MovieDetailToJson(_$_MovieDetail instance) =>
     <String, dynamic>{
       'adult': instance.adult,
+      'belongs_to_collection': instance.belongsToCollection,
       'backdrop_path': instance.backdropPath,
       'budget': instance.budget,
       'genres': instance.genres,
@@ -54,4 +59,22 @@ Map<String, dynamic> _$$_MovieDetailToJson(_$_MovieDetail instance) =>
       'title': instance.title,
       'video': instance.video,
       'vote_average': instance.rating,
+    };
+
+_$_BelongsToCollection _$$_BelongsToCollectionFromJson(
+        Map<String, dynamic> json) =>
+    _$_BelongsToCollection(
+      id: json['id'] as int,
+      name: json['name'] as String,
+      posterPath: json['poster_path'] as String?,
+      backdropPath: json['backdrop_path'] as String?,
+    );
+
+Map<String, dynamic> _$$_BelongsToCollectionToJson(
+        _$_BelongsToCollection instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'poster_path': instance.posterPath,
+      'backdrop_path': instance.backdropPath,
     };

@@ -22,6 +22,9 @@ MovieDetail _$MovieDetailFromJson(Map<String, dynamic> json) {
 mixin _$MovieDetail {
   @JsonKey(name: "adult")
   bool? get adult => throw _privateConstructorUsedError;
+  @JsonKey(name: "belongs_to_collection")
+  BelongsToCollection? get belongsToCollection =>
+      throw _privateConstructorUsedError;
   @JsonKey(name: "backdrop_path")
   String? get backdropPath => throw _privateConstructorUsedError;
   @JsonKey(name: "budget")
@@ -65,26 +68,42 @@ abstract class $MovieDetailCopyWith<$Res> {
           MovieDetail value, $Res Function(MovieDetail) then) =
       _$MovieDetailCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: "adult") bool? adult,
-      @JsonKey(name: "backdrop_path") String? backdropPath,
-      @JsonKey(name: "budget") int? budget,
-      @JsonKey(name: "genres") List<Map<String, dynamic>>? genres,
-      @JsonKey(name: "homepage") String? homepage,
-      @JsonKey(name: "id") int? id,
-      @JsonKey(name: "imdb_id") String? imdbId,
-      @JsonKey(name: "original_language") String? originalLanguage,
-      @JsonKey(name: "original_title") String? originalTitle,
+      {@JsonKey(name: "adult")
+          bool? adult,
+      @JsonKey(name: "belongs_to_collection")
+          BelongsToCollection? belongsToCollection,
+      @JsonKey(name: "backdrop_path")
+          String? backdropPath,
+      @JsonKey(name: "budget")
+          int? budget,
+      @JsonKey(name: "genres")
+          List<Map<String, dynamic>>? genres,
+      @JsonKey(name: "homepage")
+          String? homepage,
+      @JsonKey(name: "id")
+          int? id,
+      @JsonKey(name: "imdb_id")
+          String? imdbId,
+      @JsonKey(name: "original_language")
+          String? originalLanguage,
+      @JsonKey(name: "original_title")
+          String? originalTitle,
       String? overview,
       double? popularity,
-      @JsonKey(name: "poster_path") String? posterPath,
-      @JsonKey(name: "release_date") String releaseDate,
+      @JsonKey(name: "poster_path")
+          String? posterPath,
+      @JsonKey(name: "release_date")
+          String releaseDate,
       int? revenue,
       int? runtime,
       String? status,
       String? tagline,
       String? title,
       bool? video,
-      @JsonKey(name: "vote_average") double rating});
+      @JsonKey(name: "vote_average")
+          double rating});
+
+  $BelongsToCollectionCopyWith<$Res>? get belongsToCollection;
 }
 
 /// @nodoc
@@ -98,6 +117,7 @@ class _$MovieDetailCopyWithImpl<$Res> implements $MovieDetailCopyWith<$Res> {
   @override
   $Res call({
     Object? adult = freezed,
+    Object? belongsToCollection = freezed,
     Object? backdropPath = freezed,
     Object? budget = freezed,
     Object? genres = freezed,
@@ -123,6 +143,10 @@ class _$MovieDetailCopyWithImpl<$Res> implements $MovieDetailCopyWith<$Res> {
           ? _value.adult
           : adult // ignore: cast_nullable_to_non_nullable
               as bool?,
+      belongsToCollection: belongsToCollection == freezed
+          ? _value.belongsToCollection
+          : belongsToCollection // ignore: cast_nullable_to_non_nullable
+              as BelongsToCollection?,
       backdropPath: backdropPath == freezed
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
@@ -201,6 +225,18 @@ class _$MovieDetailCopyWithImpl<$Res> implements $MovieDetailCopyWith<$Res> {
               as double,
     ));
   }
+
+  @override
+  $BelongsToCollectionCopyWith<$Res>? get belongsToCollection {
+    if (_value.belongsToCollection == null) {
+      return null;
+    }
+
+    return $BelongsToCollectionCopyWith<$Res>(_value.belongsToCollection!,
+        (value) {
+      return _then(_value.copyWith(belongsToCollection: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -211,26 +247,43 @@ abstract class _$$_MovieDetailCopyWith<$Res>
       __$$_MovieDetailCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: "adult") bool? adult,
-      @JsonKey(name: "backdrop_path") String? backdropPath,
-      @JsonKey(name: "budget") int? budget,
-      @JsonKey(name: "genres") List<Map<String, dynamic>>? genres,
-      @JsonKey(name: "homepage") String? homepage,
-      @JsonKey(name: "id") int? id,
-      @JsonKey(name: "imdb_id") String? imdbId,
-      @JsonKey(name: "original_language") String? originalLanguage,
-      @JsonKey(name: "original_title") String? originalTitle,
+      {@JsonKey(name: "adult")
+          bool? adult,
+      @JsonKey(name: "belongs_to_collection")
+          BelongsToCollection? belongsToCollection,
+      @JsonKey(name: "backdrop_path")
+          String? backdropPath,
+      @JsonKey(name: "budget")
+          int? budget,
+      @JsonKey(name: "genres")
+          List<Map<String, dynamic>>? genres,
+      @JsonKey(name: "homepage")
+          String? homepage,
+      @JsonKey(name: "id")
+          int? id,
+      @JsonKey(name: "imdb_id")
+          String? imdbId,
+      @JsonKey(name: "original_language")
+          String? originalLanguage,
+      @JsonKey(name: "original_title")
+          String? originalTitle,
       String? overview,
       double? popularity,
-      @JsonKey(name: "poster_path") String? posterPath,
-      @JsonKey(name: "release_date") String releaseDate,
+      @JsonKey(name: "poster_path")
+          String? posterPath,
+      @JsonKey(name: "release_date")
+          String releaseDate,
       int? revenue,
       int? runtime,
       String? status,
       String? tagline,
       String? title,
       bool? video,
-      @JsonKey(name: "vote_average") double rating});
+      @JsonKey(name: "vote_average")
+          double rating});
+
+  @override
+  $BelongsToCollectionCopyWith<$Res>? get belongsToCollection;
 }
 
 /// @nodoc
@@ -246,6 +299,7 @@ class __$$_MovieDetailCopyWithImpl<$Res> extends _$MovieDetailCopyWithImpl<$Res>
   @override
   $Res call({
     Object? adult = freezed,
+    Object? belongsToCollection = freezed,
     Object? backdropPath = freezed,
     Object? budget = freezed,
     Object? genres = freezed,
@@ -271,6 +325,10 @@ class __$$_MovieDetailCopyWithImpl<$Res> extends _$MovieDetailCopyWithImpl<$Res>
           ? _value.adult
           : adult // ignore: cast_nullable_to_non_nullable
               as bool?,
+      belongsToCollection: belongsToCollection == freezed
+          ? _value.belongsToCollection
+          : belongsToCollection // ignore: cast_nullable_to_non_nullable
+              as BelongsToCollection?,
       backdropPath: backdropPath == freezed
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
@@ -357,6 +415,8 @@ class _$_MovieDetail implements _MovieDetail {
   const _$_MovieDetail(
       {@JsonKey(name: "adult")
           required this.adult,
+      @JsonKey(name: "belongs_to_collection")
+          required this.belongsToCollection,
       @JsonKey(name: "backdrop_path")
           required this.backdropPath,
       @JsonKey(name: "budget")
@@ -395,6 +455,9 @@ class _$_MovieDetail implements _MovieDetail {
   @override
   @JsonKey(name: "adult")
   final bool? adult;
+  @override
+  @JsonKey(name: "belongs_to_collection")
+  final BelongsToCollection? belongsToCollection;
   @override
   @JsonKey(name: "backdrop_path")
   final String? backdropPath;
@@ -454,7 +517,7 @@ class _$_MovieDetail implements _MovieDetail {
 
   @override
   String toString() {
-    return 'MovieDetail(adult: $adult, backdropPath: $backdropPath, budget: $budget, genres: $genres, homepage: $homepage, id: $id, imdbId: $imdbId, originalLanguage: $originalLanguage, originalTitle: $originalTitle, overview: $overview, popularity: $popularity, posterPath: $posterPath, releaseDate: $releaseDate, revenue: $revenue, runtime: $runtime, status: $status, tagline: $tagline, title: $title, video: $video, rating: $rating)';
+    return 'MovieDetail(adult: $adult, belongsToCollection: $belongsToCollection, backdropPath: $backdropPath, budget: $budget, genres: $genres, homepage: $homepage, id: $id, imdbId: $imdbId, originalLanguage: $originalLanguage, originalTitle: $originalTitle, overview: $overview, popularity: $popularity, posterPath: $posterPath, releaseDate: $releaseDate, revenue: $revenue, runtime: $runtime, status: $status, tagline: $tagline, title: $title, video: $video, rating: $rating)';
   }
 
   @override
@@ -463,6 +526,8 @@ class _$_MovieDetail implements _MovieDetail {
         (other.runtimeType == runtimeType &&
             other is _$_MovieDetail &&
             const DeepCollectionEquality().equals(other.adult, adult) &&
+            const DeepCollectionEquality()
+                .equals(other.belongsToCollection, belongsToCollection) &&
             const DeepCollectionEquality()
                 .equals(other.backdropPath, backdropPath) &&
             const DeepCollectionEquality().equals(other.budget, budget) &&
@@ -495,6 +560,7 @@ class _$_MovieDetail implements _MovieDetail {
   int get hashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(adult),
+        const DeepCollectionEquality().hash(belongsToCollection),
         const DeepCollectionEquality().hash(backdropPath),
         const DeepCollectionEquality().hash(budget),
         const DeepCollectionEquality().hash(_genres),
@@ -533,6 +599,8 @@ abstract class _MovieDetail implements MovieDetail {
   const factory _MovieDetail(
       {@JsonKey(name: "adult")
           required final bool? adult,
+      @JsonKey(name: "belongs_to_collection")
+          required final BelongsToCollection? belongsToCollection,
       @JsonKey(name: "backdrop_path")
           required final String? backdropPath,
       @JsonKey(name: "budget")
@@ -570,6 +638,9 @@ abstract class _MovieDetail implements MovieDetail {
   @override
   @JsonKey(name: "adult")
   bool? get adult;
+  @override
+  @JsonKey(name: "belongs_to_collection")
+  BelongsToCollection? get belongsToCollection;
   @override
   @JsonKey(name: "backdrop_path")
   String? get backdropPath;
@@ -622,5 +693,217 @@ abstract class _MovieDetail implements MovieDetail {
   @override
   @JsonKey(ignore: true)
   _$$_MovieDetailCopyWith<_$_MovieDetail> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+BelongsToCollection _$BelongsToCollectionFromJson(Map<String, dynamic> json) {
+  return _BelongsToCollection.fromJson(json);
+}
+
+/// @nodoc
+mixin _$BelongsToCollection {
+  int get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'poster_path')
+  String? get posterPath => throw _privateConstructorUsedError;
+  @JsonKey(name: 'backdrop_path')
+  String? get backdropPath => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $BelongsToCollectionCopyWith<BelongsToCollection> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BelongsToCollectionCopyWith<$Res> {
+  factory $BelongsToCollectionCopyWith(
+          BelongsToCollection value, $Res Function(BelongsToCollection) then) =
+      _$BelongsToCollectionCopyWithImpl<$Res>;
+  $Res call(
+      {int id,
+      String name,
+      @JsonKey(name: 'poster_path') String? posterPath,
+      @JsonKey(name: 'backdrop_path') String? backdropPath});
+}
+
+/// @nodoc
+class _$BelongsToCollectionCopyWithImpl<$Res>
+    implements $BelongsToCollectionCopyWith<$Res> {
+  _$BelongsToCollectionCopyWithImpl(this._value, this._then);
+
+  final BelongsToCollection _value;
+  // ignore: unused_field
+  final $Res Function(BelongsToCollection) _then;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? posterPath = freezed,
+    Object? backdropPath = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      posterPath: posterPath == freezed
+          ? _value.posterPath
+          : posterPath // ignore: cast_nullable_to_non_nullable
+              as String?,
+      backdropPath: backdropPath == freezed
+          ? _value.backdropPath
+          : backdropPath // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$$_BelongsToCollectionCopyWith<$Res>
+    implements $BelongsToCollectionCopyWith<$Res> {
+  factory _$$_BelongsToCollectionCopyWith(_$_BelongsToCollection value,
+          $Res Function(_$_BelongsToCollection) then) =
+      __$$_BelongsToCollectionCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {int id,
+      String name,
+      @JsonKey(name: 'poster_path') String? posterPath,
+      @JsonKey(name: 'backdrop_path') String? backdropPath});
+}
+
+/// @nodoc
+class __$$_BelongsToCollectionCopyWithImpl<$Res>
+    extends _$BelongsToCollectionCopyWithImpl<$Res>
+    implements _$$_BelongsToCollectionCopyWith<$Res> {
+  __$$_BelongsToCollectionCopyWithImpl(_$_BelongsToCollection _value,
+      $Res Function(_$_BelongsToCollection) _then)
+      : super(_value, (v) => _then(v as _$_BelongsToCollection));
+
+  @override
+  _$_BelongsToCollection get _value => super._value as _$_BelongsToCollection;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? posterPath = freezed,
+    Object? backdropPath = freezed,
+  }) {
+    return _then(_$_BelongsToCollection(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      posterPath: posterPath == freezed
+          ? _value.posterPath
+          : posterPath // ignore: cast_nullable_to_non_nullable
+              as String?,
+      backdropPath: backdropPath == freezed
+          ? _value.backdropPath
+          : backdropPath // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_BelongsToCollection implements _BelongsToCollection {
+  const _$_BelongsToCollection(
+      {required this.id,
+      required this.name,
+      @JsonKey(name: 'poster_path') this.posterPath,
+      @JsonKey(name: 'backdrop_path') this.backdropPath});
+
+  factory _$_BelongsToCollection.fromJson(Map<String, dynamic> json) =>
+      _$$_BelongsToCollectionFromJson(json);
+
+  @override
+  final int id;
+  @override
+  final String name;
+  @override
+  @JsonKey(name: 'poster_path')
+  final String? posterPath;
+  @override
+  @JsonKey(name: 'backdrop_path')
+  final String? backdropPath;
+
+  @override
+  String toString() {
+    return 'BelongsToCollection(id: $id, name: $name, posterPath: $posterPath, backdropPath: $backdropPath)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_BelongsToCollection &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality()
+                .equals(other.posterPath, posterPath) &&
+            const DeepCollectionEquality()
+                .equals(other.backdropPath, backdropPath));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(posterPath),
+      const DeepCollectionEquality().hash(backdropPath));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_BelongsToCollectionCopyWith<_$_BelongsToCollection> get copyWith =>
+      __$$_BelongsToCollectionCopyWithImpl<_$_BelongsToCollection>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_BelongsToCollectionToJson(
+      this,
+    );
+  }
+}
+
+abstract class _BelongsToCollection implements BelongsToCollection {
+  const factory _BelongsToCollection(
+          {required final int id,
+          required final String name,
+          @JsonKey(name: 'poster_path') final String? posterPath,
+          @JsonKey(name: 'backdrop_path') final String? backdropPath}) =
+      _$_BelongsToCollection;
+
+  factory _BelongsToCollection.fromJson(Map<String, dynamic> json) =
+      _$_BelongsToCollection.fromJson;
+
+  @override
+  int get id;
+  @override
+  String get name;
+  @override
+  @JsonKey(name: 'poster_path')
+  String? get posterPath;
+  @override
+  @JsonKey(name: 'backdrop_path')
+  String? get backdropPath;
+  @override
+  @JsonKey(ignore: true)
+  _$$_BelongsToCollectionCopyWith<_$_BelongsToCollection> get copyWith =>
       throw _privateConstructorUsedError;
 }

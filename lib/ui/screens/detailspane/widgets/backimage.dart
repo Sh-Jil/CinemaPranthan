@@ -13,9 +13,11 @@ class BackImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double height = MediaQuery.of(context).size.height * 0.7;
+    final double height = MediaQuery.of(context).size.height;
+    final double width = MediaQuery.of(context).size.width;
     ValueNotifier<int> currentindex = ValueNotifier(0);
     return Container(
+      width: width < 1081 ? width : 1080,
       padding: const EdgeInsets.only(bottom: 0.5),
       decoration: const BoxDecoration(
           color: grey,
@@ -28,11 +30,13 @@ class BackImage extends StatelessWidget {
             bottomRight: Radius.circular(30.0)),
         child: imagelist.isNotEmpty
             ? Stack(
+                fit: StackFit.expand,
                 children: [
                   CarouselSlider.builder(
                       itemCount: imagelist.length,
                       itemBuilder: (context, itemIndex, pageindex) {
                         return CachedNetworkImage(
+                          width: double.infinity,
                           fit: BoxFit.cover,
                           imageUrl:
                               '$backdrophead${imagelist[itemIndex].filePath}',
@@ -48,7 +52,7 @@ class BackImage extends StatelessWidget {
                           }),
                           enableInfiniteScroll: false,
                           viewportFraction: 1.0,
-                          height: height)),
+                          height: height < 2401 ? height * 0.7 : 2400 * 0.7)),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Align(
