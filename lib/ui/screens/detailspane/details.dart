@@ -262,7 +262,7 @@ class Details extends StatelessWidget {
                                           width: width * 0.7,
                                           borderRadius:
                                               BorderRadius.circular(20.0),
-                                          padding: EdgeInsets.symmetric(
+                                          padding: const EdgeInsets.symmetric(
                                               vertical: 8.0, horizontal: 16.0),
                                           blurPower: 25.0,
                                           gradientColors: [
@@ -286,7 +286,7 @@ class Details extends StatelessWidget {
                                   ),
                                 ),
                               )
-                            : SizedBox(),
+                            : const SizedBox(),
                       ),
                       SliverList(
                           delegate: SliverChildBuilderDelegate(

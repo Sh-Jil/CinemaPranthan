@@ -3,7 +3,6 @@ import 'package:cinemapranthan/constants/colours/colours.dart';
 import 'package:cinemapranthan/constants/links/links.dart';
 
 import 'package:cinemapranthan/ui/screens/settings/widgets/helplisttile.dart';
-import 'package:cinemapranthan/ui/screens/settings/widgets/logo.dart';
 import 'package:cinemapranthan/utils/navigation.dart';
 import 'package:flutter/material.dart';
 
@@ -37,7 +36,7 @@ class HelpFeed extends StatelessWidget {
                     showDialog(
                         context: context,
                         builder: (context) {
-                          return RatingScreen();
+                          return const RatingScreen();
                         });
                   },
                   buttoncolor: const Color.fromARGB(255, 192, 175, 26),

@@ -8,5 +8,5 @@ class TvSeasonDetailState with _$TvSeasonDetailState {
       required List<SeasonDetailsModel> seasondetail}) = _TvSeasonDetailState;
 
   factory TvSeasonDetailState.initial() =>
-      TvSeasonDetailState(isLoading: true, options: None(), seasondetail: []);
+      const TvSeasonDetailState(isLoading: true, options: None(), seasondetail: []);
 }

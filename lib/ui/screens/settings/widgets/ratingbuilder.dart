@@ -17,31 +17,31 @@ class RatingDialog extends StatelessWidget {
       initialRating: 0,
       direction: Axis.horizontal,
       itemCount: 5,
-      itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+      itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
       itemBuilder: (context, index) {
         switch (index) {
           case 0:
-            return Icon(
+            return const Icon(
               Icons.sentiment_very_dissatisfied,
               color: Colors.red,
             );
           case 1:
-            return Icon(
+            return const Icon(
               Icons.sentiment_dissatisfied,
               color: Colors.redAccent,
             );
           case 2:
-            return Icon(
+            return const Icon(
               Icons.sentiment_neutral,
               color: Colors.amber,
             );
           case 3:
-            return Icon(
+            return const Icon(
               Icons.sentiment_satisfied,
               color: Colors.lightGreen,
             );
           case 4:
-            return Icon(
+            return const Icon(
               Icons.sentiment_very_satisfied,
               color: Colors.green,
             );
@@ -75,10 +75,10 @@ class RatingScreen extends StatelessWidget {
           children: [
             ListTile(
               horizontalTitleGap: 0,
-              title: Text(
+              title: const Text(
                 "Rate Us",
                 textAlign: TextAlign.center,
-                style: const TextStyle(
+                style: TextStyle(
                     color: white,
                     fontSize: 17,
                     letterSpacing: 1.0,
@@ -86,7 +86,7 @@ class RatingScreen extends StatelessWidget {
               ),
               leading: IconButton(
                 onPressed: (() => goback(context)),
-                icon: Icon(
+                icon: const Icon(
                   Icons.close,
                   color: white,
                 ),
@@ -100,10 +100,10 @@ class RatingScreen extends StatelessWidget {
                     "assets/images/f0fc1ca20e08d638195b9-removebg-preview.png"),
               ),
             ),
-            Text(
+            const Text(
               "How Was Your Experience?",
               textAlign: TextAlign.center,
-              style: const TextStyle(
+              style: TextStyle(
                   color: white,
                   fontSize: 17,
                   letterSpacing: 1.0,
@@ -113,7 +113,7 @@ class RatingScreen extends StatelessWidget {
         ),
       ),
       children: [
-        Center(child: RatingDialog()),
+        const Center(child: RatingDialog()),
         Padding(
           padding: const EdgeInsets.all(24.0),
           child: ValueListenableBuilder(
@@ -141,17 +141,17 @@ class RatingScreen extends StatelessWidget {
                       elevation: 0.0,
                       shadowColor: Colors.transparent,
                       padding:
-                          EdgeInsets.symmetric(vertical: 15, horizontal: 0),
+                          const EdgeInsets.symmetric(vertical: 15, horizontal: 0),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                         side: BorderSide(
                             color: onPressed ? Colors.transparent : orange),
                       ),
                     ),
-                    child: Text(
+                    child: const Text(
                       "Submit",
                       textAlign: TextAlign.center,
-                      style: const TextStyle(
+                      style: TextStyle(
                           color: white,
                           fontSize: 17,
                           letterSpacing: 1.0,

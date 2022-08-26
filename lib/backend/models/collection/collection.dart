@@ -2,9 +2,7 @@
 //
 //     final collectionModel = collectionModelFromMap(jsonString);
 
-import 'package:meta/meta.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'dart:convert';
 
 part 'collection.freezed.dart';
 part 'collection.g.dart';

@@ -35,7 +35,7 @@ class CollectionScreen extends StatelessWidget {
         ),
         backgroundColor: darkColour,
         leading: IconButton(
-            onPressed: () => goback(context), icon: Icon(Icons.close_rounded)),
+            onPressed: () => goback(context), icon: const Icon(Icons.close_rounded)),
       ),
       body: SafeArea(child: SingleChildScrollView(
         child: BlocBuilder<CollectionBloc, CollectionState>(
@@ -60,11 +60,11 @@ class CollectionScreen extends StatelessWidget {
                               textAlign: TextAlign.start),
                         ),
                       GridView.builder(
-                          physics: BouncingScrollPhysics(),
+                          physics: const BouncingScrollPhysics(),
                           shrinkWrap: true,
                           itemCount: state.movieseries.parts.length,
                           gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
+                              const SliverGridDelegateWithFixedCrossAxisCount(
                                   mainAxisSpacing: 8.0,
                                   crossAxisCount: 3,
                                   childAspectRatio: 0.8),

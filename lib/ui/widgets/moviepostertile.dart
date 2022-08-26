@@ -3,7 +3,6 @@ import 'package:cinemapranthan/ui/screens/detailspane/details.dart';
 
 import 'package:cinemapranthan/utils/navigation.dart';
 import 'package:flutter/material.dart';
-import '../../../constants/Icons/appicons.dart';
 
 import 'package:cinemapranthan/ui/screens/detailspane/tvdetails.dart';
 

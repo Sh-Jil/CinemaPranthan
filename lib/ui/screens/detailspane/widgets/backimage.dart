@@ -37,6 +37,7 @@ class BackImage extends StatelessWidget {
                       itemBuilder: (context, itemIndex, pageindex) {
                         return CachedNetworkImage(
                           width: double.infinity,
+                          height: double.infinity,
                           fit: BoxFit.cover,
                           imageUrl:
                               '$backdrophead${imagelist[itemIndex].filePath}',

@@ -13,7 +13,6 @@ import 'package:side_sheet/side_sheet.dart';
 import '../../../backend/apicall/movies.dart';
 import '../../../constants/Icons/appicons.dart';
 import '../../../constants/colours/colours.dart';
-import '../../widgets/aboutdialog.dart';
 import '../../widgets/moviepostertile.dart';
 import '../../widgets/searchwidget.dart';
 import '../../widgets/sidesheet.dart';
