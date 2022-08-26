@@ -35,7 +35,8 @@ class CollectionScreen extends StatelessWidget {
         ),
         backgroundColor: darkColour,
         leading: IconButton(
-            onPressed: () => goback(context), icon: const Icon(Icons.close_rounded)),
+            onPressed: () => goback(context),
+            icon: const Icon(Icons.close_rounded)),
       ),
       body: SafeArea(child: SingleChildScrollView(
         child: BlocBuilder<CollectionBloc, CollectionState>(
@@ -65,9 +66,10 @@ class CollectionScreen extends StatelessWidget {
                           itemCount: state.movieseries.parts.length,
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
-                                  mainAxisSpacing: 8.0,
-                                  crossAxisCount: 3,
-                                  childAspectRatio: 0.8),
+                            childAspectRatio: 0.5,
+                            mainAxisSpacing: 8.0,
+                            crossAxisCount: 3,
+                          ),
                           itemBuilder: ((context, index) {
                             final head = state.movieseries.parts;
                             return CollectionTile(
